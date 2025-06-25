@@ -2,6 +2,7 @@ import Header from "../components/Header";
 import { useState } from "react";
 import "./CreateGroupPage.css";
 import InvitationModal from "../components/InvitationModal";
+import MemberLimitModal from "../components/MemberLimitModal";
 
 function CreateGroupPage() {
   const [groupName, setGroupName] = useState("");
@@ -10,12 +11,19 @@ function CreateGroupPage() {
   const [members, setMembers] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [inviteEmail, setInviteEmail] = useState("");
+  const [isLimitModalOpen, setIsLimitModalOpen] = useState(false);
 
   const handleAddMember = () => {
+    // 멤버 수 제한
+    if (members.length >= 3) {
+      setIsLimitModalOpen(true);
+      setMemberInput("");
+      return;
+    }
     // 공백 제한, 중복 제한
     if (memberInput.trim() && !members.includes(memberInput.trim())) {
       setInviteEmail(memberInput.trim());
-      setIsModalOpen(true); // 모달 오픈
+      setIsModalOpen(true);
     }
   };
 
@@ -90,7 +98,7 @@ function CreateGroupPage() {
                     {member.nickname}
                     <button
                       type="button"
-                      onClick={() => handleRemoveMember(name)}
+                      onClick={() => handleRemoveMember(member.email)}
                       className="remove-member-btn"
                     >
                       ×
@@ -115,6 +123,12 @@ function CreateGroupPage() {
         nickname={inviteEmail ? inviteEmail.split("@")[0] : ""}
         email={inviteEmail}
         onInvite={handleInvite}
+      />
+      <MemberLimitModal
+        isOpen={isLimitModalOpen}
+        onClose={() => setIsLimitModalOpen(false)}
+        ownerNickname="solux"
+        members={members}
       />
     </>
   );

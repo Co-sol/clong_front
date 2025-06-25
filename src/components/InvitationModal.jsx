@@ -36,7 +36,7 @@ const InvitationModal = ({ isOpen, onClose, nickname, email, onInvite }) => {
         <div
           style={{
             color: "#787878",
-            fontSize: "0.8rem",
+            fontSize: "0.85rem",
             marginBottom: 30,
             fontFamily: "NotoSansKR-Regular, sans-serif",
             fontWeight: 400,
