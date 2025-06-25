@@ -1,24 +1,37 @@
 import Header from "../components/Header";
 import { useState } from "react";
 import "./CreateGroupPage.css";
+import InvitationModal from "../components/InvitationModal";
 
 function CreateGroupPage() {
   const [groupName, setGroupName] = useState("");
   const [groupRule, setGroupRule] = useState("");
   const [memberInput, setMemberInput] = useState("");
-  const [members, setMembers] = useState(["solux", "A", "sook"]);
+  const [members, setMembers] = useState([]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [inviteEmail, setInviteEmail] = useState("");
 
   const handleAddMember = () => {
     // 공백 제한, 중복 제한
     if (memberInput.trim() && !members.includes(memberInput.trim())) {
-      setMembers([...members, memberInput.trim()]);
-      setMemberInput(""); // 입력창 비우기
+      setInviteEmail(memberInput.trim());
+      setIsModalOpen(true); // 모달 오픈
     }
   };
 
+  const handleInvite = () => {
+    if (inviteEmail && !members.some((m) => m.email === inviteEmail)) {
+      const nickname = inviteEmail.split("@")[0];
+      setMembers([...members, { nickname, email: inviteEmail }]);
+    }
+    setIsModalOpen(false);
+    setMemberInput("");
+    setInviteEmail("");
+  };
+
   // 멤버 삭제
-  const handleRemoveMember = (name) => {
-    setMembers(members.filter((m) => m !== name));
+  const handleRemoveMember = (email) => {
+    setMembers(members.filter((m) => m.email !== email));
   };
 
   const handleSubmit = (e) => {
@@ -72,9 +85,9 @@ function CreateGroupPage() {
                 </button>
               </div>
               <div className="member-list">
-                {members.map((name) => (
-                  <div className="member-chip" key={name}>
-                    {name}
+                {members.map((member) => (
+                  <div className="member-chip" key={member.email}>
+                    {member.nickname}
                     <button
                       type="button"
                       onClick={() => handleRemoveMember(name)}
@@ -92,6 +105,17 @@ function CreateGroupPage() {
           </form>
         </div>
       </main>
+      <InvitationModal
+        isOpen={isModalOpen}
+        onClose={() => {
+          setIsModalOpen(false);
+          setMemberInput("");
+          setInviteEmail("");
+        }}
+        nickname={inviteEmail ? inviteEmail.split("@")[0] : ""}
+        email={inviteEmail}
+        onInvite={handleInvite}
+      />
     </>
   );
 }
