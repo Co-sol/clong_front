@@ -16,14 +16,12 @@
     position: relative;
 }
 
-.PListItem .place {
-    margin-right: 2rem;
-}
-
 .PListItem .toClean {
     font-size: 1rem;
-    /* padding-right: 5.5rem; */
     max-width: 9rem;
+
+    position: absolute;
+    left: 7rem;
 }
 
 .PListItem .deadLine {
