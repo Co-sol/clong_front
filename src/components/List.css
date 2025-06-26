@@ -43,6 +43,23 @@
     line-height: 55px;
 }
 
+.List .title {
+    display: flex;
+    margin-left: 3.4rem;
+
+    font-size: 1rem;
+
+    color: rgb(103, 103, 103);
+}
+
+.List .to-clean_text {
+    margin-left: 2.9rem;
+}
+
+.List .deadLine_text {
+    margin-left: 5.63rem;
+}
+
 .List .attribute {
     color: rgb(103, 103, 103);
     margin-left: 2.5rem;

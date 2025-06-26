@@ -12,6 +12,8 @@
     margin-top: 0.6rem;
     margin-left: 2rem;
     padding-left: 1.2rem;
+
+    position: relative;
 }
 
 .ListItem .Badge {
@@ -22,17 +24,24 @@
 
 .ListItem .toClean {
     font-size: 1rem;
-    margin-right: 5.5rem;
+    /* padding-right: 5.5rem; */
+    max-width: 9rem;
 }
 
 .ListItem .deadLine {
     font-size: 1rem;
+    position: absolute;
+    left: 16.5rem;
+    max-width: 6rem;
 }
 
 .ListItem .Button_done {
     width: 3.1rem;
     height: 1.9rem;
     border-radius: 10px;
+
+    position: absolute;
+    right: 0.1rem;
 
     margin-left: 3rem;
     margin-right: 1.2rem;
