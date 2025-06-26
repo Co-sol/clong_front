@@ -179,3 +179,23 @@ body {
 .create-btn:hover {
   background: #74d3a4;
 }
+
+/* 스크롤 */
+.form-rule::-webkit-scrollbar {
+  width: 7.5px;
+}
+
+.form-rule::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 15px;
+}
+
+.form-rule::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 15px;
+  transition: background 0.3s ease;
+}
+
+.form-rule::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}

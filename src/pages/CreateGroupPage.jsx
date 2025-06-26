@@ -100,6 +100,11 @@ function CreateGroupPage() {
                 type="text"
                 value={groupName}
                 onChange={(e) => setGroupName(e.target.value)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") {
+                    e.preventDefault();
+                  }
+                }}
                 className="form-name"
                 placeholder="그룹명을 입력해주세요."
               />
