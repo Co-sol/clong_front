@@ -45,13 +45,5 @@
 
 .List .attribute {
     color: rgb(103, 103, 103);
-    margin-left: 8%;
-}
-
-.List .ListItem {
-    margin-top: 2%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 3%;
+    margin-left: 2.5rem;
 }
