@@ -37,7 +37,7 @@
 
 .PList .title {
     display: flex;
-    margin-left: 3.3rem;
+    margin-left: 3.7rem;
     margin-bottom: 0.6rem;
 
     font-size: 1rem;
@@ -46,11 +46,11 @@
 }
 
 .PList .to-clean_text {
-    margin-left: 2.9rem;
+    margin-left: 2.8rem;
 }
 
 .PList .deadLine_text {
-    margin-left: 5.63rem;
+    margin-left: 6.2rem;
 }
 
 .PList .attribute {

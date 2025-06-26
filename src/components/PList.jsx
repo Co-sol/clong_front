@@ -2,7 +2,7 @@ import "./PList.css";
 import { useContext } from "react";
 import { toCleanContext } from "../App";
 
-import ListItem from "./GListItem";
+import PListItem from "./PListItem";
 import Button from "./Button";
 import { getBadgeImage } from "../utils/get-badge-images";
 
@@ -23,7 +23,7 @@ const PList = () => {
                 <div className="deadLine_text">마감 기한</div>
             </section>
             <div>
-                <ListItem />
+                <PListItem />
             </div>
         </div>
     );
