@@ -1,0 +1,57 @@
+.List {
+    width: 502px;
+    height: 802px;
+    background-color: white;
+
+    border-radius: 20px;
+    position: relative;
+}
+
+.List h3 {
+    font-size: 24px;
+    text-align: center;
+
+    padding: 8%;
+    margin-bottom: 0px;
+}
+
+.List .Button_edit {
+    position: absolute;
+    right: 3%;
+    top: 2%;
+
+    width: 80px;
+    height: 40px;
+    border-radius: 15px;
+
+    color: white;
+    font-size: 15px;
+
+    cursor: pointer;
+}
+
+.List .place {
+    width: 164px;
+    height: 55px;
+    background-color: rgb(139, 226, 182);
+    border-radius: 80px;
+    margin-left: 169px;
+    margin-bottom: 8%;
+
+    font-size: 30px;
+    text-align: center;
+    line-height: 55px;
+}
+
+.List .attribute {
+    color: rgb(103, 103, 103);
+    margin-left: 8%;
+}
+
+.List .ListItem {
+    margin-top: 2%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3%;
+}
