@@ -1,4 +1,4 @@
-.GroupList {
+.GList {
     width: 502px;
     height: 802px;
     background-color: white;
@@ -7,7 +7,7 @@
     position: relative;
 }
 
-.GroupList h3 {
+.GList h3 {
     font-size: 24px;
     text-align: center;
 
@@ -15,7 +15,7 @@
     margin-bottom: 0px;
 }
 
-.GroupList .Button_edit {
+.GList .Button_edit {
     position: absolute;
     right: 3%;
     top: 2%;
@@ -30,7 +30,7 @@
     cursor: pointer;
 }
 
-.GroupList .place {
+.GList .place {
     width: 164px;
     height: 55px;
     background-color: rgb(139, 226, 182);
@@ -43,7 +43,7 @@
     line-height: 51px;
 }
 
-.GroupList .title {
+.GList .title {
     display: flex;
     margin-left: 3.3rem;
     margin-bottom: 0.6rem;
@@ -53,15 +53,15 @@
     color: rgb(103, 103, 103);
 }
 
-.GroupList .to-clean_text {
+.GList .to-clean_text {
     margin-left: 2.9rem;
 }
 
-.GroupList .deadLine_text {
+.GList .deadLine_text {
     margin-left: 5.63rem;
 }
 
-.GroupList .attribute {
+.GList .attribute {
     color: rgb(103, 103, 103);
     margin-left: 2.5rem;
 }

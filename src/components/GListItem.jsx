@@ -1,11 +1,11 @@
-import "./ListItem.css";
+import "./GListItem.css";
 import { getBadgeImage } from "../utils/get-badge-images";
 import Button from "./Button";
 
-const ListItem = ({ badgeId }) => {
+const GListItem = ({ badgeId }) => {
     badgeId = 1;
     return (
-        <div className="ListItem">
+        <div className="GListItem">
             <img
                 className={`Badge Badge_${badgeId}`}
                 src={getBadgeImage(badgeId)}
@@ -17,4 +17,4 @@ const ListItem = ({ badgeId }) => {
     );
 };
 
-export default ListItem;
+export default GListItem;

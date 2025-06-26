@@ -1,21 +1,24 @@
-import "./PersonalList.css";
+import "./PList.css";
 import { useContext } from "react";
 import { toCleanContext } from "../App";
 
-import ListItem from "./ListItem";
+import ListItem from "./GListItem";
 import Button from "./Button";
+import { getBadgeImage } from "../utils/get-badge-images";
 
-const PersonalList = () => {
+const PList = () => {
     const mockdata = useContext(toCleanContext);
     console.log(mockdata);
 
     return (
-        <div className="PersonalList">
+        <div className="PList">
             <h3>To-clean</h3>
             <Button text={"편집"} type={"edit"} />
-            <div className="place">거실</div>
+            <div className="profile">
+                <img src={getBadgeImage(1)} />
+            </div>
             <section className="title">
-                <div className="profile_text">프로필</div>
+                <div className="place_text">공간</div>
                 <div className="to-clean_text">to-clean</div>
                 <div className="deadLine_text">마감 기한</div>
             </section>
@@ -26,4 +29,4 @@ const PersonalList = () => {
     );
 };
 
-export default PersonalList;
+export default PList;

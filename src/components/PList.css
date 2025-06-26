@@ -1,4 +1,4 @@
-.PersonalList {
+.PList {
     width: 502px;
     height: 802px;
     background-color: white;
@@ -7,7 +7,7 @@
     position: relative;
 }
 
-.PersonalList h3 {
+.PList h3 {
     font-size: 24px;
     text-align: center;
 
@@ -15,7 +15,7 @@
     margin-bottom: 0px;
 }
 
-.PersonalList .Button_edit {
+.PList .Button_edit {
     position: absolute;
     right: 3%;
     top: 2%;
@@ -30,20 +30,12 @@
     cursor: pointer;
 }
 
-.PersonalList .place {
-    width: 164px;
-    height: 55px;
-    background-color: rgb(139, 226, 182);
-    border-radius: 80px;
-    margin-left: 169px;
-    margin-bottom: 8%;
-
-    font-size: 30px;
+.PList .profile {
     text-align: center;
-    line-height: 51px;
+    margin-bottom: 1.8rem;
 }
 
-.PersonalList .title {
+.PList .title {
     display: flex;
     margin-left: 3.3rem;
     margin-bottom: 0.6rem;
@@ -53,15 +45,15 @@
     color: rgb(103, 103, 103);
 }
 
-.PersonalList .to-clean_text {
+.PList .to-clean_text {
     margin-left: 2.9rem;
 }
 
-.PersonalList .deadLine_text {
+.PList .deadLine_text {
     margin-left: 5.63rem;
 }
 
-.PersonalList .attribute {
+.PList .attribute {
     color: rgb(103, 103, 103);
     margin-left: 2.5rem;
 }

@@ -1,5 +1,6 @@
 import "./App.css";
-import GroupList from "./components/GroupList";
+import GList from "./components/GList";
+import PList from "./components/PList";
 import { createContext } from "react";
 
 let mockdata = [
@@ -25,7 +26,8 @@ function App() {
     return (
         <div className="App">
             <toCleanContext.Provider value={{ mockdata }}>
-                <GroupList />
+                <GList />
+                <PList />
             </toCleanContext.Provider>
         </div>
     );
