@@ -18,7 +18,7 @@ const InvitationModal = ({ isOpen, onClose, nickname, email, onInvite }) => {
         <div
           style={{
             textAlign: "left",
-            maraginLeft: 20,
+            marginLeft: 15,
             marginBottom: 15,
             fontFamily: "NotoSansKR-Regular, sans-serif",
             fontWeight: 400,

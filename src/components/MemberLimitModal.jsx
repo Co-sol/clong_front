@@ -1,12 +1,43 @@
 import Modal from "./Modal";
+const fontStyles = {
+  "@font-face": {
+    "NotoSansKR-Bold": {
+      fontFamily: "NotoSansKR-Bold",
+      src: "url('/fonts/NotoSansKR-Bold.ttf') format('truetype')",
+      fontWeight: "bold",
+      fontStyle: "normal",
+    },
+    "NotoSansKR-Regular": {
+      fontFamily: "NotoSansKR-Regular",
+      src: "url('/fonts/NotoSansKR-Regular.ttf') format('truetype')",
+      fontWeight: "normal",
+      fontStyle: "normal",
+    },
+  },
+};
 
 const MemberLimitModal = ({ isOpen, onClose, members, ownerNickname }) => (
   <Modal isOpen={isOpen} onClose={onClose}>
     <div style={{ textAlign: "center" }}>
-      <div style={{ fontWeight: 700, fontSize: "1.2rem", margin: "10px 0" }}>
+      <div
+        style={{
+          fontFamily: "'NotoSansKR-Bold', sans-serif",
+          fontWeight: 700,
+          fontSize: "1.2rem",
+          margin: "10px 0",
+        }}
+      >
         그룹 인원이 가득 찼어요
       </div>
-      <div style={{ marginBottom: 40, fontSize: "1rem", color: "#000000" }}>
+      <div
+        style={{
+          fontFamily: "'NotoSansKR-Regular', sans-serif",
+          fontWeight: "normal",
+          marginBottom: 40,
+          fontSize: "1rem",
+          color: "#000000",
+        }}
+      >
         이미 4명이 모두 참여 중이에요
       </div>
       <div

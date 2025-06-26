@@ -1,10 +1,13 @@
 import Header from "../components/Header";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./CreateGroupPage.css";
 import InvitationModal from "../components/InvitationModal";
 import MemberLimitModal from "../components/MemberLimitModal";
+import AlreadyGroupModal from "../components/AlreadyGroupModal";
 
 function CreateGroupPage() {
+  const navigate = useNavigate();
   const [groupName, setGroupName] = useState("");
   const [groupRule, setGroupRule] = useState("");
   const [memberInput, setMemberInput] = useState("");
@@ -12,8 +15,23 @@ function CreateGroupPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [inviteEmail, setInviteEmail] = useState("");
   const [isLimitModalOpen, setIsLimitModalOpen] = useState(false);
+  const [isAlreadyGroupModalOpen, setIsAlreadyGroupModalOpen] = useState(false);
+  const [alreadyGroupInfo, setAlreadyGroupInfo] = useState({
+    nickname: "",
+    email: "",
+  });
 
   const handleAddMember = () => {
+    // 이미 추가된 멤버(중복) 체크
+    const trimmedInput = memberInput.trim();
+    if (members.some((m) => m.email === trimmedInput)) {
+      // 중복일 때 모달 오픈
+      const nickname = trimmedInput.split("@")[0];
+      setAlreadyGroupInfo({ nickname, email: trimmedInput });
+      setIsAlreadyGroupModalOpen(true);
+      setMemberInput("");
+      return;
+    }
     // 멤버 수 제한
     if (members.length >= 3) {
       setIsLimitModalOpen(true);
@@ -44,7 +62,16 @@ function CreateGroupPage() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // 그룹 생성 연동 로직 추가 예정
+
+    // 입력 데이터 수집
+    const groupData = {
+      groupName: groupName,
+      groupRule: groupRule,
+      members: members,
+      ownerNickname: "solux", // 임시 고정값
+    };
+
+    navigate("/tutorial");
   };
 
   return (
@@ -81,6 +108,12 @@ function CreateGroupPage() {
                   type="email"
                   value={memberInput}
                   onChange={(e) => setMemberInput(e.target.value)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter") {
+                      e.preventDefault();
+                      handleAddMember();
+                    }
+                  }}
                   className="form-email"
                   placeholder="이메일을 입력해주세요."
                 />
@@ -129,6 +162,12 @@ function CreateGroupPage() {
         onClose={() => setIsLimitModalOpen(false)}
         ownerNickname="solux"
         members={members}
+      />
+      <AlreadyGroupModal
+        isOpen={isAlreadyGroupModalOpen}
+        onClose={() => setIsAlreadyGroupModalOpen(false)}
+        nickname={alreadyGroupInfo.nickname}
+        email={alreadyGroupInfo.email}
       />
     </>
   );
