@@ -1,10 +1,16 @@
-import "./List.css";
+import "./PersonalList.css";
+import { useContext } from "react";
+import { toCleanContext } from "../App";
+
 import ListItem from "./ListItem";
 import Button from "./Button";
 
-const List = () => {
+const PersonalList = () => {
+    const mockdata = useContext(toCleanContext);
+    console.log(mockdata);
+
     return (
-        <div className="List">
+        <div className="PersonalList">
             <h3>To-clean</h3>
             <Button text={"편집"} type={"edit"} />
             <div className="place">거실</div>
@@ -20,4 +26,4 @@ const List = () => {
     );
 };
 
-export default List;
+export default PersonalList;

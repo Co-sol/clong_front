@@ -1,0 +1,67 @@
+.GroupList {
+    width: 502px;
+    height: 802px;
+    background-color: white;
+
+    border-radius: 20px;
+    position: relative;
+}
+
+.GroupList h3 {
+    font-size: 24px;
+    text-align: center;
+
+    padding: 8%;
+    margin-bottom: 0px;
+}
+
+.GroupList .Button_edit {
+    position: absolute;
+    right: 3%;
+    top: 2%;
+
+    width: 80px;
+    height: 40px;
+    border-radius: 15px;
+
+    color: white;
+    font-size: 15px;
+
+    cursor: pointer;
+}
+
+.GroupList .place {
+    width: 164px;
+    height: 55px;
+    background-color: rgb(139, 226, 182);
+    border-radius: 80px;
+    margin-left: 169px;
+    margin-bottom: 8%;
+
+    font-size: 30px;
+    text-align: center;
+    line-height: 51px;
+}
+
+.GroupList .title {
+    display: flex;
+    margin-left: 3.3rem;
+    margin-bottom: 0.6rem;
+
+    font-size: 1rem;
+
+    color: rgb(103, 103, 103);
+}
+
+.GroupList .to-clean_text {
+    margin-left: 2.9rem;
+}
+
+.GroupList .deadLine_text {
+    margin-left: 5.63rem;
+}
+
+.GroupList .attribute {
+    color: rgb(103, 103, 103);
+    margin-left: 2.5rem;
+}

@@ -1,4 +1,4 @@
-.List {
+.PersonalList {
     width: 502px;
     height: 802px;
     background-color: white;
@@ -7,7 +7,7 @@
     position: relative;
 }
 
-.List h3 {
+.PersonalList h3 {
     font-size: 24px;
     text-align: center;
 
@@ -15,7 +15,7 @@
     margin-bottom: 0px;
 }
 
-.List .Button_edit {
+.PersonalList .Button_edit {
     position: absolute;
     right: 3%;
     top: 2%;
@@ -30,7 +30,7 @@
     cursor: pointer;
 }
 
-.List .place {
+.PersonalList .place {
     width: 164px;
     height: 55px;
     background-color: rgb(139, 226, 182);
@@ -40,27 +40,28 @@
 
     font-size: 30px;
     text-align: center;
-    line-height: 55px;
+    line-height: 51px;
 }
 
-.List .title {
+.PersonalList .title {
     display: flex;
-    margin-left: 3.4rem;
+    margin-left: 3.3rem;
+    margin-bottom: 0.6rem;
 
     font-size: 1rem;
 
     color: rgb(103, 103, 103);
 }
 
-.List .to-clean_text {
+.PersonalList .to-clean_text {
     margin-left: 2.9rem;
 }
 
-.List .deadLine_text {
+.PersonalList .deadLine_text {
     margin-left: 5.63rem;
 }
 
-.List .attribute {
+.PersonalList .attribute {
     color: rgb(103, 103, 103);
     margin-left: 2.5rem;
 }
