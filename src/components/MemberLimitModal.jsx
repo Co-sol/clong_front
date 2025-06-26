@@ -89,7 +89,7 @@ const MemberLimitModal = ({ isOpen, onClose, members, ownerNickname }) => (
           marginTop: 10,
         }}
       >
-        Clong에서는 한 그룹당 최대 4명까지 참여할 수 있어요
+        한 그룹당 최대 4명까지 참여할 수 있어요
       </div>
     </div>
   </Modal>

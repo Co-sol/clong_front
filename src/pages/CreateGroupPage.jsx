@@ -21,9 +21,22 @@ function CreateGroupPage() {
     email: "",
   });
 
+  const validateEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
   const handleAddMember = () => {
     // 이미 추가된 멤버(중복) 체크
     const trimmedInput = memberInput.trim();
+
+    // 이메일 형식 검사 추가
+    if (!validateEmail(trimmedInput)) {
+      alert("올바른 이메일 형식을 입력해주세요.");
+      setMemberInput("");
+      return;
+    }
+
     if (members.some((m) => m.email === trimmedInput)) {
       // 중복일 때 모달 오픈
       const nickname = trimmedInput.split("@")[0];
