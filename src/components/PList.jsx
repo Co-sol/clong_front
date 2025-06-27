@@ -1,21 +1,22 @@
 import "./PList.css";
 import { useContext } from "react";
-import { toCleanContext } from "../App";
+import { toCleanDispatchContext, toCleanStateContext } from "../App";
 
 import PListItem from "./PListItem";
 import Button from "./Button";
 import { getBadgeImage } from "../utils/get-badge-images";
 
 const PList = () => {
-    const mockdata = useContext(toCleanContext);
-    console.log(mockdata);
+    const data = useContext(toCleanStateContext);
+    const badgeId = 1;
 
     return (
         <div className="PList">
             <h3>To-clean</h3>
             <Button text={"편집"} type={"edit"} />
             <div className="profile">
-                <img src={getBadgeImage(1)} />
+                <img src={getBadgeImage(badgeId)} />
+                <div className="border"></div>
             </div>
             <section className="title">
                 <div className="place_text">공간</div>

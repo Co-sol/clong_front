@@ -1,13 +1,12 @@
 import "./GList.css";
 import { useContext } from "react";
-import { toCleanContext } from "../App";
+import { toCleanDispatchContext, toCleanStateContext } from "../App";
 
-import ListItem from "./GListItem";
+import GListItem from "./GListItem";
 import Button from "./Button";
 
 const GList = () => {
-    const mockdata = useContext(toCleanContext);
-    console.log(mockdata);
+    const data = useContext(toCleanStateContext);
 
     return (
         <div className="GList">
@@ -19,8 +18,10 @@ const GList = () => {
                 <div className="to-clean_text">to-clean</div>
                 <div className="deadLine_text">마감 기한</div>
             </section>
-            <div>
-                <ListItem />
+            <div className="scrollBar">
+                {data.group.map((item) => (
+                    <GListItem item={item} />
+                ))}
             </div>
         </div>
     );

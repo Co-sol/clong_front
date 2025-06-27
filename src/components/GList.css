@@ -1,6 +1,6 @@
 .GList {
-    width: 502px;
-    height: 802px;
+    width: 31.3rem;
+    height: 50.1rem;
     background-color: white;
 
     border-radius: 20px;
@@ -45,7 +45,7 @@
 
 .GList .title {
     display: flex;
-    margin-left: 3.3rem;
+    margin-left: 3.2rem;
     margin-bottom: 0.6rem;
 
     font-size: 1rem;
@@ -64,4 +64,26 @@
 .GList .attribute {
     color: rgb(103, 103, 103);
     margin-left: 2.5rem;
+}
+
+.GList .scrollBar {
+    height: 33rem;
+    width: 30.5rem;
+    overflow-y: auto;
+}
+
+.scrollBar::-webkit-scrollbar {
+    /* 스크롤바의 너비 */
+    width: 0.6rem;
+}
+.scrollBar::-webkit-scrollbar-thumb {
+    /* 스크롤바의 색상 */
+    background: rgb(139, 226, 170);
+    border-radius: 10px;
+}
+
+.scrollBar::-webkit-scrollbar-track {
+    /*스크롤바 뒷 배경 색상*/
+    background: rgb(217, 217, 217);
+    border-radius: 20px;
 }

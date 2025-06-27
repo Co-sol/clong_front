@@ -1,6 +1,6 @@
 .PList {
-    width: 502px;
-    height: 802px;
+    width: 31.3rem;
+    height: 50.1rem;
     background-color: white;
 
     border-radius: 20px;
@@ -35,9 +35,16 @@
     margin-bottom: 1.8rem;
 }
 
+.PList .profile > img {
+    width: 4.4rem;
+    height: 4.4rem;
+    border-radius: 50%;
+    border: 0.3rem solid rgb(164, 235, 217);
+}
+
 .PList .title {
     display: flex;
-    margin-left: 3.7rem;
+    margin-left: 3rem;
     margin-bottom: 0.6rem;
 
     font-size: 1rem;
@@ -46,11 +53,11 @@
 }
 
 .PList .to-clean_text {
-    margin-left: 3.4rem;
+    margin-left: 3.9rem;
 }
 
 .PList .deadLine_text {
-    margin-left: 5.6rem;
+    margin-left: 5.7rem;
 }
 
 .PList .attribute {
