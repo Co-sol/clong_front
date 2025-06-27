@@ -3,7 +3,7 @@ import { useContext, useState } from "react";
 import {
     toCleanDispatchContext,
     toCleanStateContext,
-} from "../Pages/GroupHomePage";
+} from "../Pages/GroupSpacePage";
 
 import PListItem from "./PListItem";
 import Button from "./Button";

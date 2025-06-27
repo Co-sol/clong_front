@@ -1,9 +1,6 @@
 import "./GList.css";
 import { useContext, useState, useRef } from "react";
-import {
-    toCleanDispatchContext,
-    toCleanStateContext,
-} from "../Pages/GroupHomePage";
+import { toCleanStateContext } from "../App";
 
 import GListItem from "./GListItem";
 import Button from "./Button";
