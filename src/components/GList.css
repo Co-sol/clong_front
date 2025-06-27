@@ -30,6 +30,20 @@
     cursor: pointer;
 }
 
+.GList .Button_add1 {
+    color: white;
+    font-size: 3rem;
+
+    width: 27.5rem;
+    height: 8.5vh;
+    border-radius: 15px;
+    background-color: rgb(217, 217, 217);
+
+    margin-left: 1.8rem;
+    margin-bottom: 0.9rem;
+    padding-left: 1.2rem;
+}
+
 .GList .place {
     width: 164px;
     height: 55px;
@@ -78,7 +92,7 @@
 }
 .scrollBar::-webkit-scrollbar-thumb {
     /* 스크롤바의 색상 */
-    background: rgb(139, 226, 170);
+    background: rgb(68, 168, 113);
     border-radius: 10px;
 }
 

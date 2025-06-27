@@ -30,6 +30,20 @@
     cursor: pointer;
 }
 
+.PList .Button_add2 {
+    color: white;
+    font-size: 3rem;
+
+    width: 27.5rem;
+    height: 8.5vh;
+    border-radius: 15px;
+    background-color: rgb(217, 217, 217);
+
+    margin-left: 1.8rem;
+    margin-bottom: 0.9rem;
+    padding-left: 1.2rem;
+}
+
 .PList .profile {
     text-align: center;
     margin-bottom: 1.8rem;

@@ -16,12 +16,23 @@
     position: relative;
 }
 
+.PListItem .place {
+    font-size: 1rem;
+    max-width: 5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .PListItem .toClean {
     font-size: 1rem;
     max-width: 9rem;
 
     position: absolute;
     left: 7rem;
+
+    white-space: nowrap;
+    overflow-x: auto;
 }
 
 .PListItem .deadLine {
