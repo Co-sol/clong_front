@@ -3,13 +3,14 @@
     height: 78.32vh; /* 화면 높이에 맞춤 */
     background-color: white;
     border-radius: 1.39vw; /* 20px */
+    margin-top: 6.7vh;
     position: relative;
 }
 
 .GList h3 {
     font-size: 1.67vw; /* 24px */
     text-align: center;
-    padding-top: 3vw; /* 반응형 간격 */
+    padding-top: 1.5vw; /* 반응형 간격 */
     padding-bottom: 3vw;
     margin-bottom: 0;
 }
@@ -62,7 +63,7 @@
 }
 
 .GList .deadLine_text {
-    margin-left: 8vw;
+    margin-left: 7.5vw;
 }
 
 .GList .scrollBar {

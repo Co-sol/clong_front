@@ -2,7 +2,7 @@ import "./GListItem.css";
 import { getBadgeImage } from "../utils/get-badge-images";
 import Button from "./Button";
 
-const GListItem = ({ item }) => {
+const GListItem = ({ isEditMode, item }) => {
     return (
         <div className="GListItem">
             <img
@@ -11,7 +11,11 @@ const GListItem = ({ item }) => {
             />
             <div className="toClean">{item.toClean}</div>
             <div className="deadLine">{item.deadLine}</div>
-            <Button type={"done"} text={"완료"} />
+            {isEditMode ? (
+                <Button type={"delete"} text={"✕"} />
+            ) : (
+                <Button type={"done"} text={"완료"} />
+            )}
         </div>
     );
 };

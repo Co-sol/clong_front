@@ -36,9 +36,9 @@ const GList = () => {
             </section>
             <div className="scrollBar">
                 {groupData.map((item) => (
-                    <GListItem item={item} />
+                    <GListItem isEditMode={isEditMode} item={item} />
                 ))}
-                {!isEditMode && <Button text={"+"} type={"add1"} />}
+                {isEditMode && <Button text={"+"} type={"add1"} />}
             </div>
         </div>
     );
