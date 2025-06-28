@@ -17,8 +17,11 @@ const GList = () => {
     );
 
     const onClickEditMode = () => {
-        isEditMode ? setIsEditMode(false) : setIsEditMode(true);
-        isEditMode ? setText("저장") : setText("편집");
+        setIsEditMode((prev) => {
+            const next = !prev;
+            setText(next ? "저장" : "편집");
+            return next;
+        });
     };
 
     return (
@@ -35,7 +38,6 @@ const GList = () => {
                 {groupData.map((item) => (
                     <GListItem item={item} />
                 ))}
-                {/* 비동기화 때문에 위에서는 state isEditMode는 나중에 바뀜 그래서 +버튼이 '편집/저장'과 거꾸로 되길래 !로 처리함*/}
                 {!isEditMode && <Button text={"+"} type={"add1"} />}
             </div>
         </div>

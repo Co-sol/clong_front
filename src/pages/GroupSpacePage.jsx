@@ -1,12 +1,12 @@
 import Header from "../components/Header";
 import "./GroupSpacePage.css";
-import GList from "../components/GList";
+import PList from "../components/PList";
 
 function GroupSpacePage() {
     return (
         <div className="GroupSpace">
             <Header />
-            <GList />
+            <PList />
         </div>
     );
 }

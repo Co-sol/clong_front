@@ -1,9 +1,6 @@
 import "./PList.css";
 import { useContext, useState } from "react";
-import {
-    toCleanDispatchContext,
-    toCleanStateContext,
-} from "../Pages/GroupSpacePage";
+import { toCleanDispatchContext, toCleanStateContext } from "../App";
 
 import PListItem from "./PListItem";
 import Button from "./Button";
@@ -22,9 +19,11 @@ const PList = () => {
     );
 
     const onClickEditMode = () => {
-        isEditMode ? setIsEditMode(false) : setIsEditMode(true);
-        console.log(isEditMode);
-        isEditMode ? setText("저장") : setText("편집");
+        setIsEditMode((prev) => {
+            const next = !prev;
+            setText(next ? "저장" : "편집");
+            return next;
+        });
     };
 
     // 어짜피 personalData는 1명에 대한 data기에 badgeId가 동일할거라 personalData[0]으로 통일시킴
@@ -45,9 +44,7 @@ const PList = () => {
                 {personalData.map((item) => (
                     <PListItem item={item} />
                 ))}
-                {console.log(isEditMode)}
-                {/* 비동기화 때문에 위에서는 state isEditMode는 나중에 바뀜 그래서 +버튼이 '편집/저장'과 거꾸로 되길래 !로 처리함*/}
-                {!isEditMode && <Button text={"+"} type={"add2"} />}{" "}
+                {isEditMode && <Button text={"+"} type={"add2"} />}{" "}
             </div>
         </div>
     );
