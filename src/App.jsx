@@ -11,9 +11,7 @@ import { useState, useReducer, createContext, useRef } from "react";
 export const toCleanStateContext = createContext();
 export const toCleanDispatchContext = createContext();
 
-// mockdata={group:[], person:[]} 으로 카테고리 나눴었는데, 한번에 모든 정보를 저장하게 하는 형태가
-// 나중에 group별(장소 기준), personal별(name 기준), 전체(각 개인의 모든 checklist) 에서 Data에 접근할 때 유리할거라 판단함
-// 그래도 target을 group, person
+// 한번에 모든 정보를 담고, map으로 찾을 생각 (첨엔, group/person으로 나눴었는데, 짜피 target=group/personal 정보도 저장하니 굳이 싶어 구분없앰)
 const mockdata = [
     {
         target: "group",
