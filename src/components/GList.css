@@ -1,92 +1,84 @@
-/* GList.css */
 .GList {
-    width: 34.86vw;
-    height: 78.32vh;
+    width: 34.86vw; /* 기존 고정 → 화면에 맞춤 */
+    height: 78.32vh; /* 화면 높이에 맞춤 */
     background-color: white;
-    border-radius: 20px;
+    border-radius: 1.39vw; /* 20px */
     position: relative;
 }
 
 .GList h3 {
     font-size: 1.67vw; /* 24px */
     text-align: center;
-    padding: 4.4vh;
-    margin-bottom: 0px;
+    padding-top: 3vw; /* 반응형 간격 */
+    padding-bottom: 3vw;
+    margin-bottom: 0;
 }
 
 .GList .Button_edit {
     position: absolute;
-    right: 3vw;
-    top: 2vh;
-    width: 5.56vw; /* 80px */
-    height: 4.44vh; /* 40px */
-    border-radius: 15px;
+    right: 2vw;
+    top: 1.4vw;
+    width: 5.5vw; /* 80px */
+    height: 2.8vw;
+    border-radius: 1vw;
+    font-size: 1vw;
     color: white;
-    font-size: 1.04vw; /* 15px */
     cursor: pointer;
 }
 
 .GList .Button_add1 {
-    color: white;
-    font-size: 3.33vw; /* 48px */
-    width: 19.1vw;
-    height: 8.5vh;
-    border-radius: 15px;
+    font-size: 2.8vw; /* 반응형 텍스트 */
+    width: 28.8vw; /* 26.3rem → 반응형 */
+    height: 5.3vw;
+    border-radius: 1vw;
     background-color: rgb(217, 217, 217);
-    margin-left: 1.25vw;
-    margin-bottom: 1vh;
+    margin-left: 3vw;
     padding-left: 0.83vw;
+    margin-bottom: 0.63vw;
 }
 
 .GList .place {
-    width: 11.39vw; /* 164px */
-    height: 6.11vh; /* 55px */
+    width: 11.4vw; /* 164px */
+    height: 3.8vw; /* 55px */
     background-color: rgb(139, 226, 182);
-    border-radius: 80px;
-    margin-left: 11.74vw;
-    margin-bottom: 4.4vh;
-    font-size: 2.08vw; /* 30px */
+    border-radius: 5.6vw;
+    margin-left: 11.7vw;
+    margin-bottom: 3vw;
+    font-size: 2.1vw;
+    line-height: 3.5vw;
     text-align: center;
-    line-height: 5.67vh; /* 51px */
 }
 
 .GList .title {
     display: flex;
-    margin-left: 4.25vw;
-    margin-bottom: 0.67vh;
-    font-size: 1.11vw; /* 16px */
+    margin-left: 4.13vw;
+    margin-bottom: 0.4vw;
+    font-size: 1.1vw;
     color: rgb(103, 103, 103);
 }
 
 .GList .to-clean_text {
-    margin-left: 2.01vw;
+    margin-left: 3.6vw;
 }
 
 .GList .deadLine_text {
-    margin-left: 3.91vw;
-}
-
-.GList .attribute {
-    color: rgb(103, 103, 103);
-    margin-left: 1.74vw;
-    font-size: 1.11vw;
+    margin-left: 8vw;
 }
 
 .GList .scrollBar {
-    margin-left: 1.9vw;
-    height: 45vh;
-    width: 31vw;
+    height: 43.8vh; /* 화면 높이 기반 스크롤 */
+    width: 33vw;
     overflow-y: auto;
 }
 
 .scrollBar::-webkit-scrollbar {
-    width: 0.42vw;
+    width: 0.5vw;
 }
 .scrollBar::-webkit-scrollbar-thumb {
     background: rgb(68, 168, 113);
-    border-radius: 10px;
+    border-radius: 0.7vw;
 }
 .scrollBar::-webkit-scrollbar-track {
     background: rgb(217, 217, 217);
-    border-radius: 20px;
+    border-radius: 1vw;
 }
