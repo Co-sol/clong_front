@@ -1,103 +1,92 @@
+/* GList.css */
 .GList {
-    width: 31.3rem;
-    height: 50.1rem;
+    width: 34.86vw;
+    height: 78.32vh;
     background-color: white;
-
     border-radius: 20px;
     position: relative;
 }
 
 .GList h3 {
-    font-size: 24px;
+    font-size: 1.67vw; /* 24px */
     text-align: center;
-
-    padding: 8%;
+    padding: 4.4vh;
     margin-bottom: 0px;
 }
 
 .GList .Button_edit {
     position: absolute;
-    right: 3%;
-    top: 2%;
-
-    width: 80px;
-    height: 40px;
+    right: 3vw;
+    top: 2vh;
+    width: 5.56vw; /* 80px */
+    height: 4.44vh; /* 40px */
     border-radius: 15px;
-
     color: white;
-    font-size: 15px;
-
+    font-size: 1.04vw; /* 15px */
     cursor: pointer;
 }
 
 .GList .Button_add1 {
     color: white;
-    font-size: 3rem;
-
-    width: 27.5rem;
+    font-size: 3.33vw; /* 48px */
+    width: 19.1vw;
     height: 8.5vh;
     border-radius: 15px;
     background-color: rgb(217, 217, 217);
-
-    margin-left: 1.8rem;
-    margin-bottom: 0.9rem;
-    padding-left: 1.2rem;
+    margin-left: 1.25vw;
+    margin-bottom: 1vh;
+    padding-left: 0.83vw;
 }
 
 .GList .place {
-    width: 164px;
-    height: 55px;
+    width: 11.39vw; /* 164px */
+    height: 6.11vh; /* 55px */
     background-color: rgb(139, 226, 182);
     border-radius: 80px;
-    margin-left: 169px;
-    margin-bottom: 8%;
-
-    font-size: 30px;
+    margin-left: 11.74vw;
+    margin-bottom: 4.4vh;
+    font-size: 2.08vw; /* 30px */
     text-align: center;
-    line-height: 51px;
+    line-height: 5.67vh; /* 51px */
 }
 
 .GList .title {
     display: flex;
-    margin-left: 3.2rem;
-    margin-bottom: 0.6rem;
-
-    font-size: 1rem;
-
+    margin-left: 4.25vw;
+    margin-bottom: 0.67vh;
+    font-size: 1.11vw; /* 16px */
     color: rgb(103, 103, 103);
 }
 
 .GList .to-clean_text {
-    margin-left: 2.9rem;
+    margin-left: 2.01vw;
 }
 
 .GList .deadLine_text {
-    margin-left: 5.63rem;
+    margin-left: 3.91vw;
 }
 
 .GList .attribute {
     color: rgb(103, 103, 103);
-    margin-left: 2.5rem;
+    margin-left: 1.74vw;
+    font-size: 1.11vw;
 }
 
 .GList .scrollBar {
-    height: 33rem;
-    width: 30.5rem;
+    margin-left: 1.9vw;
+    height: 45vh;
+    width: 31vw;
     overflow-y: auto;
 }
 
 .scrollBar::-webkit-scrollbar {
-    /* 스크롤바의 너비 */
-    width: 0.6rem;
+    width: 0.42vw;
 }
 .scrollBar::-webkit-scrollbar-thumb {
-    /* 스크롤바의 색상 */
     background: rgb(68, 168, 113);
     border-radius: 10px;
 }
-
 .scrollBar::-webkit-scrollbar-track {
-    /*스크롤바 뒷 배경 색상*/
     background: rgb(217, 217, 217);
     border-radius: 20px;
 }

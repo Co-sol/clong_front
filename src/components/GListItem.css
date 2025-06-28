@@ -1,50 +1,44 @@
+/* GListItem.css */
 .GListItem {
     display: flex;
     align-items: center;
     gap: 3%;
-
-    width: 26.3rem;
-    height: 5rem;
+    width: 27.5vw;
+    height: 5.56vh;
     border-radius: 15px;
-
     background-color: rgb(248, 248, 248);
-
-    margin-left: 1.8rem;
-    margin-bottom: 0.9rem;
-    padding-left: 1.2rem;
-
+    margin-left: 1.25vw;
+    margin-bottom: 1vh;
+    padding-left: 0.83vw;
     position: relative;
 }
 
 .GListItem .Badge {
-    margin-right: 2rem;
-    width: 50px;
-    height: 50px;
+    margin-right: 1.39vw;
+    width: 3.47vw;
+    height: 5.56vh;
 }
 
 .GListItem .toClean {
-    font-size: 1rem;
-    /* padding-right: 5.5rem; */
-    max-width: 9rem;
+    font-size: 1.11vw; /* 16px */
+    max-width: 6.25vw;
 }
 
 .GListItem .deadLine {
-    font-size: 1rem;
+    font-size: 1.11vw; /* 16px */
     position: absolute;
-    left: 16.5rem;
-    max-width: 6rem;
+    left: 11.46vw;
+    max-width: 4.17vw;
 }
 
 .GListItem .Button_done {
-    width: 3.1rem;
-    height: 1.9rem;
+    width: 2.15vw;
+    height: 2.11vh;
     border-radius: 10px;
-
     position: absolute;
-    right: 0.1rem;
-
-    margin-left: 3rem;
-    margin-right: 1.2rem;
-    font-size: 0.9rem;
+    right: 0.07vw;
+    margin-left: 2.08vw;
+    margin-right: 0.83vw;
+    font-size: 1vw; /* 14.4px */
     color: white;
 }
