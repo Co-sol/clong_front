@@ -23,7 +23,7 @@
     width: 5.5vw; /* 80px */
     height: 2.8vw;
     border-radius: 1vw;
-    font-size: 1vw;
+    font-size: 1.1vw;
     color: white;
     cursor: pointer;
 }
@@ -60,15 +60,15 @@
 }
 
 .PList .place_text {
-    margin-left: 3.6vw;
+    margin-left: 5vw; /*3.6vw; */
 }
 
 .PList .toclean_text {
-    margin-left: 4.9vw;
+    margin-left: 3.5vw;
 }
 
 .PList .deadLine_text {
-    margin-left: 7.4vw;
+    margin-left: 7.3vw;
 }
 
 .PList .scrollBar {

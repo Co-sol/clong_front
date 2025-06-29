@@ -13,6 +13,7 @@
 }
 
 .PListItem .place {
+    font-size: 1.1vw;
     margin-left: 1.5vw;
     margin-right: 1.4vw;
 }
@@ -35,7 +36,7 @@
     border-radius: 0.7vw;
     position: absolute;
     right: 1vw;
-    font-size: 0.8vw;
+    font-size: 0.9vw;
     color: white;
 }
 
