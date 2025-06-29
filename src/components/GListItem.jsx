@@ -6,6 +6,10 @@ import { toCleanDispatchContext } from "../App";
 
 const GListItem = ({ isEditMode, item }) => {
     const { onDelete } = useContext(toCleanDispatchContext);
+    const onClickDelete = () => {
+        onDelete(item.target, item.id);
+    };
+
     return (
         <div className="GListItem">
             <img
@@ -15,7 +19,7 @@ const GListItem = ({ isEditMode, item }) => {
             <div className="toClean">{item.toClean}</div>
             <div className="deadLine">{item.deadLine}</div>
             {isEditMode ? (
-                <Button onClick={onDelete} type={"delete"} text={"✕"} />
+                <Button onClick={onClickDelete} type={"delete"} text={"✕"} />
             ) : (
                 <Button type={"done"} text={"완료"} />
             )}
