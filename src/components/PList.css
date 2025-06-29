@@ -1,52 +1,47 @@
 .PList {
-    width: 31.3rem;
-    height: 50.1rem;
+    width: 34.86vw; /* 기존 고정 → 화면에 맞춤 */
+    height: 56.75vw; /* 89.1vh */
     background-color: white;
-
-    border-radius: 20px;
+    border-radius: 1.39vw; /* 20px */
+    margin-top: 6.7vh;
+    margin-bottom: 6.6vh;
     position: relative;
 }
 
 .PList h3 {
-    font-size: 24px;
+    font-size: 1.67vw; /* 24px */
     text-align: center;
-
-    padding: 8%;
-    margin-bottom: 0px;
+    padding-top: 1.5vw; /* 반응형 간격 */
+    padding-bottom: 1.73vw;
+    margin-bottom: 0;
 }
 
 .PList .Button_edit {
     position: absolute;
-    right: 3%;
-    top: 2%;
-
-    width: 80px;
-    height: 40px;
-    border-radius: 15px;
-
+    right: 2vw;
+    top: 1.4vw;
+    width: 5.5vw; /* 80px */
+    height: 2.8vw;
+    border-radius: 1vw;
+    font-size: 1vw;
     color: white;
-    font-size: 15px;
-
     cursor: pointer;
 }
 
 .PList .Button_add2 {
-    color: white;
-    font-size: 3rem;
-
-    width: 27.5rem;
-    height: 8.5vh;
-    border-radius: 15px;
+    font-size: 2.8vw; /* 반응형 텍스트 */
+    width: 28.8vw; /* 26.3rem → 반응형 */
+    height: 5.3vw;
+    border-radius: 1vw;
     background-color: rgb(217, 217, 217);
-
-    margin-left: 1.8rem;
-    margin-bottom: 0.9rem;
-    padding-left: 1.2rem;
+    margin-left: 3vw;
+    padding-left: 0.83vw;
+    margin-bottom: 0.63vw;
 }
 
 .PList .profile {
     text-align: center;
-    margin-bottom: 1.8rem;
+    margin-bottom: 2.08vw;
 }
 
 .PList .profile > img {
@@ -58,23 +53,38 @@
 
 .PList .title {
     display: flex;
-    margin-left: 3rem;
-    margin-bottom: 0.6rem;
-
-    font-size: 1rem;
-
+    margin-left: 0.3vw;
+    margin-bottom: 0.4vw;
+    font-size: 1.1vw;
     color: rgb(103, 103, 103);
 }
 
-.PList .to-clean_text {
-    margin-left: 3.9rem;
+.PList .place_text {
+    margin-left: 3.6vw;
+}
+
+.PList .toclean_text {
+    margin-left: 4.9vw;
 }
 
 .PList .deadLine_text {
-    margin-left: 5.7rem;
+    margin-left: 7.4vw;
 }
 
-.PList .attribute {
-    color: rgb(103, 103, 103);
-    margin-left: 2.5rem;
+.PList .scrollBar {
+    height: 35vw; /* 43.8vh, 일부러 마지막 ListItem 살짝 안보이게 함, 사용자에게 아래 커서 내릴 수 있음 보여주려고 */
+    width: 33vw;
+    overflow-y: auto;
+}
+
+.scrollBar::-webkit-scrollbar {
+    width: 0.5vw;
+}
+.scrollBar::-webkit-scrollbar-thumb {
+    background: rgb(68, 168, 113);
+    border-radius: 0.7vw;
+}
+.scrollBar::-webkit-scrollbar-track {
+    background: rgb(217, 217, 217);
+    border-radius: 1vw;
 }

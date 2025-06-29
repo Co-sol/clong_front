@@ -37,10 +37,10 @@ const PList = () => {
             </div>
             <section className="title">
                 <div className="place_text">공간</div>
-                <div className="to-clean_text">to-clean</div>
-                <div className="deadLine_text">마감 기한</div>
+                <div className="toclean_text">to-clean</div>
+                <div className="deadLine_text">마감기한</div>
             </section>
-            <div>
+            <div className="scrollBar">
                 {personalData.map((item) => (
                     <PListItem item={item} />
                 ))}
