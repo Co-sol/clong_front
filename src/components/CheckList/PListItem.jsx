@@ -1,6 +1,6 @@
 import "./PListItem.css";
-import { getBadgeImage } from "../utils/get-badge-images";
-import Button from "./Button";
+import { getBadgeImage } from "../../utils/get-badge-images";
+import Button from "../Button";
 
 const PListItem = ({ item }) => {
     return (

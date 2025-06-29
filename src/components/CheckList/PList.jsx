@@ -1,10 +1,10 @@
 import "./PList.css";
 import { useContext, useState } from "react";
-import { toCleanDispatchContext, toCleanStateContext } from "../App";
+import { toCleanDispatchContext, toCleanStateContext } from "../../App";
 
 import PListItem from "./PListItem";
-import Button from "./Button";
-import { getBadgeImage } from "../utils/get-badge-images";
+import Button from "../Button";
+import { getBadgeImage } from "../../utils/get-badge-images";
 
 const PList = () => {
     const data = useContext(toCleanStateContext);

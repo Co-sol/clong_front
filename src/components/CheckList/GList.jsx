@@ -1,9 +1,9 @@
 import "./GList.css";
 import { useContext, useState, useRef } from "react";
-import { toCleanStateContext } from "../App";
+import { toCleanStateContext } from "../../App";
 
 import GListItem from "./GListItem";
-import Button from "./Button";
+import Button from "../Button";
 
 const GList = () => {
     const data = useContext(toCleanStateContext);

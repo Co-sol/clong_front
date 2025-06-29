@@ -1,7 +1,7 @@
 import Header from "../components/Header";
 import "./GroupSpacePage.css";
-import PList from "../components/PList";
-import GList from "../components/GList";
+import PList from "../components/CheckList/PList";
+import GList from "../components/CheckList/GList";
 
 function GroupSpacePage() {
     return (
