@@ -1,9 +1,10 @@
 .GList {
     width: 34.86vw; /* 기존 고정 → 화면에 맞춤 */
-    height: 89.1vh; /* 78.32vh */
+    height: 56.75vw; /* 89.1vh */
     background-color: white;
     border-radius: 1.39vw; /* 20px */
     margin-top: 6.7vh;
+    margin-bottom: 6.6vh;
     position: relative;
 }
 
@@ -67,8 +68,8 @@
 }
 
 .GList .scrollBar {
-    height: 43.8vh; /* 화면 높이 기반 스크롤 */
-    width: 33vw;
+    height: 35vw; /* 43.8vh */
+    width: 36.7vw;
     overflow-y: auto;
 }
 
