@@ -3,6 +3,7 @@ import LoginPage from "./pages/LoginPage";
 import CreateGroupPage from "./pages/CreateGroupPage";
 import TutorialPage from "./pages/TutorialPage";
 import CreateSpacePage from "./pages/CreateSpacePage";
+import GroupHomePage from "./pages/GroupHomePage";
 import NoGroupPage from "./pages/NoGroupPage";
 import { useAuthStatus } from "./hooks/useAuthStatus";
 import GroupSpacePage from "./Pages/GroupSpacePage";
@@ -11,8 +12,25 @@ import { useState, useReducer, createContext, useRef } from "react";
 export const toCleanStateContext = createContext();
 export const toCleanDispatchContext = createContext();
 
+const personMockData = [
+    {
+        name: "A",
+        badgeId: 1,
+        email: "A@email.com",
+        pw: "1111",
+        cleanSensitivity: 50,
+    },
+    {
+        name: "B",
+        badgeId: 2,
+        email: "B@email.com",
+        pw: "2222",
+        cleanSensitivity: 80,
+    },
+];
+
 // 한번에 모든 정보를 담고, map으로 찾을 생각 (첨엔, group/person으로 나눴었는데, 짜피 target=group/personal 정보도 저장하니 굳이 싶어 구분없앰)
-const mockdata = [
+const checkListMockData = [
     {
         target: "group",
         id: 1,
@@ -71,7 +89,8 @@ function reducer(data, action) {
 
 function App() {
     const { isLoggedIn, hasGroup } = useAuthStatus();
-    const [data, dispatch] = useReducer(reducer, mockdata);
+    const [checkListData, dispatch] = useReducer(reducer, checkListMockData);
+    const [personData, setPersonData] = useState(personMockData);
     const idRef = useRef(5);
 
     const onCreate = (target, id, name, badgeId, place, toClean, deadLine) => {
@@ -118,7 +137,9 @@ function App() {
             <toCleanDispatchContext.Provider
                 value={{ onCreate, onUpdate, onDelete }}
             >
-                <toCleanStateContext.Provider value={data}>
+                <toCleanStateContext.Provider
+                    value={{ checkListData, personData }}
+                >
                     <Routes>
                         <Route path="/" element={<LoginPage />} />
                         <Route path="/noGroup" element={<NoGroupPage />} />
@@ -135,6 +156,7 @@ function App() {
                             path="/groupSpace"
                             element={<GroupSpacePage />}
                         />
+                        <Route path="/groupHome" element={<GroupHomePage />} />
                         <Route
                             path="/redirect"
                             element={

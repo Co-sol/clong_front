@@ -4,17 +4,27 @@ import { toCleanStateContext } from "../../App";
 
 import GListItem from "./GListItem";
 import Button from "../Button";
+import ListAddModal from "./ListAddModal";
+
+import Modal from "../Modal";
 
 const GList = () => {
-    const data = useContext(toCleanStateContext);
+    const { checkListData } = useContext(toCleanStateContext);
     const [isEditMode, setIsEditMode] = useState(false);
     const [text, setText] = useState("편집");
+    const [isAddMode, setIsAddMode] = useState(false);
+
     const selectedPlace = "화장실";
-    const groupData = data.filter(
+
+    const groupData = checkListData.filter(
         (item) =>
             item.target === "group" &&
             String(item.place) === String(selectedPlace)
     );
+
+    const onClickAdd = () => {
+        setIsAddMode(!isAddMode);
+    };
 
     const onClickEditMode = () => {
         setIsEditMode((prev) => {
@@ -38,7 +48,16 @@ const GList = () => {
                 {groupData.map((item) => (
                     <GListItem isEditMode={isEditMode} item={item} />
                 ))}
-                {isEditMode && <Button text={"+"} type={"add1"} />}
+                {isEditMode && (
+                    <Button onClick={onClickAdd} text={"+"} type={"add1"} />
+                )}
+                {isAddMode && (
+                    <ListAddModal
+                        isAddMode={isAddMode}
+                        setIsAddMode={setIsAddMode}
+                        selectedPlace={selectedPlace}
+                    />
+                )}
             </div>
         </div>
     );
