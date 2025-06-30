@@ -111,6 +111,9 @@
     align-items: center;
     width: min(6vw, 86.625px);
     height: min(8vw, 115.5px);
+
+    background-color: transparent;
+    border: none;
 }
 
 .ListAddModal .hover_wrapper:hover {
