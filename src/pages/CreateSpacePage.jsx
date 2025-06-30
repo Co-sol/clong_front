@@ -20,7 +20,10 @@ function ShapeButton({ shape, onClick, direction = "vertical" }) {
   return (
     <button
       className="shape-btn"
-      style={{ width: `${40 * w}px`, height: `${40 * h}px` }}
+      style={{
+        width: `${w * 20}%`,
+        aspectRatio: `${w} / ${h}`,
+      }}
       onClick={() => onClick(shape)}
     >
       +
