@@ -18,7 +18,19 @@ const ListAddModal = ({ isAddMode, setIsAddMode, selectedPlace }) => {
 
     return (
         <div className="ListAddModal">
-            <Modal isOpen={isAddMode} onClose={onClickCloseModal}>
+            <Modal
+                className="AddModal"
+                isOpen={isAddMode}
+                onClose={onClickCloseModal}
+                contentStyle={{
+                    width: "40vw",
+                    height: "45vw",
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "center",
+                    alignItems: "center",
+                }}
+            >
                 <div className="selectedPlace">{selectedPlace}</div>
                 <section className="createToClean">
                     <div className="toClean_text">

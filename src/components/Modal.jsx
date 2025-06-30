@@ -35,12 +35,15 @@ const styles = {
     },
 };
 
-const Modal = ({ isOpen, onClose, children }) => {
+const Modal = ({ isOpen, onClose, children, contentStyle }) => {
     if (!isOpen) return null;
 
     return (
         <div style={styles.overlay} onClick={onClose}>
-            <div style={styles.content} onClick={(e) => e.stopPropagation()}>
+            <div
+                style={{ ...styles.content, ...contentStyle }}
+                onClick={(e) => e.stopPropagation()}
+            >
                 <button style={styles.close} onClick={onClose}>
                     ×
                 </button>

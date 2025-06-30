@@ -10,6 +10,9 @@
     font-style: "normal";
 }
 
+.ListAddModal .AddModal {
+}
+
 .ListAddModal .selectedPlace {
     background-color: #8be2b6;
     width: 8.5vw;
@@ -34,6 +37,7 @@
 .ListAddModal .deadLine_text {
     font-size: 1rem;
     text-align: center;
+    margin-left: 0;
 }
 
 .ListAddModal .createToClean > textarea {
