@@ -27,7 +27,7 @@ const Header = () => {
             그룹 홈
           </NavLink>
           <NavLink
-            to="/createSpace"
+            to="/groupSpace"
             className={({ isActive }) =>
               "menu-item" + (isActive ? " active" : "")
             }
