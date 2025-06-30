@@ -35,16 +35,28 @@ const styles = {
     },
 };
 
-const Modal = ({ isOpen, onClose, children, contentStyle }) => {
+const Modal = ({
+    isOpen,
+    onClose,
+    children,
+
+    // modal 하드 코딩 때매 외부 파일에서 css 변경 불가라 매게변수 넣어줌 (이러면 밖에서도 Modal css 변경 가능)
+    overlayStyle,
+    contentStyle,
+    closeStyle,
+}) => {
     if (!isOpen) return null;
 
     return (
-        <div style={styles.overlay} onClick={onClose}>
+        <div style={{ ...styles.overlay, ...overlayStyle }} onClick={onClose}>
             <div
                 style={{ ...styles.content, ...contentStyle }}
                 onClick={(e) => e.stopPropagation()}
             >
-                <button style={styles.close} onClick={onClose}>
+                <button
+                    style={{ ...styles.close, ...closeStyle }}
+                    onClick={onClose}
+                >
                     ×
                 </button>
                 {children}

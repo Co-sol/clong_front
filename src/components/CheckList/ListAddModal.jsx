@@ -23,9 +23,9 @@ const ListAddModal = ({ isAddMode, setIsAddMode, selectedPlace }) => {
                 onClose={onClickCloseModal}
                 contentStyle={{
                     width: "34vw",
-                    maxWidth: "577px",
-                    height: "41vw",
-                    maxHeight: "647px",
+                    maxWidth: "491px",
+                    height: "40vw",
+                    maxHeight: "577.6px",
                     display: "flex",
                     flexDirection: "column",
                     justifyContent: "center",
@@ -53,7 +53,7 @@ const ListAddModal = ({ isAddMode, setIsAddMode, selectedPlace }) => {
                     <div className="personTodo">
                         {personData.map((item) => {
                             return (
-                                <div key={item.name}>
+                                <div className="hover_wrapper">
                                     <img
                                         className="BadgeTodo"
                                         src={getBadgeImage(item.badgeId)}

@@ -17,7 +17,7 @@
     width: min(9vw, 129.8px);
     height: min(3.2vw, 46.1px);
     border-radius: 80px;
-    margin-bottom: 2.5vw;
+    margin-bottom: min(2.4vw, 34.656px);
 
     font-size: min(1.7vw, 25px);
     font-weight: bold;
@@ -29,8 +29,8 @@
 .ListAddModal .createToClean {
     display: flex;
     flex-direction: column;
-    gap: 1vw;
-    margin-bottom: 2vw;
+    gap: min(1vw, 14.4px);
+    margin-bottom: min(2vw, 28.8px);
 }
 
 .ListAddModal .toClean_text {
@@ -43,16 +43,15 @@
     border: none;
     border-radius: 15px;
 
-    width: 32vw;
-    max-width: 551px;
-    height: 1.7vw;
+    width: min(32vw, 462.1px);
+    height: min(1.7vw, 24.54px);
 
     resize: none;
     padding: 1rem 1rem 1rem 1.3rem;
     overflow: hidden;
 
     font-size: 1.1rem;
-    line-height: 1.8vw;
+    line-height: min(1.7vw, 24.54px);
     text-align: center;
 }
 
@@ -60,7 +59,7 @@
 .ListAddModal .createDeadLine {
     display: flex;
     flex-direction: column;
-    gap: 1vw;
+    gap: min(1vw, 14.4px);
 }
 .ListAddModal .date {
     width: min(12vw, 173px);
@@ -79,7 +78,7 @@
     border: none;
     border-radius: 15px;
     background-color: #f5f5f5;
-    margin-bottom: 1.5vw;
+    margin-bottom: min(1.5vw, 21.66px);
 
     text-align: center;
     font-size: 1.2rem;
@@ -90,8 +89,8 @@
 .ListAddModal .selectPerson {
     display: flex;
     flex-direction: column;
-    gap: 2.5vw;
-    margin-bottom: 3vw;
+    gap: min(1.5vw, 21.6px);
+    margin-bottom: min(2vw, 28.8px);
 }
 
 .ListAddModal .personTodo_text {
@@ -101,8 +100,27 @@
 
 .ListAddModal .selectPerson .personTodo {
     display: flex;
-    gap: 2.5vw;
+    gap: min(1.5vw, 21.6px);
     justify-content: center;
+}
+
+.ListAddModal .hover_wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: min(6vw, 86.625px);
+    height: min(8vw, 115.5px);
+}
+
+.ListAddModal .hover_wrapper:hover {
+    background-color: #8be2b6;
+    border-radius: 45px;
+}
+
+.ListAddModal .selectPerson .personTodo .BadgeTodo {
+    width: min(5vw, 72.25px);
+    height: min(5vw, 72.25px);
 }
 
 .ListAddModal .selectPerson .personTodo .nameTodo {
@@ -110,22 +128,17 @@
     text-align: center;
 }
 
-.ListAddModal .selectPerson .personTodo .BadgeTodo {
-    width: 5vw;
-    height: 5vw;
-}
-
 /* 저장 버튼 */
 .ListAddModal .Button_save {
-    margin-left: 26vw;
+    margin-left: min(26vw, 375.44px);
     margin-bottom: 0;
 
-    width: 8vw;
-    height: 3.2vw;
+    width: min(8vw, 115.5px);
+    height: min(3.2vw, 46px);
     border-radius: 15px;
 
-    font-size: 1.7vw;
+    font-size: min(1.7vw, 24.548px);
     color: white;
     font-weight: bold;
-    line-height: 3vw;
+    line-height: min(3.2vw, 46px);
 }
