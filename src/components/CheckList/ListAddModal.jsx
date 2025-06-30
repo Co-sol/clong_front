@@ -2,6 +2,7 @@ import "./ListAddModal.css";
 import { useContext } from "react";
 import Modal from "../Modal";
 import Button from "../Button";
+import DatePicker from "react-datepicker";
 
 import { toCleanStateContext } from "../../App";
 import { toCleanDispatchContext } from "../../App";
@@ -23,7 +24,9 @@ const ListAddModal = ({ isAddMode, setIsAddMode, selectedPlace }) => {
                 onClose={onClickCloseModal}
                 contentStyle={{
                     width: "40vw",
+                    maxWidth: "577px",
                     height: "45vw",
+                    maxHeight: "647px",
                     display: "flex",
                     flexDirection: "column",
                     justifyContent: "center",
@@ -39,10 +42,12 @@ const ListAddModal = ({ isAddMode, setIsAddMode, selectedPlace }) => {
                 </section>
                 <section className="createDeadLine">
                     <div className="deadLine_text">마감 기한</div>
-                    <input
-                        className="date"
-                        placeholder="0000-00-00"
-                        type="date"
+                    <DatePicker
+                        className="DatePicker"
+                        placeholderText="0000-00-00"
+                        dateFormat="yyyy-mm-dd"
+                        showPopperArrow={true}
+                        locale="ko"
                     />
                 </section>
                 <section className="selectPerson">

@@ -12,14 +12,14 @@
 
 .ListAddModal .selectedPlace {
     background-color: rgb(139, 226, 182);
-    width: 8.5vw;
-    height: 2.9vw;
+    width: min(9vw, 129.8px);
+    height: min(3.2vw, 46.1px);
     border-radius: 80px;
     margin-bottom: 2.5vw;
 
-    font-size: 1.6vw;
+    font-size: min(1.7vw, 25px);
     font-weight: bold;
-    line-height: 2.7vw;
+    line-height: min(3.2vw, 46.1px);
     text-align: center;
 }
 
@@ -51,9 +51,13 @@
     background-color: #f5f5f5;
     border: none;
     border-radius: 15px;
-    width: 42.36vw;
-    height: 3vw;
+    width: 36vw;
+    max-width: 551px;
+    height: 1.7vw;
     resize: none;
+    padding: 1rem;
+    overflow: hidden;
+
     font-size: 1rem;
 }
 
