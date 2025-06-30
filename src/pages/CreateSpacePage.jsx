@@ -18,8 +18,25 @@ function CreateSpacePage() {
   return (
     <>
       <div className="create-space-bg">
-        {" "}
-        <Header />{" "}
+        <Header />
+
+        <div className="grid-panel">
+          <div className="grid-container">
+            <div
+              className="grid"
+              style={{
+                display: "grid",
+                gridTemplateColumns: `repeat(${GRID_SIZE}, 1fr)`,
+                gridTemplateRows: `repeat(${GRID_SIZE}, 1fr)`,
+                gap: "0.8px",
+              }}
+            >
+              {[...Array(GRID_SIZE * GRID_SIZE)].map((_, idx) => {
+                return <div key={idx} className="grid-cell" />;
+              })}
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );
