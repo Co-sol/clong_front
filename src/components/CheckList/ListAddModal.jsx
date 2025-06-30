@@ -19,7 +19,6 @@ const ListAddModal = ({ isAddMode, setIsAddMode, selectedPlace }) => {
     return (
         <div className="ListAddModal">
             <Modal
-                className="AddModal"
                 isOpen={isAddMode}
                 onClose={onClickCloseModal}
                 contentStyle={{
@@ -62,7 +61,7 @@ const ListAddModal = ({ isAddMode, setIsAddMode, selectedPlace }) => {
                         })}
                     </div>
                 </section>
-                <Button text={"저장"} />
+                <Button type={"save"} text={"저장"} />
             </Modal>
         </div>
     );

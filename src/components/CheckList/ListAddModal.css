@@ -10,28 +10,35 @@
     font-style: "normal";
 }
 
-.ListAddModal .AddModal {
-}
-
 .ListAddModal .selectedPlace {
-    background-color: #8be2b6;
+    background-color: rgb(139, 226, 182);
     width: 8.5vw;
-    height: 2.7vw;
+    height: 2.9vw;
+    border-radius: 80px;
+    margin-bottom: 2.5vw;
+
     font-size: 1.6vw;
-    font-family: bold;
+    font-weight: bold;
     line-height: 2.7vw;
     text-align: center;
-    border-radius: 80px;
 }
 
 .ListAddModal .createToClean {
     display: flex;
     flex-direction: column;
+    gap: 1vw;
+    margin-bottom: 2vw;
 }
 
 .ListAddModal .toClean_text {
     font-size: 1rem;
     text-align: center;
+}
+
+.ListAddModal .createDeadLine {
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
 }
 
 .ListAddModal .deadLine_text {
@@ -50,7 +57,14 @@
     font-size: 1rem;
 }
 
-.ListAddModal .personTOdo_text {
+.ListAddModal .selectPerson {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5vw;
+    margin-bottom: 3vw;
+}
+
+.ListAddModal .personTodo_text {
     font-size: 1rem;
     text-align: center;
 }

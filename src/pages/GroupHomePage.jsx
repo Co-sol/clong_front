@@ -1,7 +1,5 @@
-import Modal from "../components/Modal";
-
-function GroupHomePage() {
-    return <div>GroupHomePage</div>;
-}
+const GroupHomePage = () => {
+    return <div>GroupHome</div>;
+};
 
 export default GroupHomePage;
