@@ -6,8 +6,6 @@ import GListItem from "./GListItem";
 import Button from "../Button";
 import ListAddModal from "./ListAddModal";
 
-import Modal from "../Modal";
-
 const GList = () => {
     const { checkListData } = useContext(toCleanStateContext);
     const [isEditMode, setIsEditMode] = useState(false);
