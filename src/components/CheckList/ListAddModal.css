@@ -42,7 +42,7 @@
     background-color: #f5f5f5;
     border: none;
     border-radius: 15px;
-    width: 36vw;
+    width: 32vw;
     max-width: 551px;
     height: 1.7vw;
     resize: none;
@@ -97,7 +97,7 @@
 
 .ListAddModal .selectPerson .personTodo {
     display: flex;
-    gap: 3.47vw;
+    gap: 2.5vw;
     justify-content: center;
 }
 
@@ -107,15 +107,14 @@
 }
 
 .ListAddModal .selectPerson .personTodo .BadgeTodo {
-    width: 5.55vw;
-    height: 5.55vw;
+    width: 5vw;
+    height: 5vw;
 }
 
 /* 저장 버튼 */
 .ListAddModal .Button_save {
-    position: absolute;
-    right: 3vw;
-    bottom: 3vw;
+    margin-left: 26vw;
+    margin-bottom: 0;
 
     width: 8vw;
     height: 3.2vw;

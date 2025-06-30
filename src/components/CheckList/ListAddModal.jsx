@@ -22,9 +22,9 @@ const ListAddModal = ({ isAddMode, setIsAddMode, selectedPlace }) => {
                 isOpen={isAddMode}
                 onClose={onClickCloseModal}
                 contentStyle={{
-                    width: "40vw",
+                    width: "34vw",
                     maxWidth: "577px",
-                    height: "45vw",
+                    height: "41vw",
                     maxHeight: "647px",
                     display: "flex",
                     flexDirection: "column",
