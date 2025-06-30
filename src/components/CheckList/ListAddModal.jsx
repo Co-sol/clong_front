@@ -1,11 +1,12 @@
 import "./ListAddModal.css";
-import { useContext, forwardRef, useState } from "react";
+import { useContext } from "react";
 import Modal from "../Modal";
 import Button from "../Button";
 
 import { toCleanStateContext } from "../../App";
 import { toCleanDispatchContext } from "../../App";
 import { getBadgeImage } from "../../utils/get-badge-images";
+import DatePicker from "react-datepicker";
 
 const ListAddModal = ({ isAddMode, setIsAddMode, selectedPlace }) => {
     const { onCreate } = useContext(toCleanDispatchContext);
@@ -29,6 +30,8 @@ const ListAddModal = ({ isAddMode, setIsAddMode, selectedPlace }) => {
                     flexDirection: "column",
                     justifyContent: "center",
                     alignItems: "center",
+                    className: "AddModal",
+                    position: "relative",
                 }}
             >
                 <div className="selectedPlace">{selectedPlace}</div>
@@ -40,7 +43,10 @@ const ListAddModal = ({ isAddMode, setIsAddMode, selectedPlace }) => {
                 </section>
                 <section className="createDeadLine">
                     <div className="deadLine_text">마감 기한</div>
-                    <input className="date" type="date" />
+                    <DatePicker
+                        className="DatePicker"
+                        placeholderText="0000-00-00"
+                    />
                 </section>
                 <section className="selectPerson">
                     <div className="personTodo_text">담당자</div>

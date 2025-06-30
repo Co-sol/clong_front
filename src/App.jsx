@@ -27,6 +27,20 @@ const personMockData = [
         pw: "2222",
         cleanSensitivity: 80,
     },
+    {
+        name: "C",
+        badgeId: 3,
+        email: "C@email.com",
+        pw: "333",
+        cleanSensitivity: 30,
+    },
+    {
+        name: "D",
+        badgeId: 4,
+        email: "D@email.com",
+        pw: "444",
+        cleanSensitivity: 20,
+    },
 ];
 
 // 한번에 모든 정보를 담고, map으로 찾을 생각 (첨엔, group/person으로 나눴었는데, 짜피 target=group/personal 정보도 저장하니 굳이 싶어 구분없앰)
