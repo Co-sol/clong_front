@@ -6,6 +6,7 @@ import TutorialPage from "./pages/TutorialPage";
 import CreateSpacePage from "./pages/CreateSpacePage";
 import NoGroupPage from "./pages/NoGroupPage";
 import { useAuthStatus } from "./hooks/useAuthStatus";
+import SignupPage from "./pages/SignupPage";
 
 function App() {
   const { isLoggedIn, hasGroup } = useAuthStatus();
@@ -13,10 +14,13 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<LoginPage />} />
+      <Route path="/signup" element={<SignupPage />} />
+      <Route path="/login" element={<LoginPage />} />
       <Route path="/noGroup" element={<NoGroupPage />} />
       <Route path="/createGroup" element={<CreateGroupPage />} />
       <Route path="/tutorial" element={<TutorialPage />} />
       <Route path="/createSpace" element={<CreateSpacePage />} />
+      
       <Route
         path="/redirect"
         element={
