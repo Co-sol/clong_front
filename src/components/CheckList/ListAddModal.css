@@ -40,6 +40,10 @@
     flex-direction: column;
     gap: 1vw;
 }
+.ListAddModal .date {
+    width: min(12vw, 173px);
+    height: min(3vw, 43px);
+}
 
 .ListAddModal .deadLine_text {
     font-size: 1rem;
@@ -87,89 +91,4 @@
 .ListAddModal .selectPerson .personTodo .BadgeTodo {
     width: 5.55vw;
     height: 5.55vw;
-}
-
-/* DatePicker css */
-.ListAddModal {
-    /* DatePicker input wrapper */
-    .calendar-input-wrap {
-        display: flex;
-        align-items: center;
-        padding: 0.5rem;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        background-color: #fff;
-    }
-
-    .calendar-input-wrap svg {
-        margin-left: 0.5rem;
-        width: 20px;
-        height: 20px;
-        fill: #888;
-    }
-
-    .calendar-input {
-        flex: 1;
-        border: none;
-        font-size: 1rem;
-        background: transparent;
-    }
-
-    .calendar-input:focus {
-        outline: none;
-    }
-
-    /* DatePicker custom header */
-    .custom-header {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 8px;
-        gap: 8px;
-    }
-
-    .custom-header select {
-        padding: 4px 8px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        font-size: 14px;
-    }
-
-    .custom-header button {
-        background: none;
-        border: none;
-        font-size: 20px;
-        cursor: pointer;
-        color: #333;
-    }
-
-    .custom-header button:disabled {
-        color: #aaa;
-        cursor: not-allowed;
-    }
-
-    /* DatePicker calendar overrides */
-    .react-datepicker__day--outside-month {
-        color: #a8a8a8 !important;
-        pointer-events: none;
-    }
-
-    .react-datepicker__day--selected,
-    .react-datepicker__day--in-range {
-        background-color: #4a90e2 !important;
-        color: #fff !important;
-    }
-
-    .react-datepicker__day--keyboard-selected {
-        background-color: #b3d4fc !important;
-        color: #000 !important;
-    }
-
-    .react-datepicker__day--today {
-        border: 1px solid #f39c12 !important;
-    }
-
-    .react-datepicker__day--weekend {
-        color: #e74c3c;
-    }
 }
