@@ -17,29 +17,34 @@ const ListAddModal = ({ isAddMode, setIsAddMode, selectedPlace }) => {
     };
 
     return (
-        <>
-            <Modal
-                className="Modal"
-                isOpen={isAddMode}
-                onClose={onClickCloseModal}
-            >
-                <div>{selectedPlace}</div>
+        <div className="ListAddModal">
+            <Modal isOpen={isAddMode} onClose={onClickCloseModal}>
+                <div className="selectedPlace">{selectedPlace}</div>
                 <section className="createToClean">
-                    <div>추가하실 to-clean을 입력하세요.</div>
+                    <div className="toClean_text">
+                        추가하실 to-clean을 입력하세요.
+                    </div>
                     <textarea></textarea>
                 </section>
                 <section className="createDeadLine">
-                    <div>마감 기한</div>
-                    <input placeholder="0000-00-00" type="date" />
+                    <div className="deadLine_text">마감 기한</div>
+                    <input
+                        className="date"
+                        placeholder="0000-00-00"
+                        type="date"
+                    />
                 </section>
                 <section className="selectPerson">
-                    <div>담당자</div>
-                    <div>
+                    <div className="personTodo_text">담당자</div>
+                    <div className="personTodo">
                         {personData.map((item) => {
                             return (
                                 <div>
-                                    <div>{item.name}</div>
-                                    <img src={getBadgeImage(item.badgeId)} />
+                                    <img
+                                        className="BadgeTodo"
+                                        src={getBadgeImage(item.badgeId)}
+                                    />
+                                    <div className="nameTodo">{item.name}</div>
                                 </div>
                             );
                         })}
@@ -47,7 +52,7 @@ const ListAddModal = ({ isAddMode, setIsAddMode, selectedPlace }) => {
                 </section>
                 <Button text={"저장"} />
             </Modal>
-        </>
+        </div>
     );
 };
 
