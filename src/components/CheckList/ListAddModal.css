@@ -78,7 +78,7 @@
     border: none;
     border-radius: 15px;
     background-color: #f5f5f5;
-    margin-bottom: min(1.5vw, 21.66px);
+    margin-bottom: min(24.53px, 1.7vw);
 
     text-align: center;
     font-size: 1.2rem;
@@ -104,11 +104,13 @@
     justify-content: center;
 }
 
-.ListAddModal .hover_wrapper {
+.ListAddModal .hover_button {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: min(0.7vw, 10.1px);
+
     width: min(6vw, 86.625px);
     height: min(8vw, 115.5px);
 
@@ -116,7 +118,7 @@
     border: none;
 }
 
-.ListAddModal .hover_wrapper:hover {
+.ListAddModal .hover_button:hover {
     background-color: #8be2b6;
     border-radius: 45px;
 }
