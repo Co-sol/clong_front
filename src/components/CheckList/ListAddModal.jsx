@@ -99,10 +99,14 @@ const ListAddModal = ({ isAddMode, setIsAddMode, selectedPlace }) => {
                         dateFormat="yyyy-MM-dd"
                         selected={selectedDate}
                         onChange={(date) => {
+                            const d_day = Math.ceil(
+                                (date.getTime() - new Date().getTime()) /
+                                    (1000 * 60 * 60 * 24)
+                            );
                             setSelectedDate(date);
                             setCreateData((prev) => ({
                                 ...prev,
-                                deadLine: date.toLocaleDateString("ko-KR"),
+                                deadLine: `${d_day > 0 ? d_day : "D"}-day`,
                             }));
                         }}
                         shouldCloseOnSelect={false}
