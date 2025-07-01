@@ -44,9 +44,8 @@ const ListAddModal = ({ isAddMode, setIsAddMode, selectedPlace }) => {
             return;
         }
 
-        onCreate(createData); // 객체 전체 전달
-        console.log(createData);
-        setIsAddMode(false); // 모달 닫기
+        onCreate(...createData);
+        setIsAddMode(false);
     };
 
     return (
@@ -91,17 +90,14 @@ const ListAddModal = ({ isAddMode, setIsAddMode, selectedPlace }) => {
                         locale="ko"
                         dateFormat="yyyy-MM-dd"
                         selected={selectedDate}
-                        onChange={(date) =>
-                            setSelectedDate(date.toLocaleDateString("ko-KR"))
-                        }
+                        onChange={(date) => {
+                            setSelectedDate(date.toLocaleDateString("ko-KR"));
+                            setCreateData({
+                                ...createData,
+                                deadLine: selectedDate,
+                            });
+                        }}
                         shouldCloseOnSelect={false}
-                        // 날짜 임시 data (날짜 구현은 나중에)
-                        // onChange={() => {
-                        //     setCreateData({
-                        //         ...createData,
-                        //         deadLine: new Date(),
-                        //     });
-                        // }}
                     />
                 </section>
                 <section className="selectPerson">
