@@ -49,14 +49,19 @@
     font-size: min(30px, 2.1vw);
     line-height: min(55px, 3.8vw);
     text-align: center;
+    font-weight: bold;
 }
 
 .GList .title {
     display: flex;
     margin-left: min(60px, 4.13vw);
     margin-bottom: min(6px, 0.4vw);
+
     font-size: min(16px, 1.1vw);
     color: rgb(103, 103, 103);
+    font-style: normal;
+    font-weight: normal;
+    font-family: sans-serif, "Noto Sans KR";
 }
 
 .GList .to-clean_text {
