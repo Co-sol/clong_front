@@ -1,6 +1,6 @@
 .GList {
     width: min(503px, 34.86vw); /* 기존 고정 → 화면에 맞춤 */
-    height: 59.9vw; /* 89.1vh */
+    height: min(865px, 59.9vw); /* 89.1vh */
     background-color: white;
     border-radius: 1.39vw; /* 20px */
     margin-top: 6vh;
@@ -68,7 +68,7 @@
 }
 
 .GList .scrollBar {
-    height: 35vw;
+    height: min(528.1px, 36.6vw);
     width: min(475px, 33vw);
     overflow-y: auto;
 }
@@ -78,11 +78,11 @@
 }
 
 .scrollBar::-webkit-scrollbar-thumb {
-    background: rgb(68, 168, 113);
+    background: #c1c1c1;
     border-radius: 20px;
 }
 
 .scrollBar::-webkit-scrollbar-track {
-    background: rgb(217, 217, 217);
+    background: #f5f5f5;
     border-radius: 20px;
 }
