@@ -12,7 +12,6 @@
 }
 
 .GroupHome {
-    margin: min(1.25vw, 18px) min(4.86vw, 70px);
     background-color: rgb(245, 245, 245);
 }
 
@@ -22,6 +21,7 @@
     gap: min(0.69vw, 10px);
     justify-content: center;
     align-items: center;
+    padding-top: 0.8vw;
     margin-bottom: min(18px, 1.25vw);
 }
 
@@ -117,7 +117,7 @@
     margin-top: min(2.5vw, 36px);
 }
 
-.Button_eval {
+.groupEval .Button_eval {
     width: min(9.02vw, 130px);
     height: min(2.77vw, 40px);
     border-radius: 15px;
