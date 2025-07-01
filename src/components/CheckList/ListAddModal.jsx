@@ -8,10 +8,15 @@ import { toCleanStateContext, toCleanDispatchContext } from "../../App";
 import { getBadgeImage } from "../../utils/get-badge-images";
 import DatePicker from "react-datepicker";
 
+import { ko } from "date-fns/locale";
+import { registerLocale } from "react-datepicker";
+
+registerLocale("ko", ko);
+
 const ListAddModal = ({ isAddMode, setIsAddMode, selectedPlace }) => {
     const { onCreate } = useContext(toCleanDispatchContext);
     const { personData } = useContext(toCleanStateContext);
-    const [selectedDate, setSelectedDate] = useState(new Date());
+    const [selectedDate, setSelectedDate] = useState(null);
     const [createData, setCreateData] = useState({
         target: "group",
         place: selectedPlace,
@@ -83,8 +88,12 @@ const ListAddModal = ({ isAddMode, setIsAddMode, selectedPlace }) => {
                     <DatePicker
                         className="DatePicker"
                         placeholderText="0000-00-00"
+                        locale="ko"
+                        dateFormat="yyyy-MM-dd"
                         selected={selectedDate}
-                        onChange={(date) => setSelectedDate(date)}
+                        onChange={(date) =>
+                            setSelectedDate(date.toLocaleDateString("ko-KR"))
+                        }
                         shouldCloseOnSelect={false}
                         // 날짜 임시 data (날짜 구현은 나중에)
                         // onChange={() => {
