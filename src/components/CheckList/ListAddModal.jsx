@@ -21,7 +21,7 @@ const ListAddModal = ({ isAddMode, setIsAddMode, selectedPlace }) => {
         target: "group",
         place: selectedPlace,
         toClean: "",
-        deadLine: "",
+        deadLine: new Date(),
         name: "",
         badgeId: 1,
     });
@@ -43,8 +43,8 @@ const ListAddModal = ({ isAddMode, setIsAddMode, selectedPlace }) => {
             alert("to-clean 내용과 담당자를 모두 선택해주세요.");
             return;
         }
-
-        onCreate(...createData);
+        onCreate(createData);
+        console.log(createData);
         setIsAddMode(false);
     };
 
@@ -91,11 +91,11 @@ const ListAddModal = ({ isAddMode, setIsAddMode, selectedPlace }) => {
                         dateFormat="yyyy-MM-dd"
                         selected={selectedDate}
                         onChange={(date) => {
-                            setSelectedDate(date.toLocaleDateString("ko-KR"));
-                            setCreateData({
-                                ...createData,
-                                deadLine: selectedDate,
-                            });
+                            setSelectedDate(date);
+                            setCreateData((prev) => ({
+                                ...prev,
+                                deadLine: date.toLocaleDateString("ko-KR"),
+                            }));
                         }}
                         shouldCloseOnSelect={false}
                     />
