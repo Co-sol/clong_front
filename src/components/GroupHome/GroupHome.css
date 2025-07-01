@@ -52,7 +52,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 2.77vw;
+    gap: min(40px, 2.77vw);
     margin-bottom: min(18px, 1.25vw);
 }
 
