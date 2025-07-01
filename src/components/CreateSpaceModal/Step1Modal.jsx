@@ -1,5 +1,3 @@
-import React from "react";
-
 function Step1Modal({
   spaceType,
   setSpaceType,
@@ -11,7 +9,9 @@ function Step1Modal({
     <>
       <div className="modal-title">도형을 선택했어요!</div>
       <div className="modal-section">
-        <div className="modal-label">이 공간은 어떤 공간인가요?</div>
+        <div className="modal-label">
+          <strong>이 공간은 어떤 공간인가요?</strong>
+        </div>
         <div className="modal-radio-group">
           <label>
             <input
@@ -32,7 +32,9 @@ function Step1Modal({
           </label>
         </div>
 
-        <div className="modal-label">공간의 이름을 입력해주세요</div>
+        <div className="modal-label">
+          <strong>공간의 이름을 입력해주세요</strong>
+        </div>
         <input
           className="modal-input"
           value={spaceName}

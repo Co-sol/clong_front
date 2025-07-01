@@ -18,8 +18,9 @@ function Step3Modal({ modalShape, shapeDirection, spaceName, onNext, onBack }) {
           height:
             60 *
             (shapeDirection === "horizontal" ? modalShape.w : modalShape.h),
-          margin: "10px auto",
-          background: "#d9d9d9",
+          margin: "30px auto 20px",
+          background: "#EBFEF4",
+          border: "2px solid #8BE2B6",
           borderRadius: 12,
           display: "flex",
           alignItems: "center",
