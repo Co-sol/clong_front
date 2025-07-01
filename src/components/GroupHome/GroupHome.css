@@ -79,6 +79,17 @@
     border-radius: 15px;
 }
 
+.GroupHome .groupRule > h3 {
+    margin-top: min(33px, 2.3vw);
+    text-align: center;
+
+    font-size: min(1.66vw, 24px);
+}
+
+.ruleContent {
+    padding: min(4px, 0.27vw) min(50.5px, 3.5vw);
+}
+
 .GroupHome .groupEval {
     background-color: white;
     width: min(39.2vw, 564px);

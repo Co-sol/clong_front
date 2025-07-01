@@ -1,7 +1,15 @@
 import "./GroupHome.css";
-
 import home_img from "../../assets/home_img.png";
 import pencil_img from "../../assets/pencil_img.png";
+import Button from "../Button";
+
+const groupData = {
+    groupName: "Clong",
+    groupRule:
+        "설거지는 당일에ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ",
+    members: ["A", "B", "C"],
+    ownerNickname: "solux", // 임시 고정값
+};
 
 const GroupHome = () => {
     return (
@@ -14,8 +22,15 @@ const GroupHome = () => {
             <div className="groupHomeUnder">
                 <div className="groupSpace">공간 구조도</div>
                 <div className="groupHomeRE">
-                    <div className="groupRule">그룹 규칙</div>
-                    <div className="groupEval">그룹원 평가</div>
+                    <div className="groupRule">
+                        <h3>그룹 규칙</h3>
+                        <div className="ruleContent">{groupData.groupRule}</div>
+                    </div>
+                    <div className="groupEval">
+                        <h3>그룹원</h3>
+                        <div className="ruleContent">그룹원들 정보 들어감</div>
+                        <Button text={"그룹원 평가"} />
+                    </div>
                 </div>
             </div>
         </div>
