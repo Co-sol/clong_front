@@ -21,7 +21,7 @@ const ListAddModal = ({ isAddMode, setIsAddMode, selectedPlace }) => {
         target: "group",
         place: selectedPlace,
         toClean: "",
-        deadLine: new Date(),
+        deadLine: "미정",
         name: "",
         badgeId: 1,
     });
@@ -43,7 +43,15 @@ const ListAddModal = ({ isAddMode, setIsAddMode, selectedPlace }) => {
             alert("to-clean 내용과 담당자를 모두 선택해주세요.");
             return;
         }
-        onCreate(createData);
+        // target, name, badgeId, place, toClean, deadLine
+        onCreate(
+            createData.target,
+            createData.name,
+            createData.badgeId,
+            createData.place,
+            createData.toClean,
+            createData.deadLine
+        );
         console.log(createData);
         setIsAddMode(false);
     };

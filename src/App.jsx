@@ -107,7 +107,7 @@ function App() {
     const [personData, setPersonData] = useState(personMockData);
     const idRef = useRef(5);
 
-    const onCreate = (target, place, toClean, deadLine, name, badgeId) => {
+    const onCreate = (target, name, badgeId, place, toClean, deadLine) => {
         dispatch({
             type: "CREATE",
             data: {
