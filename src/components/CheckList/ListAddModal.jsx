@@ -4,7 +4,10 @@ import { useContext, useState } from "react";
 import Modal from "../Modal";
 import Button from "../Button";
 
-import { toCleanStateContext, toCleanDispatchContext } from "../../App";
+import {
+    toCleanStateContext,
+    toCleanDispatchContext,
+} from "../../Pages/GroupSpacePage";
 import { getBadgeImage } from "../../utils/get-badge-images";
 import DatePicker from "react-datepicker";
 
@@ -99,7 +102,9 @@ const ListAddModal = ({ isAddMode, setIsAddMode, selectedPlace }) => {
                             setSelectedDate(date);
                             setCreateData((prev) => ({
                                 ...prev,
-                                deadLine: `${d_day > 0 ? d_day : "D"}-day`,
+                                deadLine: `${
+                                    d_day > 0 ? `D-${d_day}` : "D-day"
+                                }`,
                             }));
                         }}
                         shouldCloseOnSelect={false}
