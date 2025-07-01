@@ -12,17 +12,17 @@
 }
 
 .GroupHome {
-    margin: 60px 70px;
+    margin: min(1.25vw, 18px) min(4.86vw, 70px);
     background-color: rgb(245, 245, 245);
 }
 
 /* 상단 그룹 이름 */
 .GroupHome .groupName {
     display: flex;
-    gap: 10px;
+    gap: min(0.69vw, 10px);
     justify-content: center;
     align-items: center;
-    margin-bottom: 30px;
+    margin-bottom: min(18px, 1.25vw);
 }
 
 .GroupHome .groupName > img {
@@ -45,6 +45,22 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: min(40px, 2.7vw);
+}
+
+.GroupHome .groupHomeUnder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2.77vw;
+    margin-bottom: min(18px, 1.25vw);
+}
+
+.GroupHome .groupHomeUnder .groupSpace {
+    background-color: white;
+    width: min(696px, 48.3vw);
+    height: min(696px, 48.3vw);
+    border-radius: 15px;
 }
 
 .GroupHome .groupHomeRE {
@@ -52,12 +68,20 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 30px;
+    gap: min(30px, 2.08vw);
+    margin-bottom: min(40px, 2.7vw);
 }
 
-.GroupHome .groupHomeUnder {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
+.GroupHome .groupRule {
+    background-color: white;
+    width: min(39.2vw, 564px);
+    height: min(18.3vw, 264px);
+    border-radius: 15px;
+}
+
+.GroupHome .groupEval {
+    background-color: white;
+    width: min(39.2vw, 564px);
+    height: min(28vw, 402px);
+    border-radius: 15px;
 }
