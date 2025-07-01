@@ -1,0 +1,63 @@
+@font-face {
+    font-family: "NotoSansKR-Regular";
+    src: url("/fonts/NotoSansKR-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: "NotoSansKR-Bold";
+    src: url("/fonts/NotoSansKR-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+}
+
+.GroupHome {
+    margin: 60px 70px;
+    background-color: rgb(245, 245, 245);
+}
+
+/* 상단 그룹 이름 */
+.GroupHome .groupName {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.GroupHome .groupName > img {
+    width: min(2.1vw, 36px);
+    height: min(2.1vw, 30.3px);
+}
+
+/* home_img 옆으로 홀쭉하길래 조정해줌 */
+.GroupHome .groupName .home_img {
+    width: min(36px, 2.5vw);
+}
+
+.GroupHome .groupName > h3 {
+    font-size: min(30.3px, 2.1vw);
+    font-family: sans-serif, "NotoSansKR-Bold";
+}
+
+/* 하단 그룹 주요 기능 */
+.GroupHome .groupSpace {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.GroupHome .groupHomeRE {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.GroupHome .groupHomeUnder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}

@@ -1,5 +1,13 @@
+import Header from "../components/Header";
+import GroupHome from "../components/GroupHome/GroupHome";
+
 const GroupHomePage = () => {
-    return <div>GroupHome</div>;
+    return (
+        <>
+            <Header />
+            <GroupHome />
+        </>
+    );
 };
 
 export default GroupHomePage;
