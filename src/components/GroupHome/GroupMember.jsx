@@ -1,5 +1,5 @@
-const GroupMember = () => {
-    return <div className="GroupMember">dd</div>;
+const GroupMember = ({ badgeId, name, Eval }) => {
+    return <div className="GroupMember"></div>;
 };
 
 export default GroupMember;
