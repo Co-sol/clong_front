@@ -72,6 +72,7 @@
     margin-bottom: min(40px, 2.7vw);
 }
 
+/* 그룹 규칙 */
 .GroupHome .groupRule {
     background-color: white;
     width: min(39.2vw, 564px);
@@ -87,12 +88,45 @@
 }
 
 .ruleContent {
-    padding: min(4px, 0.27vw) min(50.5px, 3.5vw);
+    padding-left: min(50.5px, 3.5vw);
+    padding-right: min(50.5px, 3.5vw);
+    padding-bottom: min(2.3vw, 33.1px);
+
+    font-size: min(1.38vw, 20px);
 }
 
+/* 그룹원 평가 */
 .GroupHome .groupEval {
     background-color: white;
     width: min(39.2vw, 564px);
     height: min(28vw, 402px);
     border-radius: 15px;
+    position: relative;
+}
+
+.groupEval > h3 {
+    margin-top: min(33px, 2.3vw);
+    text-align: center;
+
+    font-size: min(1.66vw, 24px);
+}
+
+.groupEval .members {
+    padding-left: min(3vw, 43.2px);
+    padding-right: min(3vw, 43.2px);
+    margin-top: min(2.5vw, 36px);
+}
+
+.Button_eval {
+    width: min(9.02vw, 130px);
+    height: min(2.77vw, 40px);
+    border-radius: 15px;
+
+    color: white;
+    font-size: min(1vw, 15px);
+    line-height: min(2.77vw, 40px);
+
+    position: absolute;
+    top: min(1vw, 15px);
+    right: min(1vw, 15px);
 }
