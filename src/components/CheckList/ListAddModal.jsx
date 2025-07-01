@@ -16,6 +16,7 @@ registerLocale("ko", ko);
 const ListAddModal = ({ isAddMode, setIsAddMode, selectedPlace }) => {
     const { onCreate } = useContext(toCleanDispatchContext);
     const { personData } = useContext(toCleanStateContext);
+    const [activeName, setActiveName] = useState("");
     const [selectedDate, setSelectedDate] = useState(null);
     const [createData, setCreateData] = useState({
         target: "group",
@@ -25,13 +26,6 @@ const ListAddModal = ({ isAddMode, setIsAddMode, selectedPlace }) => {
         name: "",
         badgeId: 1,
     });
-    // target, name, badgeId, place, toClean, deadLine
-    // target: "group",
-    // place: "거실",
-    // toClean: "tv 닦기",
-    // deadLine: "D-2",
-    // name: "A",
-    // badgeId: 1,
 
     const onClickCloseModal = () => {
         setIsAddMode(false);
@@ -43,7 +37,7 @@ const ListAddModal = ({ isAddMode, setIsAddMode, selectedPlace }) => {
             alert("to-clean 내용과 담당자를 모두 선택해주세요.");
             return;
         }
-        // target, name, badgeId, place, toClean, deadLine
+
         onCreate(
             createData.target,
             createData.name,
@@ -52,7 +46,6 @@ const ListAddModal = ({ isAddMode, setIsAddMode, selectedPlace }) => {
             createData.toClean,
             createData.deadLine
         );
-        console.log(createData);
         setIsAddMode(false);
     };
 
@@ -118,15 +111,20 @@ const ListAddModal = ({ isAddMode, setIsAddMode, selectedPlace }) => {
                         {personData.map((item) => {
                             return (
                                 <button
-                                    className="hover_button"
+                                    className={`hover_${
+                                        activeName === item.name
+                                            ? "active"
+                                            : "button"
+                                    }`}
                                     key={item.name}
-                                    onClick={() =>
+                                    onClick={() => {
                                         setCreateData({
                                             ...createData,
                                             name: item.name,
                                             badgeId: item.badgeId,
-                                        })
-                                    }
+                                        });
+                                        setActiveName(item.name);
+                                    }}
                                 >
                                     <img
                                         className="BadgeTodo"

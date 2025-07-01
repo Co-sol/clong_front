@@ -104,7 +104,8 @@
     justify-content: center;
 }
 
-.ListAddModal .hover_button {
+.ListAddModal .hover_button,
+.hover_active {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -119,6 +120,11 @@
 }
 
 .ListAddModal .hover_button:hover {
+    background-color: #8be2b6;
+    border-radius: 45px;
+}
+
+.ListAddModal .hover_active {
     background-color: #8be2b6;
     border-radius: 45px;
 }
