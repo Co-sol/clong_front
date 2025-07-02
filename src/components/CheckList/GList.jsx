@@ -4,7 +4,7 @@ import { toCleanStateContext } from "../../Pages/GroupSpacePage";
 
 import GListItem from "./GListItem";
 import Button from "../Button";
-import ListAddModal from "./ListAddModal";
+import GListAddModal from "./GListAddModal";
 
 const GList = () => {
     const { checkListData } = useContext(toCleanStateContext);
@@ -50,7 +50,8 @@ const GList = () => {
                     <Button onClick={onClickAdd} text={"+"} type={"add1"} />
                 )}
                 {isAddMode && (
-                    <ListAddModal
+                    <GListAddModal
+                        type={"group"}
                         isAddMode={isAddMode}
                         setIsAddMode={setIsAddMode}
                         selectedPlace={selectedPlace}

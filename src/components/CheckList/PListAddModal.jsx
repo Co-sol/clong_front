@@ -1,4 +1,4 @@
-import "./ListAddModal.css";
+import "./PListAddModal.css";
 import "react-datepicker/dist/react-datepicker.css";
 import { useContext, useState } from "react";
 import Modal from "../Modal";
@@ -16,13 +16,13 @@ import { registerLocale } from "react-datepicker";
 
 registerLocale("ko", ko);
 
-const ListAddModal = ({ isAddMode, setIsAddMode, selectedPlace }) => {
+const PListAddModal = ({ isAddMode, setIsAddMode, selectedPlace }) => {
     const { onCreate } = useContext(toCleanDispatchContext);
     const { personData } = useContext(toCleanStateContext);
     const [activeName, setActiveName] = useState("");
     const [selectedDate, setSelectedDate] = useState(null);
     const [createData, setCreateData] = useState({
-        target: "group",
+        target: "personal",
         place: selectedPlace,
         toClean: "",
         deadLine: "미정",
@@ -53,7 +53,7 @@ const ListAddModal = ({ isAddMode, setIsAddMode, selectedPlace }) => {
     };
 
     return (
-        <div className="ListAddModal">
+        <div className="PListAddModal">
             <Modal
                 isOpen={isAddMode}
                 onClose={onClickCloseModal}
@@ -147,4 +147,4 @@ const ListAddModal = ({ isAddMode, setIsAddMode, selectedPlace }) => {
     );
 };
 
-export default ListAddModal;
+export default PListAddModal;
