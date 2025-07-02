@@ -7,6 +7,7 @@ import Step3Modal from "../components/CreateSpaceModal/Step3Modal";
 import "./CreateSpacePage.css";
 
 const GRID_SIZE = 10;
+const GRID_GAP = 0.8;
 
 // 도형 정보 정의
 const SHAPES = [
@@ -294,8 +295,12 @@ function CreateSpacePage() {
                         <div
                           className="placed-shape"
                           style={{
-                            width: `calc(${placedShape.w}00%)`,
-                            height: `calc(${placedShape.h}00%)`,
+                            width: `calc(${placedShape.w * 100}% + ${
+                              (placedShape.w - 1) * GRID_GAP
+                            }px)`,
+                            height: `calc(${placedShape.h * 100}% + ${
+                              (placedShape.h - 1) * GRID_GAP
+                            }px)`,
                           }}
                         >
                           {placedShape.name}
