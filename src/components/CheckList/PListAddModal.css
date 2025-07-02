@@ -46,14 +46,13 @@
     border-radius: 15px;
 
     width: min(32vw, 462.1px);
-    height: min(1.7vw, 24.54px);
+    height: min(3.5vw, 50.4px);
 
     resize: none;
-    padding: 1rem 1rem 1rem 1.3rem;
     overflow: hidden;
 
     font-size: 1.1rem;
-    line-height: min(1.7vw, 24.54px);
+    line-height: min(3.2vw, 46px);
     text-align: center;
 }
 

@@ -57,10 +57,10 @@ const PListAddModal = ({ isAddMode, setIsAddMode, personalData }) => {
                 isOpen={isAddMode}
                 onClose={onClickCloseModal}
                 contentStyle={{
-                    width: "34vw",
-                    maxWidth: "491px",
-                    height: "40vw",
-                    maxHeight: "577.6px",
+                    width: "39vw",
+                    maxWidth: "561.6px",
+                    height: "44vw",
+                    maxHeight: "633.6px",
                     display: "flex",
                     flexDirection: "column",
                     justifyContent: "center",
