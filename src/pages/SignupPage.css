@@ -8,23 +8,26 @@ body {
 
 .page-wrapper {
   width: 100%;
-  min-height: 100vh;
-  background-color: white;
+  height: 100vh; /* 추가 */
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 40px 20px;
+  padding: 0 20px;
+  background-color: white;
+  box-sizing: border-box;
+  overflow: hidden; /* 스크롤 방지 */
 }
 
 .signup-container {
+  transform: scale(0.7);
+  transform-origin: center;
   width: 100%;
   max-width: 500px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  transform: scale(0.7);
-  transform-origin: center;
 }
+
 
 .title {
   font-family: 'Inter', sans-serif;
@@ -239,7 +242,7 @@ form {
   width: 100%;
   height: 20px;
   margin-top: 8px;
-  margin-bottom: 25px;
+  margin-bottom: 30px;
 }
 
 .sensitivity-ticks span {
@@ -333,3 +336,21 @@ form {
   text-decoration: none;
   cursor: pointer;
 }
+
+.submit-error-wrapper {
+  height: 20px;
+  width: 100%;
+  margin-top: -15px;
+  margin-bottom: -10px;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+}
+
+.submit-error-message {
+  font-size: 15px;
+  font-weight: 500;
+  color: #FF5C5C;
+  visibility: hidden;
+}
+

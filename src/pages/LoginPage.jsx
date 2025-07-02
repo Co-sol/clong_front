@@ -1,19 +1,22 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom'; 
+import { Link, useNavigate } from 'react-router-dom';
 
 function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [errorMessage, setErrorMessage] = useState(' ');
+  const [errorMessage, setErrorMessage] = useState('');
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     if (!email.trim() || !password.trim()) {
       setErrorMessage('이메일과 비밀번호를 모두 입력해주세요.');
-    } else {
-      setErrorMessage('');
-      console.log('로그인 시도');
+      return;
     }
+
+    // 백엔드 요청 없이 바로 이동
+    navigate('/personality/1');
   };
 
   return (
@@ -24,28 +27,30 @@ function LoginPage() {
 
           body {
             margin: 0;
-            background-color: #ffffff;
             font-family: 'Noto Sans KR', sans-serif;
+            background-color: #ffffff;
+            height: 100vh;
+            overflow: hidden;
           }
 
           .page-wrapper {
             width: 100%;
-            max-width: 100%;
-            min-height: 100vh;
-            background-color: white;
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 40px 20px;
+            box-sizing: border-box;
           }
 
           .login-container {
+            transform: scale(0.7);
             width: 100%;
             max-width: 500px;
+            box-sizing: border-box;
             display: flex;
             flex-direction: column;
             align-items: center;
-            transform: scale(0.75);
+            padding: 20px 0;
           }
 
           .title {
@@ -67,7 +72,7 @@ function LoginPage() {
           }
 
           form .form-row:first-of-type {
-            margin-top: 30px; /* or 60px, 원하는 간격 */
+            margin-top: 30px;
           }
 
           form {
@@ -212,7 +217,6 @@ function LoginPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
-              <span>@sookmyung.ac.kr</span>
             </div>
             <div className="form-row">
               <input
@@ -231,7 +235,7 @@ function LoginPage() {
 
           <div className="bottom-text">
             <div className="label">계정이 없으신가요?</div>
-            <Link to="/signup">회원가입하기</Link> 
+            <Link to="/signup">회원가입하기</Link>
           </div>
         </div>
       </div>
@@ -240,8 +244,3 @@ function LoginPage() {
 }
 
 export default LoginPage;
-
-
-
-
-
