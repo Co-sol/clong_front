@@ -6,6 +6,7 @@ function Step3Modal({
   onNext,
   onBack,
 }) {
+  // 방향에 따라 w, h 결정
   let w = modalShape.w;
   let h = modalShape.h;
   if (shapeDirection === "horizontal") {
@@ -16,9 +17,11 @@ function Step3Modal({
   // 미리보기 도형 style 계산
   const baseWidth = 70 * w;
   const baseHeight = 70 * h;
-  const scale = shapeSize === 1 ? 0.7 : 1.0;
-  const previewWidth = baseWidth * scale;
-  const previewHeight = baseHeight * scale;
+  const previewWidth = baseWidth;
+  const previewHeight = baseHeight;
+
+  const ratioW = w * shapeSize;
+  const ratioH = h * shapeSize;
 
   return (
     <>
@@ -43,12 +46,15 @@ function Step3Modal({
           alignItems: "center",
           justifyContent: "center",
           fontSize: 17,
-
           whiteSpace: "nowrap",
           overflow: "visible",
+          position: "relative",
         }}
       >
         {spaceName}
+        <span className="shape-ratio">
+          {ratioW}x{ratioH}
+        </span>
       </div>
 
       <button className="modal-next" onClick={onNext}>

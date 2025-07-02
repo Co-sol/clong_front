@@ -188,10 +188,14 @@ function ShapeButton({ shape, onClick, direction = "vertical" }) {
       style={{
         width: `${w * 20}%`,
         aspectRatio: `${w} / ${h}`,
+        position: "relative",
       }}
       onClick={() => onClick(shape)}
     >
       +
+      <span className="shape-ratio">
+        {w}x{h}
+      </span>
     </button>
   );
 }
