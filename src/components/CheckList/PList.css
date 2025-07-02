@@ -11,7 +11,7 @@
 .PList h3 {
     font-size: 1.67vw; /* 24px */
     text-align: center;
-    padding-top: 3vw; /* 반응형 간격 */
+    padding-top: 3vw;
     padding-bottom: 1.73vw;
     margin-bottom: 0;
     font-weight: bold;
@@ -71,11 +71,11 @@
 }
 
 .PList .toclean_text {
-    margin-left: 3.5vw;
+    margin-left: 3.3vw;
 }
 
 .PList .deadLine_text {
-    margin-left: 7.3vw;
+    margin-left: 7.5vw;
 }
 
 .PList .scrollBar {
