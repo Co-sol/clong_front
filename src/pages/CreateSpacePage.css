@@ -89,6 +89,10 @@ body {
   background: #b7f8d7;
 }
 
+.grid-cell.highlight {
+  background: #b7f8d7;
+}
+
 /* 공간 도형 패널 */
 
 .shape-panel {

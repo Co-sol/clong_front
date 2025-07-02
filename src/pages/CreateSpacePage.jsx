@@ -29,6 +29,8 @@ function CreateSpacePage() {
   const [shapeDirection, setShapeDirection] = useState("vertical");
   const [shapeSize, setShapeSize] = useState(1); // 도형 크기
   const [pendingShape, setPendingShape] = useState(null); // 실제 배치할 shape
+  const [hoverCell, setHoverCell] = useState(null); // 그리드 패널 - 미리보기
+  const [previewShape, setPreviewShape] = useState(null);
 
   // 도형 버튼 클릭 시
   const handleShapeSelect = (shape) => {
@@ -61,8 +63,8 @@ function CreateSpacePage() {
 
     setPendingShape({
       ...modalShape,
-      w,
-      h,
+      w: w * shapeSize,
+      h: h * shapeSize,
       name: spaceName,
       type: spaceType,
       direction: shapeDirection,
@@ -71,6 +73,23 @@ function CreateSpacePage() {
 
   // step3: 위치 선택 안내
   const handleStep3 = () => {
+    // 방향에 따라 w, h 결정
+    let w = modalShape.w;
+    let h = modalShape.h;
+    if (shapeDirection === "horizontal") {
+      w = modalShape.h;
+      h = modalShape.w;
+    }
+    const newPendingShape = {
+      ...modalShape,
+      w: w * shapeSize,
+      h: h * shapeSize,
+      name: spaceName,
+      type: spaceType,
+      direction: shapeDirection,
+    };
+    setPendingShape(newPendingShape);
+    console.log("[handleStep3] setPendingShape:", newPendingShape);
     setModalStep(0);
     setModalShape(null);
   };
@@ -118,10 +137,8 @@ function CreateSpacePage() {
             shapeSize={shapeSize} // 추가
             onNext={handleStep3}
             onBack={handleBack}
+            setPreviewShape={setPreviewShape}
           />
-        )}
-        {modalStep === 4 && (
-          <Step4Modal onClose={handleClose} onBack={handleBack} />
         )}
       </Modal>
     );
@@ -144,7 +161,43 @@ function CreateSpacePage() {
                 }}
               >
                 {[...Array(GRID_SIZE * GRID_SIZE)].map((_, idx) => {
-                  return <div key={idx} className="grid-cell" />;
+                  const row = Math.floor(idx / GRID_SIZE);
+                  const col = idx % GRID_SIZE;
+
+                  // 도형 배치 모드일 때만 하이라이트 계산
+                  let isHighlighted = false;
+                  if (pendingShape && hoverCell) {
+                    const { w, h } = pendingShape;
+                    if (
+                      row >= hoverCell.row &&
+                      row < hoverCell.row + h &&
+                      col >= hoverCell.col &&
+                      col < hoverCell.col + w
+                    ) {
+                      isHighlighted = true;
+                    }
+                  }
+
+                  // 콘솔로 상태 확인
+                  if (isHighlighted) {
+                    console.log("[Grid] pendingShape:", pendingShape, "hoverCell:", hoverCell);
+                  }
+
+                  return (
+                    <div
+                      key={idx}
+                      className={`grid-cell${isHighlighted ? " highlight" : ""}`}
+                      onMouseEnter={() => {
+                        if (pendingShape) {
+                          setHoverCell({ row, col });
+                          console.log("[onMouseEnter] hoverCell:", { row, col });
+                        }
+                      }}
+                      onMouseLeave={() => {
+                        if (pendingShape) setHoverCell(null);
+                      }}
+                    />
+                  );
                 })}
               </div>
             </div>

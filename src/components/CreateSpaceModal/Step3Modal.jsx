@@ -2,9 +2,10 @@ function Step3Modal({
   modalShape,
   shapeDirection,
   spaceName,
-  shapeSize, // 추가
+  shapeSize,
   onNext,
   onBack,
+  setPreviewShape,
 }) {
   // 방향에 따라 w, h 결정
   let w = modalShape.w;
@@ -13,6 +14,19 @@ function Step3Modal({
     w = modalShape.h;
     h = modalShape.w;
   }
+
+  const handlePreviewAndNext = () => {
+    const previewShape = {
+      ...modalShape,
+      w: w * shapeSize,
+      h: h * shapeSize,
+      name: spaceName,
+      type: 0,
+      direction: shapeDirection,
+    };
+    setPreviewShape(previewShape);
+    onNext();
+  };
 
   // 미리보기 도형 style 계산
   const baseWidth = 70 * w;
@@ -57,7 +71,7 @@ function Step3Modal({
         </span>
       </div>
 
-      <button className="modal-next" onClick={onNext}>
+      <button className="modal-next" onClick={handlePreviewAndNext}>
         다음
       </button>
     </>
