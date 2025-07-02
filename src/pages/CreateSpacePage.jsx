@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Header from "../components/Header";
 import Modal from "../components/Modal";
 import Step1Modal from "../components/CreateSpaceModal/Step1Modal";
@@ -19,6 +19,24 @@ const SHAPES = [
   { id: "shape-4x3", w: 4, h: 3 },
 ];
 
+const SHAPE_COLORS = [
+  "#CE7DA5",
+  "#CA97AC",
+  "#C6B1B2",
+  "#C2CBB9",
+  "#C0D8BC",
+  "#BEE5BF",
+  "#C7E9C8",
+  "#CFECD1",
+  "#D7F0DA",
+  "#DFF3E3",
+  "#E3EFDE",
+  "#E7EBD9",
+  "#EFE2CF",
+  "#F7DAC5",
+  "#FFD1BA",
+];
+
 function CreateSpacePage() {
   // 그리드에 배치된 도형 배열 정보
   const [placedShapes, setPlacedShapes] = useState([]);
@@ -32,6 +50,12 @@ function CreateSpacePage() {
   const [pendingShape, setPendingShape] = useState(null); // 실제 배치할 shape
   const [hoverCell, setHoverCell] = useState(null); // 그리드 패널 - 미리보기
   const [previewShape, setPreviewShape] = useState(null);
+
+  useEffect(() => {
+    if (!pendingShape) {
+      setHoverCell(null);
+    }
+  }, [pendingShape]);
 
   // 도형 버튼 클릭 시
   const handleShapeSelect = (shape) => {
@@ -274,11 +298,17 @@ function CreateSpacePage() {
                               if (overlap) break;
                             }
                             if (!overlap) {
+                              // 색상 할당
+                              const color =
+                                SHAPE_COLORS[
+                                  placedShapes.length % SHAPE_COLORS.length
+                                ];
                               // 도형 배치
                               const newShape = {
                                 ...pendingShape,
                                 top: hoverCell.row,
                                 left: hoverCell.col,
+                                color,
                               };
                               setPlacedShapes([...placedShapes, newShape]);
                               setPendingShape(null);
@@ -308,6 +338,7 @@ function CreateSpacePage() {
                             height: `calc(${placedShape.h * 100}% + ${
                               (placedShape.h - 1) * GRID_GAP
                             }px)`,
+                            background: placedShape.color || undefined,
                           }}
                         >
                           {placedShape.name}
