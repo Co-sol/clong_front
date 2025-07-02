@@ -89,7 +89,7 @@ function CreateSpacePage() {
       direction: shapeDirection,
     };
     setPendingShape(newPendingShape);
-    console.log("[handleStep3] setPendingShape:", newPendingShape);
+
     setModalStep(0);
     setModalShape(null);
   };
@@ -164,11 +164,33 @@ function CreateSpacePage() {
                   const row = Math.floor(idx / GRID_SIZE);
                   const col = idx % GRID_SIZE;
 
-                  // 도형 배치 모드일 때만 하이라이트 계산
                   let isHighlighted = false;
                   if (pendingShape && hoverCell) {
                     const { w, h } = pendingShape;
+                    // 미리보기 영역이 placedShapes와 겹치는지 체크
+                    let overlap = false;
+                    for (const shape of placedShapes) {
+                      const { w: pw, h: ph, top, left } = shape;
+                      if (
+                        row >= hoverCell.row &&
+                        row < hoverCell.row + h &&
+                        col >= hoverCell.col &&
+                        col < hoverCell.col + w
+                      ) {
+                        if (
+                          row >= top &&
+                          row < top + ph &&
+                          col >= left &&
+                          col < left + pw
+                        ) {
+                          overlap = true;
+                          break;
+                        }
+                      }
+                    }
+                    // placedShapes와 겹치지 않을 때만 하이라이트
                     if (
+                      !overlap &&
                       row >= hoverCell.row &&
                       row < hoverCell.row + h &&
                       col >= hoverCell.col &&
@@ -178,25 +200,108 @@ function CreateSpacePage() {
                     }
                   }
 
-                  // 콘솔로 상태 확인
-                  if (isHighlighted) {
-                    console.log("[Grid] pendingShape:", pendingShape, "hoverCell:", hoverCell);
+                  // placedShapes에 포함된 셀인지 확인 및 shape 정보 저장
+                  let isPlaced = false;
+                  let placedShape = null;
+                  for (const shape of placedShapes) {
+                    const { w, h, top, left } = shape;
+                    if (
+                      row >= top &&
+                      row < top + h &&
+                      col >= left &&
+                      col < left + w
+                    ) {
+                      isPlaced = true;
+                      placedShape = shape;
+                      break;
+                    }
                   }
+
+                  const isTopLeft =
+                    isPlaced &&
+                    placedShape &&
+                    row === placedShape.top &&
+                    col === placedShape.left;
 
                   return (
                     <div
                       key={idx}
-                      className={`grid-cell${isHighlighted ? " highlight" : ""}`}
+                      className={`grid-cell${
+                        isHighlighted ? " highlight" : ""
+                      }${isPlaced ? " placed" : ""}`}
                       onMouseEnter={() => {
                         if (pendingShape) {
                           setHoverCell({ row, col });
-                          console.log("[onMouseEnter] hoverCell:", { row, col });
                         }
                       }}
                       onMouseLeave={() => {
                         if (pendingShape) setHoverCell(null);
                       }}
-                    />
+                      onClick={() => {
+                        if (
+                          pendingShape &&
+                          hoverCell &&
+                          row === hoverCell.row &&
+                          col === hoverCell.col
+                        ) {
+                          let overlap = false;
+                          const { w, h } = pendingShape;
+                          for (const shape of placedShapes) {
+                            const { w: pw, h: ph, top, left } = shape;
+                            for (let r = 0; r < h; r++) {
+                              for (let c = 0; c < w; c++) {
+                                const checkRow = hoverCell.row + r;
+                                const checkCol = hoverCell.col + c;
+                                if (
+                                  checkRow >= top &&
+                                  checkRow < top + ph &&
+                                  checkCol >= left &&
+                                  checkCol < left + pw
+                                ) {
+                                  overlap = true;
+                                  break;
+                                }
+                              }
+                              if (overlap) break;
+                            }
+                            if (overlap) break;
+                          }
+                          if (!overlap) {
+                            // 도형 배치
+                            const newShape = {
+                              ...pendingShape,
+                              top: hoverCell.row,
+                              left: hoverCell.col,
+                            };
+                            setPlacedShapes([...placedShapes, newShape]);
+                            setPendingShape(null);
+                            setHoverCell(null);
+                          }
+                        }
+                      }}
+                      style={
+                        isPlaced
+                          ? {
+                              border: "none",
+                              background: "none",
+                              position: "relative",
+                              padding: 0,
+                            }
+                          : {}
+                      }
+                    >
+                      {isTopLeft && placedShape && (
+                        <div
+                          className="placed-shape"
+                          style={{
+                            width: `calc(${placedShape.w}00%)`,
+                            height: `calc(${placedShape.h}00%)`,
+                          }}
+                        >
+                          {placedShape.name}
+                        </div>
+                      )}
+                    </div>
                   );
                 })}
               </div>
