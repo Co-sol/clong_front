@@ -7,7 +7,7 @@ import Button from "../Button";
 import {
     toCleanStateContext,
     toCleanDispatchContext,
-} from "../../Pages/GroupSpacePage";
+} from "../../pages/GroupSpacePage";
 import DatePicker from "react-datepicker";
 
 import { ko } from "date-fns/locale";

@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     gap: min(28px, 2vw);
-    width: min(403px, 28vw);
+    width: min(28.95vw, 416.8px);
     height: min(79px, 5.5vw);
     border-radius: 15px;
     background-color: rgb(248, 248, 248);

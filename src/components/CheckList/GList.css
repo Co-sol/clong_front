@@ -31,13 +31,15 @@
 
 .GList .Button_add1 {
     font-size: min(40.3px, 2.8vw); /* 반응형 텍스트 */
-    width: min(417.312px, 28.9vw); /* 26.3rem → 반응형 */
+    width: min(417.312px, 28.9vw);
     height: min(73.9px, 5.1vw);
     border-radius: 15px;
     background-color: rgb(217, 217, 217);
-    margin-left: min(43.35px, 3vw);
+    margin-left: min(3.1vw, 44.64px);
     padding-left: min(12px, 0.83vw);
+    padding-bottom: min(0.8vw, 13px);
     margin-bottom: min(9.1px, 0.63vw);
+    color: white;
 }
 
 .GList .place {

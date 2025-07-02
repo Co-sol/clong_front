@@ -2,7 +2,7 @@ import "./GListItem.css";
 import { getBadgeImage } from "../../utils/get-badge-images";
 import Button from "../Button";
 import { useContext } from "react";
-import { toCleanDispatchContext } from "../../Pages/GroupSpacePage";
+import { toCleanDispatchContext } from "../../pages/GroupSpacePage";
 
 const GListItem = ({ isEditMode, item }) => {
     const { onDelete } = useContext(toCleanDispatchContext);

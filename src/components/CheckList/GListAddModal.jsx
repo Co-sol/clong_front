@@ -7,7 +7,7 @@ import Button from "../Button";
 import {
     toCleanStateContext,
     toCleanDispatchContext,
-} from "../../Pages/GroupSpacePage";
+} from "../../pages/GroupSpacePage";
 import { getBadgeImage } from "../../utils/get-badge-images";
 import DatePicker from "react-datepicker";
 
@@ -58,10 +58,10 @@ const GListAddModal = ({ isAddMode, setIsAddMode, selectedPlace }) => {
                 isOpen={isAddMode}
                 onClose={onClickCloseModal}
                 contentStyle={{
-                    width: "34vw",
-                    maxWidth: "491px",
-                    height: "40vw",
-                    maxHeight: "577.6px",
+                    width: "37vw",
+                    maxWidth: "532.8px",
+                    height: "43vw",
+                    maxHeight: "619.2px",
                     display: "flex",
                     flexDirection: "column",
                     justifyContent: "center",

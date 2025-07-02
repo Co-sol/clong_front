@@ -1,7 +1,7 @@
 import "./PListItem.css";
 import Button from "../Button";
 import { useContext } from "react";
-import { toCleanDispatchContext } from "../../Pages/GroupSpacePage";
+import { toCleanDispatchContext } from "../../pages/GroupSpacePage";
 
 const PListItem = ({ isEditMode, item }) => {
     const { onDelete } = useContext(toCleanDispatchContext);
