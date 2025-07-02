@@ -44,7 +44,6 @@ const PList = () => {
             <Button onClick={onClickEditMode} text={text} type={"edit"} />
             <div className="profile">
                 <img src={getBadgeImage(selectedBadgeId)} />
-                <div className="border"></div>
             </div>
             <section className="title">
                 <div className="place_text">공간</div>
@@ -62,7 +61,8 @@ const PList = () => {
                     <PListAddModal
                         isAddMode={isAddMode}
                         setIsAddMode={setIsAddMode}
-                        selectedPlace={selectedPlace}
+                        selectedName={selectedName}
+                        selectedBadgeId={selectedBadgeId}
                     />
                 )}
             </div>

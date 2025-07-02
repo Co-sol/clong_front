@@ -1,8 +1,10 @@
 import "./PListAddModal.css";
 import "react-datepicker/dist/react-datepicker.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 import { useContext, useState } from "react";
 import Modal from "../Modal";
 import Button from "../Button";
+import DropDown from "../DropDown";
 
 import {
     toCleanStateContext,
@@ -16,18 +18,23 @@ import { registerLocale } from "react-datepicker";
 
 registerLocale("ko", ko);
 
-const PListAddModal = ({ isAddMode, setIsAddMode, selectedPlace }) => {
+const PListAddModal = ({
+    isAddMode,
+    setIsAddMode,
+    selectedName,
+    selectedBadgeId,
+}) => {
     const { onCreate } = useContext(toCleanDispatchContext);
     const { personData } = useContext(toCleanStateContext);
     const [activeName, setActiveName] = useState("");
     const [selectedDate, setSelectedDate] = useState(null);
     const [createData, setCreateData] = useState({
         target: "personal",
-        place: selectedPlace,
+        place: "",
         toClean: "",
         deadLine: "미정",
-        name: "",
-        badgeId: 1,
+        name: selectedName,
+        badgeId: selectedBadgeId,
     });
 
     const onClickCloseModal = () => {
@@ -70,7 +77,14 @@ const PListAddModal = ({ isAddMode, setIsAddMode, selectedPlace }) => {
                     position: "relative",
                 }}
             >
-                <div className="selectedPlace">{selectedPlace}</div>
+                <section className="selectedpofile">
+                    <img src={getBadgeImage(selectedBadgeId)} />
+                    <div className="name_text">{selectedName}</div>
+                </section>
+                <section className="place">
+                    <div className="place_text">장소</div>
+                    <DropDown />
+                </section>
                 <section className="createToClean">
                     <div className="toClean_text">
                         추가하실 to-clean을 입력하세요.
@@ -110,37 +124,7 @@ const PListAddModal = ({ isAddMode, setIsAddMode, selectedPlace }) => {
                         shouldCloseOnSelect={false}
                     />
                 </section>
-                <section className="selectPerson">
-                    <div className="personTodo_text">담당자</div>
-                    <div className="personTodo">
-                        {personData.map((item) => {
-                            return (
-                                <button
-                                    className={`hover_${
-                                        activeName === item.name
-                                            ? "active"
-                                            : "button"
-                                    }`}
-                                    key={item.name}
-                                    onClick={() => {
-                                        setCreateData({
-                                            ...createData,
-                                            name: item.name,
-                                            badgeId: item.badgeId,
-                                        });
-                                        setActiveName(item.name);
-                                    }}
-                                >
-                                    <img
-                                        className="BadgeTodo"
-                                        src={getBadgeImage(item.badgeId)}
-                                    />
-                                    <div className="nameTodo">{item.name}</div>
-                                </button>
-                            );
-                        })}
-                    </div>
-                </section>
+
                 <Button onClick={onClickCreate} type={"save"} text={"저장"} />
             </Modal>
         </div>

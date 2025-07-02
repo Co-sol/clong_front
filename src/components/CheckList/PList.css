@@ -11,9 +11,10 @@
 .PList h3 {
     font-size: 1.67vw; /* 24px */
     text-align: center;
-    padding-top: 1.5vw; /* 반응형 간격 */
+    padding-top: 3vw; /* 반응형 간격 */
     padding-bottom: 1.73vw;
     margin-bottom: 0;
+    font-weight: bold;
 }
 
 .PList .Button_edit {

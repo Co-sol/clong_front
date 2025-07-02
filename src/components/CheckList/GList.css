@@ -11,9 +11,10 @@
 .GList h3 {
     font-size: min(24px, 1.67vw); /* 24px */
     text-align: center;
-    padding-top: min(21.67px, 1.5vw); /* 반응형 간격 */
+    padding-top: min(43px, 3vw); /* 반응형 간격 */
     padding-bottom: min(43.3px, 3vw);
     margin-bottom: 0;
+    font-weight: bold;
 }
 
 .GList .Button_edit {
@@ -41,13 +42,13 @@
 
 .GList .place {
     width: min(164px, 11.4vw); /* 164px */
-    height: min(55px, 3.8vw); /* 55px */
+    height: min(50.4px, 3.5vw); /* 55px */
     background-color: rgb(139, 226, 182);
     border-radius: 80px;
     margin-left: min(168px, 11.7vw);
     margin-bottom: min(43px, 3vw);
-    font-size: min(30px, 2.1vw);
-    line-height: min(55px, 3.8vw);
+    font-size: min(26px, 1.8vw);
+    line-height: min(50.4px, 3.5vw);
     text-align: center;
     font-weight: bold;
 }

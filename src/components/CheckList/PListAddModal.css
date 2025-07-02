@@ -11,19 +11,9 @@
     font-style: "normal";
 }
 
-/* 장소 */
-.PListAddModal .selectedPlace {
-    background-color: rgb(139, 226, 182);
-    width: min(9vw, 129.8px);
-    height: min(3.2vw, 46.1px);
-    border-radius: 80px;
-    margin-bottom: min(2.4vw, 34.656px);
+/* 담당자 */
 
-    font-size: min(1.7vw, 25px);
-    font-weight: bold;
-    line-height: min(3.2vw, 46.1px);
-    text-align: center;
-}
+/* 장소 */
 
 /* 할 일(to-clean) */
 .PListAddModal .createToClean {
@@ -83,60 +73,6 @@
     text-align: center;
     font-size: 1.2rem;
     line-height: min(3.6vw, 52px);
-}
-
-/* 담당자 */
-.PListAddModal .selectPerson {
-    display: flex;
-    flex-direction: column;
-    gap: min(1.5vw, 21.6px);
-    margin-bottom: min(2vw, 28.8px);
-}
-
-.PListAddModal .personTodo_text {
-    font-size: 1rem;
-    text-align: center;
-}
-
-.PListAddModal .selectPerson .personTodo {
-    display: flex;
-    gap: min(1.5vw, 21.6px);
-    justify-content: center;
-}
-
-.PListAddModal .hover_button,
-.hover_active {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: min(0.7vw, 10.1px);
-
-    width: min(6vw, 86.625px);
-    height: min(8vw, 115.5px);
-
-    background-color: transparent;
-    border: none;
-}
-
-.PListAddModal .hover_button:hover {
-    background-color: #8be2b6;
-    border-radius: 45px;
-}
-
-.PListAddModal .hover_active {
-    background-color: #8be2b6;
-    border-radius: 45px;
-}
-
-.PListAddModal .selectPerson .personTodo .BadgeTodo {
-    width: min(5vw, 72.25px);
-    height: min(5vw, 72.25px);
-}
-
-.PListAddModal .selectPerson .personTodo .nameTodo {
-    font-size: 1rem;
-    text-align: center;
 }
 
 /* 저장 버튼 */
