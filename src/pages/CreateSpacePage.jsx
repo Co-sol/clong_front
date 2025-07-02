@@ -245,38 +245,45 @@ function CreateSpacePage() {
                           row === hoverCell.row &&
                           col === hoverCell.col
                         ) {
-                          let overlap = false;
+                          // 그리드 밖으로 나가는지 체크
                           const { w, h } = pendingShape;
-                          for (const shape of placedShapes) {
-                            const { w: pw, h: ph, top, left } = shape;
-                            for (let r = 0; r < h; r++) {
-                              for (let c = 0; c < w; c++) {
-                                const checkRow = hoverCell.row + r;
-                                const checkCol = hoverCell.col + c;
-                                if (
-                                  checkRow >= top &&
-                                  checkRow < top + ph &&
-                                  checkCol >= left &&
-                                  checkCol < left + pw
-                                ) {
-                                  overlap = true;
-                                  break;
+                          if (
+                            hoverCell.row + h <= GRID_SIZE &&
+                            hoverCell.col + w <= GRID_SIZE
+                          ) {
+                            // 도형 배치 전, placedShapes와 겹치는지 체크
+                            let overlap = false;
+                            for (const shape of placedShapes) {
+                              const { w: pw, h: ph, top, left } = shape;
+                              for (let r = 0; r < h; r++) {
+                                for (let c = 0; c < w; c++) {
+                                  const checkRow = hoverCell.row + r;
+                                  const checkCol = hoverCell.col + c;
+                                  if (
+                                    checkRow >= top &&
+                                    checkRow < top + ph &&
+                                    checkCol >= left &&
+                                    checkCol < left + pw
+                                  ) {
+                                    overlap = true;
+                                    break;
+                                  }
                                 }
+                                if (overlap) break;
                               }
                               if (overlap) break;
                             }
-                            if (overlap) break;
-                          }
-                          if (!overlap) {
-                            // 도형 배치
-                            const newShape = {
-                              ...pendingShape,
-                              top: hoverCell.row,
-                              left: hoverCell.col,
-                            };
-                            setPlacedShapes([...placedShapes, newShape]);
-                            setPendingShape(null);
-                            setHoverCell(null);
+                            if (!overlap) {
+                              // 도형 배치
+                              const newShape = {
+                                ...pendingShape,
+                                top: hoverCell.row,
+                                left: hoverCell.col,
+                              };
+                              setPlacedShapes([...placedShapes, newShape]);
+                              setPendingShape(null);
+                              setHoverCell(null);
+                            }
                           }
                         }
                       }}
