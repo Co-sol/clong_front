@@ -11,9 +11,21 @@
     font-style: "normal";
 }
 
-/* 담당자 */
-
 /* 장소 */
+.PListAddModal .selectedPlace {
+    background-color: rgb(139, 226, 182);
+    width: min(9vw, 129.8px);
+    height: min(3.2vw, 46.1px);
+    border-radius: 80px;
+    margin-bottom: min(2.4vw, 34.656px);
+
+    font-size: min(1.7vw, 25px);
+    font-weight: bold;
+    line-height: min(3.2vw, 46.1px);
+    text-align: center;
+}
+
+/* 장소 dropdown (jsx 파일에 직접 적음)*/
 
 /* 할 일(to-clean) */
 .PListAddModal .createToClean {

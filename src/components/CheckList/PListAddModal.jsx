@@ -1,20 +1,18 @@
 import "./PListAddModal.css";
 import "react-datepicker/dist/react-datepicker.css";
-import "bootstrap/dist/css/bootstrap.min.css";
 import { useContext, useState } from "react";
 import Modal from "../Modal";
 import Button from "../Button";
-import DropDown from "../DropDown";
 
 import {
     toCleanStateContext,
     toCleanDispatchContext,
 } from "../../Pages/GroupSpacePage";
-import { getBadgeImage } from "../../utils/get-badge-images";
 import DatePicker from "react-datepicker";
 
 import { ko } from "date-fns/locale";
 import { registerLocale } from "react-datepicker";
+import DropDown from "../DropDown";
 
 registerLocale("ko", ko);
 
@@ -29,7 +27,7 @@ const PListAddModal = ({
     const [activeName, setActiveName] = useState("");
     const [selectedDate, setSelectedDate] = useState(null);
     const [createData, setCreateData] = useState({
-        target: "personal",
+        target: "group",
         place: "",
         toClean: "",
         deadLine: "미정",
@@ -43,8 +41,8 @@ const PListAddModal = ({
 
     const onClickCreate = () => {
         // 유효성 검사 예: toClean 또는 name이 없으면 추가 중단
-        if (!createData.toClean || !createData.name) {
-            alert("to-clean 내용과 담당자를 모두 선택해주세요.");
+        if (!createData.toClean || !createData.place) {
+            alert("장소와 to-clean 내용을 모두 입력해주세요.");
             return;
         }
 
@@ -77,13 +75,15 @@ const PListAddModal = ({
                     position: "relative",
                 }}
             >
-                <section className="selectedpofile">
-                    <img src={getBadgeImage(selectedBadgeId)} />
-                    <div className="name_text">{selectedName}</div>
-                </section>
-                <section className="place">
-                    <div className="place_text">장소</div>
-                    <DropDown />
+                <div className="selectedPlace">{`${selectedName}의 방`}</div>
+                <section className="place_section">
+                    <DropDown
+                        className="placeDropdown"
+                        style={{
+                            backgroundColor: "rgb(139, 226, 182)",
+                            border: "none",
+                        }}
+                    />
                 </section>
                 <section className="createToClean">
                     <div className="toClean_text">
@@ -124,7 +124,37 @@ const PListAddModal = ({
                         shouldCloseOnSelect={false}
                     />
                 </section>
-
+                {/* <section className="selectPerson">
+                    <div className="personTodo_text">담당자</div>
+                    <div className="personTodo">
+                        {personData.map((item) => {
+                            return (
+                                <button
+                                    className={`hover_${
+                                        activeName === item.name
+                                            ? "active"
+                                            : "button"
+                                    }`}
+                                    key={item.name}
+                                    onClick={() => {
+                                        setCreateData({
+                                            ...createData,
+                                            name: item.name,
+                                            badgeId: item.badgeId,
+                                        });
+                                        setActiveName(item.name);
+                                    }}
+                                >
+                                    <img
+                                        className="BadgeTodo"
+                                        src={getBadgeImage(item.badgeId)}
+                                    />
+                                    <div className="nameTodo">{item.name}</div>
+                                </button>
+                            );
+                        })}
+                    </div>
+                </section> */}
                 <Button onClick={onClickCreate} type={"save"} text={"저장"} />
             </Modal>
         </div>

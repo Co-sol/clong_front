@@ -1,32 +1,36 @@
-const DropDown = () => {
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
+
+const DropDown = ({ style }) => {
     return (
-        <>
-            <div class="btn-group">
-                <button
-                    class="btn btn-secondary btn-sm dropdown-toggle"
-                    type="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                >
-                    Small button
-                </button>
-                <ul class="dropdown-menu">...</ul>
-            </div>
-            <div class="btn-group">
-                <button class="btn btn-secondary btn-sm" type="button">
-                    Small split button
-                </button>
-                <button
-                    type="button"
-                    class="btn btn-sm btn-secondary dropdown-toggle dropdown-toggle-split"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                >
-                    <span class="visually-hidden">Toggle Dropdown</span>
-                </button>
-                <ul class="dropdown-menu">...</ul>
-            </div>
-        </>
+        <div class="dropdown-center">
+            <button
+                class="btn btn-secondary dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                style={{ ...style }}
+            >
+                Centered dropdown
+            </button>
+            <ul class="dropdown-menu">
+                <li>
+                    <a class="dropdown-item" href="#">
+                        Action
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="#">
+                        Action two
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="#">
+                        Action three
+                    </a>
+                </li>
+            </ul>
+        </div>
     );
 };
 

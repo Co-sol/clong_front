@@ -37,7 +37,7 @@ const GListAddModal = ({ isAddMode, setIsAddMode, selectedPlace }) => {
     const onClickCreate = () => {
         // 유효성 검사 예: toClean 또는 name이 없으면 추가 중단
         if (!createData.toClean || !createData.name) {
-            alert("to-clean 내용과 담당자를 모두 선택해주세요.");
+            alert("to-clean 내용과 담당자를 모두 입력해주세요.");
             return;
         }
 
