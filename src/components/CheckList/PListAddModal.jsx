@@ -59,8 +59,8 @@ const PListAddModal = ({ isAddMode, setIsAddMode, personalData }) => {
                 contentStyle={{
                     width: "39vw",
                     maxWidth: "561.6px",
-                    height: "44vw",
-                    maxHeight: "633.6px",
+                    height: "40vw",
+                    maxHeight: "576px",
                     display: "flex",
                     flexDirection: "column",
                     justifyContent: "center",
@@ -71,6 +71,7 @@ const PListAddModal = ({ isAddMode, setIsAddMode, personalData }) => {
             >
                 <div className="selectedPlace">{`${personData[0].name}의 방`}</div>
                 <section className="place_section">
+                    <div className="place_text">장소를 선택하세요</div>
                     <DropDown
                         title={"장소 선택"}
                         className="placeDropdown"

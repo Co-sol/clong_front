@@ -17,7 +17,7 @@
     width: min(9vw, 129.8px);
     height: min(3.2vw, 46.1px);
     border-radius: 80px;
-    margin-bottom: min(2.4vw, 34.656px);
+    margin-bottom: min(3vw, 43.2px);
 
     font-size: min(1.7vw, 25px);
     font-weight: bold;
@@ -26,6 +26,16 @@
 }
 
 /* 장소 dropdown (jsx 파일에 직접 적음)*/
+.PListAddModal .place_section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: min(1vw, 14.4px);
+}
+.PListAddModal .place_text {
+    margin-left: 0;
+}
 
 /* 할 일(to-clean) */
 .PListAddModal .createToClean {
