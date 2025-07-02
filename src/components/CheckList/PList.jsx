@@ -12,7 +12,6 @@ const PList = () => {
     const [isEditMode, setIsEditMode] = useState(false);
     const [text, setText] = useState("편집");
     const [isAddMode, setIsAddMode] = useState(false);
-    const selectedPlace = "화장실";
 
     // 나중에 사이드바 선택된 애들로 바꿀것
     const selectedName = "A";
@@ -61,8 +60,7 @@ const PList = () => {
                     <PListAddModal
                         isAddMode={isAddMode}
                         setIsAddMode={setIsAddMode}
-                        selectedName={selectedName}
-                        selectedBadgeId={selectedBadgeId}
+                        personalData={personalData}
                     />
                 )}
             </div>

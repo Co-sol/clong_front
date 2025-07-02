@@ -12,27 +12,21 @@ import DatePicker from "react-datepicker";
 
 import { ko } from "date-fns/locale";
 import { registerLocale } from "react-datepicker";
-import DropDown from "../DropDown";
+import DropDown from "./DropDown";
 
 registerLocale("ko", ko);
 
-const PListAddModal = ({
-    isAddMode,
-    setIsAddMode,
-    selectedName,
-    selectedBadgeId,
-}) => {
+const PListAddModal = ({ isAddMode, setIsAddMode, personalData }) => {
     const { onCreate } = useContext(toCleanDispatchContext);
     const { personData } = useContext(toCleanStateContext);
-    const [activeName, setActiveName] = useState("");
     const [selectedDate, setSelectedDate] = useState(null);
     const [createData, setCreateData] = useState({
         target: "group",
         place: "",
         toClean: "",
         deadLine: "미정",
-        name: selectedName,
-        badgeId: selectedBadgeId,
+        name: personData[0].name,
+        badgeId: personData[0].badgeId,
     });
 
     const onClickCloseModal = () => {
@@ -75,13 +69,21 @@ const PListAddModal = ({
                     position: "relative",
                 }}
             >
-                <div className="selectedPlace">{`${selectedName}의 방`}</div>
+                <div className="selectedPlace">{`${personData[0].name}의 방`}</div>
                 <section className="place_section">
                     <DropDown
+                        title={"장소 선택"}
                         className="placeDropdown"
+                        data={personalData}
                         style={{
-                            backgroundColor: "rgb(139, 226, 182)",
+                            backgroundColor: "#f5f5f5",
                             border: "none",
+                            marginBottom: "2vw",
+                            width: "130px",
+                            height: "43px",
+
+                            color: "rgb(33, 37, 41)",
+                            fontFamily: "sans-serif, Noto Sans KR",
                         }}
                     />
                 </section>

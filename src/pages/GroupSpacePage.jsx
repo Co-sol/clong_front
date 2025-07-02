@@ -68,6 +68,33 @@ const checkListMockData = [
     {
         target: "person",
         id: 4,
+        name: "A",
+        badgeId: 1,
+        place: "침대",
+        toClean: "침대 이불 게기",
+        deadLine: "D-2",
+    },
+    {
+        target: "person",
+        id: 5,
+        name: "A",
+        badgeId: 1,
+        place: "바닥",
+        toClean: "바닥 쓸기",
+        deadLine: "D-2",
+    },
+    {
+        target: "person",
+        id: 6,
+        name: "A",
+        badgeId: 1,
+        place: "책장",
+        toClean: "책 정리",
+        deadLine: "D-2",
+    },
+    {
+        target: "person",
+        id: 7,
         name: "B",
         badgeId: 2,
         place: "침대",
@@ -100,7 +127,7 @@ export const toCleanDispatchContext = createContext();
 function GroupSpacePage() {
     const [checkListData, dispatch] = useReducer(reducer, checkListMockData);
     const [personData, setPersonData] = useState(personMockData);
-    const idRef = useRef(5);
+    const idRef = useRef(8);
 
     const onCreate = (target, name, badgeId, place, toClean, deadLine) => {
         dispatch({
