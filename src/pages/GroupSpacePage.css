@@ -6,7 +6,6 @@
 .GroupSpace .GroupSpaceContent {
     display: flex;
     gap: 2.3vw;
-    /* height: 100%; <- sidebar height를 html끝까지 만들고 싶으면 사용*/
 }
 
 .GroupSpace .sidebar {
