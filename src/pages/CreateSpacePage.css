@@ -236,11 +236,13 @@ body {
   box-sizing: border-box;
   transition: border 0.15s;
   vertical-align: middle;
+  text-align: center;
 }
 
 .modal-input:focus {
   border: 1.5px solid #aee9d1;
   outline: none;
+  box-shadow: 0 0 0 1px #aee9d1;
 }
 
 .modal-next {

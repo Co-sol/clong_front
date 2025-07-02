@@ -115,6 +115,7 @@ function CreateSpacePage() {
             modalShape={modalShape}
             shapeDirection={shapeDirection}
             spaceName={spaceName}
+            shapeSize={shapeSize} // 추가
             onNext={handleStep3}
             onBack={handleBack}
           />

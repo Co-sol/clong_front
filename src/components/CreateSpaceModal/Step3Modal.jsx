@@ -1,4 +1,25 @@
-function Step3Modal({ modalShape, shapeDirection, spaceName, onNext, onBack }) {
+function Step3Modal({
+  modalShape,
+  shapeDirection,
+  spaceName,
+  shapeSize, // 추가
+  onNext,
+  onBack,
+}) {
+  let w = modalShape.w;
+  let h = modalShape.h;
+  if (shapeDirection === "horizontal") {
+    w = modalShape.h;
+    h = modalShape.w;
+  }
+
+  // 미리보기 도형 style 계산
+  const baseWidth = 70 * w;
+  const baseHeight = 70 * h;
+  const scale = shapeSize === 1 ? 0.7 : 1.0;
+  const previewWidth = baseWidth * scale;
+  const previewHeight = baseHeight * scale;
+
   return (
     <>
       <button className="modal-back" onClick={onBack}>
@@ -12,12 +33,8 @@ function Step3Modal({ modalShape, shapeDirection, spaceName, onNext, onBack }) {
       <div
         className="modal-shape-preview"
         style={{
-          width:
-            60 *
-            (shapeDirection === "horizontal" ? modalShape.h : modalShape.w),
-          height:
-            60 *
-            (shapeDirection === "horizontal" ? modalShape.w : modalShape.h),
+          width: previewWidth,
+          height: previewHeight,
           margin: "30px auto 20px",
           background: "#EBFEF4",
           border: "2px solid #8BE2B6",
@@ -25,7 +42,10 @@ function Step3Modal({ modalShape, shapeDirection, spaceName, onNext, onBack }) {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          fontSize: 18,
+          fontSize: 17,
+
+          whiteSpace: "nowrap",
+          overflow: "visible",
         }}
       >
         {spaceName}
