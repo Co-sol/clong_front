@@ -58,12 +58,12 @@ const PListAddModal = ({ isAddMode, setIsAddMode, personalData }) => {
                 onClose={onClickCloseModal}
                 contentStyle={{
                     width: "37vw",
-                    maxWidth: "532.8px",
-                    height: "40vw",
-                    maxHeight: "576px",
+                    // maxWidth: "532.8px",
+                    height: "38vw",
+                    // maxHeight: "518.4px",
 
-                    paddingBottom: "0.6vw",
-                    maxPaddingBottom: "8.64px",
+                    paddingTop: "5vw",
+                    paddingBottom: "3vw",
 
                     display: "flex",
                     flexDirection: "column",
@@ -86,7 +86,7 @@ const PListAddModal = ({ isAddMode, setIsAddMode, personalData }) => {
                             backgroundColor: "#f5f5f5",
                             border: "none",
                             borderRadius: "15px",
-                            marginBottom: "2.7vw",
+                            marginBottom: "1.5vw",
                             width: "130px",
                             height: "43px",
 
