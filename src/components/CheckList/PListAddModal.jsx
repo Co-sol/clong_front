@@ -85,6 +85,7 @@ const PListAddModal = ({ isAddMode, setIsAddMode, personalData }) => {
                         style={{
                             backgroundColor: "#f5f5f5",
                             border: "none",
+                            borderRadius: "15px",
                             marginBottom: "2.7vw",
                             width: "130px",
                             height: "43px",

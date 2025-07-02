@@ -102,8 +102,8 @@
 
 /* 저장 버튼 */
 .PListAddModal .Button_save {
-    margin-left: 22.7vw;
-    margin-bottom: 1vw;
+    margin-left: 25.2vw;
+    margin-bottom: 0.5vw;
 
     width: min(7vw, 100.8px);
     height: min(3.2vw, 46px);
