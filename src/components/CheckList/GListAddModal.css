@@ -34,7 +34,7 @@
 }
 
 .GListAddModal .toClean_text {
-    font-size: 1rem;
+    font-size: min(1.11vw, 1rem);
     text-align: center;
 }
 
@@ -49,7 +49,7 @@
     resize: none;
     overflow: hidden;
 
-    font-size: 1.1rem;
+    font-size: min(1.22vw, 1.1rem);
     line-height: min(3.2vw, 46px);
     text-align: center;
 }
@@ -66,7 +66,7 @@
 }
 
 .GListAddModal .deadLine_text {
-    font-size: 1rem;
+    font-size: min(1.11vw, 1rem);
     text-align: center;
     margin-left: 0;
 }
@@ -80,7 +80,7 @@
     margin-bottom: min(24.53px, 1.7vw);
 
     text-align: center;
-    font-size: 1.2rem;
+    font-size: min(1.33vw, 1.2rem);
     line-height: min(3.6vw, 52px);
 }
 
@@ -93,7 +93,7 @@
 }
 
 .GListAddModal .personTodo_text {
-    font-size: 1rem;
+    font-size: min(1.11vw, 1rem);
     text-align: center;
 }
 
@@ -134,7 +134,7 @@
 }
 
 .GListAddModal .selectPerson .personTodo .nameTodo {
-    font-size: 1rem;
+    font-size: min(1.11vw, 1rem);
     text-align: center;
 }
 
