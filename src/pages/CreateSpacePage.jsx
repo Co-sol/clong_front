@@ -342,11 +342,7 @@ function CreateSpacePage() {
                                 left: hoverCell.col,
                                 color,
                               };
-                              console.log("새 도형 생성:", newShape);
-                              console.log(
-                                "생성된 space_id:",
-                                newShape.space_id
-                              );
+
                               setPlacedShapes([...placedShapes, newShape]);
                               setNextSpaceId(nextSpaceId + 1);
                               setPendingShape(null);
@@ -395,12 +391,7 @@ function CreateSpacePage() {
                             }}
                             onClick={(e) => {
                               e.stopPropagation();
-                              console.log("삭제할 도형:", placedShape);
-                              console.log(
-                                "삭제할 space_id:",
-                                placedShape.space_id
-                              );
-                              console.log("현재 모든 도형:", placedShapes);
+
                               setPlacedShapes((prevShapes) =>
                                 prevShapes.filter(
                                   (shape) =>
@@ -440,14 +431,8 @@ function CreateSpacePage() {
               <button
                 className="save-btn"
                 onClick={() => {
-                  console.log("=== 백엔드 전송용 데이터 ===");
                   const backendData = placedShapes.map((shape) =>
                     formatForBackend(shape)
-                  );
-                  console.log("전체 도형 데이터:", backendData);
-                  console.log(
-                    "JSON 형태:",
-                    JSON.stringify(backendData, null, 2)
                   );
 
                   // TODO: 백엔드 API 호출
