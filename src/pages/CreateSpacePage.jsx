@@ -39,6 +39,28 @@ const SHAPE_COLORS = [
   "#24945C",
 ];
 
+// 백엔드 연동
+const calculateEndCoordinates = (shape) => {
+  return {
+    end_x: shape.start_x + shape.w,
+    end_y: shape.start_y + shape.h,
+  };
+};
+
+const formatForBackend = (shape) => {
+  const endCoords = calculateEndCoordinates(shape);
+  return {
+    // group_id는 아직 없음
+    space_id: shape.space_id,
+    space_name: shape.space_name,
+    space_type: shape.space_type,
+    start_x: shape.start_x,
+    start_y: shape.start_y,
+    end_x: endCoords.end_x,
+    end_y: endCoords.end_y,
+  };
+};
+
 function CreateSpacePage() {
   // 그리드에 배치된 도형 배열 정보
   const [placedShapes, setPlacedShapes] = useState([]);
@@ -162,7 +184,7 @@ function CreateSpacePage() {
             modalShape={modalShape}
             shapeDirection={shapeDirection}
             spaceName={spaceName}
-            shapeSize={shapeSize} // 추가
+            shapeSize={shapeSize}
             onNext={handleStep3}
             onBack={handleBack}
             setPreviewShape={setPreviewShape}
@@ -306,13 +328,19 @@ function CreateSpacePage() {
                                 SHAPE_COLORS[
                                   placedShapes.length % SHAPE_COLORS.length
                                 ];
-                              // 도형 배치
+                              // API 연동
                               const newShape = {
                                 ...pendingShape,
+                                // 백엔드 API 명세서 변수명 (루트 공간)
+                                space_id: nextSpaceId,
+                                space_name: pendingShape.name,
+                                space_type: pendingShape.type,
+                                start_x: hoverCell.col,
+                                start_y: hoverCell.row,
+                                // 기존 UI용 필드
                                 top: hoverCell.row,
                                 left: hoverCell.col,
                                 color,
-                                space_id: nextSpaceId, // 순차적으로 0, 1, 2, 3... 부여
                               };
                               console.log("새 도형 생성:", newShape);
                               console.log(
@@ -320,7 +348,7 @@ function CreateSpacePage() {
                                 newShape.space_id
                               );
                               setPlacedShapes([...placedShapes, newShape]);
-                              setNextSpaceId(nextSpaceId + 1); // 다음 번호로 증가
+                              setNextSpaceId(nextSpaceId + 1);
                               setPendingShape(null);
                               setHoverCell(null);
                             }
@@ -409,7 +437,29 @@ function CreateSpacePage() {
               <div className="shape-row">
                 <ShapeButton shape={SHAPES[5]} onClick={handleShapeSelect} />
               </div>
-              <button className="save-btn">저장하기</button>
+              <button
+                className="save-btn"
+                onClick={() => {
+                  console.log("=== 백엔드 전송용 데이터 ===");
+                  const backendData = placedShapes.map((shape) =>
+                    formatForBackend(shape)
+                  );
+                  console.log("전체 도형 데이터:", backendData);
+                  console.log(
+                    "JSON 형태:",
+                    JSON.stringify(backendData, null, 2)
+                  );
+
+                  // TODO: 백엔드 API 호출
+                  // fetch('/api/spaces', {
+                  //   method: 'POST',
+                  //   headers: { 'Content-Type': 'application/json' },
+                  //   body: JSON.stringify(backendData)
+                  // });
+                }}
+              >
+                저장하기
+              </button>
             </div>
           </div>
         </div>
