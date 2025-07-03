@@ -48,6 +48,7 @@ const PListAddModal = ({ isAddMode, setIsAddMode, personalData }) => {
             createData.toClean,
             createData.deadLine
         );
+        console.log(createData);
         setIsAddMode(false);
     };
 
@@ -59,7 +60,7 @@ const PListAddModal = ({ isAddMode, setIsAddMode, personalData }) => {
                 contentStyle={{
                     width: "37vw",
                     // maxWidth: "532.8px",
-                    height: "38vw",
+                    height: "39vw",
                     // maxHeight: "518.4px",
 
                     paddingTop: "5vw",
@@ -86,7 +87,7 @@ const PListAddModal = ({ isAddMode, setIsAddMode, personalData }) => {
                             backgroundColor: "#f5f5f5",
                             border: "none",
                             borderRadius: "15px",
-                            marginBottom: "1.5vw",
+                            marginBottom: "2.1vw",
                             width: "130px",
                             height: "43px",
 
@@ -128,6 +129,7 @@ const PListAddModal = ({ isAddMode, setIsAddMode, personalData }) => {
                             setCreateData((prev) => ({
                                 ...prev,
                                 deadLine: `${
+                                    // d_day면 D-day 출력, 아니면 'D-N' 출력
                                     d_day > 0 ? `D-${d_day}` : "D-day"
                                 }`,
                             }));

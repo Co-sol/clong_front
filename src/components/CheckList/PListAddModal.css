@@ -14,14 +14,14 @@
 /* 장소 */
 .PListAddModal .selectedPlace {
     background-color: #b0ebcd;
-    width: 8.5vw;
-    height: 3.05vw;
+    width: 8.7vw;
+    height: 3vw;
     border-radius: 80px;
-    margin-bottom: 2.5vw;
+    margin-bottom: 2.77vw;
 
     font-size: min(1.7vw, 25px);
     font-weight: bold;
-    line-height: min(43.2px, 3vw);
+    line-height: 3vw;
     text-align: center;
 }
 
@@ -43,7 +43,7 @@
     display: flex;
     flex-direction: column;
     gap: min(0.7vw, 10.08px);
-    margin-bottom: min(1.5vw, 21.6px);
+    margin-bottom: min(2vw, 28.8px);
 }
 
 .PListAddModal .toClean_text {
@@ -61,7 +61,6 @@
     height: min(3.5vw, 50.4px);
     padding-left: min(1.6vw, 23.04px);
     padding-right: min(1.6vw, 23.04px);
-    margin-bottom: 0vw;
     margin-bottom: 0vw;
 
     resize: none;
@@ -107,14 +106,14 @@
 /* 저장 버튼 */
 .PListAddModal .Button_save {
     margin-left: 23.5vw;
-    margin-bottom: 1vw;
+    margin-bottom: 1.3vw;
     margin-top: 0.3vw;
 
     width: 8.1vw;
-    height: min(3.2vw, 46px);
+    height: 48px;
     border-radius: 15px;
 
-    font-size: min(1.7vw, 24.548px);
+    font-size: 22.4px;
     color: white;
     font-weight: bold;
     line-height: min(3.2vw, 46px);

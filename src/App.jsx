@@ -41,34 +41,6 @@ function App() {
             <Route path="*" element={<div>잘못된 페이지입니다.</div>} />
         </Routes>
     );
-    return (
-        <>
-            <Routes>
-                <Route path="/" element={<LoginPage />} />
-                <Route path="/noGroup" element={<NoGroupPage />} />
-                <Route path="/createGroup" element={<CreateGroupPage />} />
-                <Route path="/tutorial" element={<TutorialPage />} />
-                <Route path="/createSpace" element={<CreateSpacePage />} />
-                <Route path="/groupSpace" element={<GroupSpacePage />} />
-                <Route path="/groupHome" element={<GroupHomePage />} />
-                <Route
-                    path="/redirect"
-                    element={
-                        isLoggedIn ? (
-                            hasGroup ? (
-                                <Navigate to="/createSpace" replace />
-                            ) : (
-                                <Navigate to="/createGroup" replace />
-                            )
-                        ) : (
-                            <Navigate to="/" replace />
-                        )
-                    }
-                />
-                <Route path="*" element={<div>잘못된 페이지입니다.</div>} />
-            </Routes>
-        </>
-    );
 }
 
 export default App;
