@@ -83,6 +83,8 @@ const PListAddModal = ({ isAddMode, setIsAddMode, personalData }) => {
                         title={"장소 선택"}
                         className="placeDropdown"
                         data={personalData}
+                        setCreateData={setCreateData}
+                        createData={createData}
                         style={{
                             backgroundColor: "#f5f5f5",
                             border: "none",

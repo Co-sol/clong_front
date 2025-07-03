@@ -1,7 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
-const DropDown = ({ title, style, data }) => {
+const DropDown = ({ title, style, data, setCreateData, createData }) => {
     return (
         <div class="dropdown-center">
             <button
@@ -11,11 +11,19 @@ const DropDown = ({ title, style, data }) => {
                 aria-expanded="false"
                 style={{ ...style }}
             >
-                {title}
+                {createData.place || title}
             </button>
             <ul class="dropdown-menu">
                 {data.map((item) => (
-                    <li class="text-center">
+                    <li
+                        class="text-center"
+                        onClick={() => {
+                            setCreateData({
+                                ...createData,
+                                place: item.place,
+                            });
+                        }}
+                    >
                         <a class="dropdown-item" href="#">
                             {item.place}
                         </a>
