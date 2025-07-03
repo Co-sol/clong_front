@@ -14,13 +14,13 @@
 
 .PListItem .place {
     font-size: min(1.1vw, 15.84px);
-    margin-left: min(1.5vw, 21.6px);
+    margin-left: min(1.2vw, 17.28px);
     margin-right: min(1vw, 14.4px);
 }
 
 .PListItem .toClean {
     font-size: min(1.1vw, 15.84px);
-    max-width: min(6.25vw, 90px);
+    max-width: 11vw;
 }
 
 .PListItem .deadLine {

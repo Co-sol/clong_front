@@ -44,7 +44,7 @@
 
 .PList .profile {
     text-align: center;
-    margin-bottom: min(2.08vw, 29.95px);
+    margin-bottom: min(2.1vw, 30.24px);
 }
 
 .PList .profile > img {
@@ -67,15 +67,15 @@
 }
 
 .PList .place_text {
-    margin-left: min(5vw, 72px); /*3.6vw; */
+    margin-left: min(4.85vw, 72px); /*3.6vw; */
 }
 
 .PList .toclean_text {
-    margin-left: min(3.3vw, 47.52px);
+    margin-left: min(3.1vw, 44.64px);
 }
 
 .PList .deadLine_text {
-    margin-left: min(7.5vw, 108px);
+    margin-left: min(7.9vw, 113.76px);
 }
 
 .PList .scrollBar {

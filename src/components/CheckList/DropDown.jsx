@@ -31,31 +31,36 @@ const DropDown = ({ title, targetPlaceData, setCreateData, createData }) => {
 
             <Dropdown.Menu
                 className="text-center w-100"
+                drop="down-centered"
                 style={{
                     backgroundColor: "transparent",
                     border: "none",
                 }}
             >
-                <div style={{ width: "8vw", height: "50vw" }}>
-                    {targetPlaceData.map((item) => (
-                        <Dropdown.Item
-                            key={item.place}
-                            onClick={() =>
-                                setCreateData({
-                                    ...createData,
-                                    place: item.place,
-                                })
-                            }
-                            style={{
-                                backgroundColor: "#ffffff",
-                                color: "black",
-                                transform: "translateX(-150px)",
-                            }}
-                        >
-                            {item.place}
-                        </Dropdown.Item>
-                    ))}
-                </div>
+                {targetPlaceData.map((item) => (
+                    <Dropdown.Item
+                        key={item.place}
+                        onClick={() =>
+                            setCreateData({
+                                ...createData,
+                                place: item.place,
+                            })
+                        }
+                        style={{
+                            backgroundColor: "#ffffff",
+                            color: "black",
+                            transform: "translate(-124.9px,-7px)",
+
+                            width: "120px",
+                            height: "40px",
+                            border: "1px solid rgb(210,210,210)",
+
+                            paddingTop: "7px",
+                        }}
+                    >
+                        {item.place}
+                    </Dropdown.Item>
+                ))}
             </Dropdown.Menu>
         </Dropdown>
     );
