@@ -12,7 +12,7 @@
     font-size: min(24px, 1.67vw); /* 24px */
     text-align: center;
     padding-top: min(43px, 3vw); /* 반응형 간격 */
-    padding-bottom: min(2vw, 28.8px);
+    padding-bottom: min(1.8vw, 25.92px);
     margin-bottom: 0;
     font-weight: bold;
 }
@@ -27,10 +27,14 @@
     font-size: min(16px, 1.1vw);
     color: white;
     cursor: pointer;
+
+    font-weight: bold;
 }
 
 .PList .Button_add2 {
     font-size: min(40.3px, 2.8vw); /* 반응형 텍스트 */
+    font-weight: bold;
+
     width: min(417.312px, 28.9vw);
     height: min(73.9px, 5.1vw);
     border-radius: 15px;
@@ -75,7 +79,7 @@
 }
 
 .PList .deadLine_text {
-    margin-left: min(7.9vw, 113.76px);
+    margin-left: min(7.8vw, 112.32px);
 }
 
 .PList .scrollBar {

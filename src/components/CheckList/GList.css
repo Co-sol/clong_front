@@ -24,13 +24,17 @@
     width: min(79.46px, 5.5vw);
     height: min(40.45px, 2.8vw);
     border-radius: 15px;
-    font-size: min(16px, 1.1vw);
     color: white;
     cursor: pointer;
+
+    font-size: min(16px, 1.1vw);
+    font-weight: bold;
 }
 
 .GList .Button_add1 {
     font-size: min(40.3px, 2.8vw); /* 반응형 텍스트 */
+    font-weight: bold;
+
     width: min(417.312px, 28.9vw);
     height: min(73.9px, 5.1vw);
     border-radius: 15px;

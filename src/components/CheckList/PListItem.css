@@ -36,8 +36,10 @@
     border-radius: 10px;
     position: absolute;
     right: min(1vw, 14.4px);
-    font-size: min(0.9vw, 12.96px);
     color: white;
+
+    font-size: min(0.9vw, 12.96px);
+    font-weight: bold;
 }
 
 .PListItem .Button_delete {

@@ -46,7 +46,9 @@
     border-radius: 10px;
     position: absolute;
     right: min(10px, 0.7vw);
-    font-size: 22px;
     color: rgb(103, 103, 103);
     background-color: transparent;
+
+    font-size: 22px;
+    font-weight: bold;
 }
