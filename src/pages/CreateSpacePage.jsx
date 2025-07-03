@@ -6,6 +6,7 @@ import Step2Modal from "../components/CreateSpaceModal/Step2Modal";
 import Step3Modal from "../components/CreateSpaceModal/Step3Modal";
 import { FaTrashAlt } from "react-icons/fa";
 import "./CreateSpacePage.css";
+import { useNavigate } from "react-router-dom";
 
 const GRID_SIZE = 10;
 const GRID_GAP = 0.8;
@@ -74,6 +75,8 @@ function CreateSpacePage() {
   const [pendingShape, setPendingShape] = useState(null); // 실제 배치할 shape
   const [hoverCell, setHoverCell] = useState(null); // 그리드 패널 - 미리보기
   const [previewShape, setPreviewShape] = useState(null);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (!pendingShape) {
@@ -429,17 +432,23 @@ function CreateSpacePage() {
               </div>
               <button
                 className="save-btn"
-                onClick={() => {
+                onClick={async () => {
                   const backendData = placedShapes.map((shape) =>
                     formatForBackend(shape)
                   );
-
                   // TODO: 백엔드 API 호출
-                  // fetch('/api/spaces', {
-                  //   method: 'POST',
-                  //   headers: { 'Content-Type': 'application/json' },
-                  //   body: JSON.stringify(backendData)
-                  // });
+                  // try {
+                  //   await fetch('/api/spaces', {
+                  //     method: 'POST',
+                  //     headers: { 'Content-Type': 'application/json' },
+                  //     body: JSON.stringify(backendData)
+                  //   });
+                  //   navigate("/groupSpace");
+                  // } catch (e) {
+                  //   alert("저장에 실패했습니다.");
+                  // }
+                  // 임시로 바로 이동
+                  navigate("/groupSpace");
                 }}
               >
                 저장하기
