@@ -119,6 +119,7 @@ const PListAddModal = ({ isAddMode, setIsAddMode, personalData }) => {
                         dateFormat="yyyy-MM-dd"
                         selected={selectedDate}
                         onChange={(date) => {
+                            // 선택한 날짜와 오늘 날짜 빼서 'ms(getTime)->일' 단위로 변환
                             const d_day = Math.ceil(
                                 (date.getTime() - new Date().getTime()) /
                                     (1000 * 60 * 60 * 24)
