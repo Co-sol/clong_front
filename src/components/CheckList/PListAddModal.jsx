@@ -16,17 +16,12 @@ import DropDown from "./DropDown";
 
 registerLocale("ko", ko);
 
-const PListAddModal = ({
-    isAddMode,
-    setIsAddMode,
-    targetPersonData,
-    targetPlaceData,
-}) => {
+const PListAddModal = ({ isAddMode, setIsAddMode, targetPlaceData }) => {
     const { onCreate } = useContext(toCleanDispatchContext);
     const { personData } = useContext(toCleanStateContext);
     const [selectedDate, setSelectedDate] = useState(null);
     const [createData, setCreateData] = useState({
-        target: "group",
+        target: "person",
         place: "",
         toClean: "",
         deadLine: "미정",
@@ -53,6 +48,7 @@ const PListAddModal = ({
             createData.toClean,
             createData.deadLine
         );
+        console.log(createData);
         console.log(createData);
         setIsAddMode(false);
     };
@@ -90,17 +86,6 @@ const PListAddModal = ({
                         targetPlaceData={targetPlaceData}
                         setCreateData={setCreateData}
                         createData={createData}
-                        style={{
-                            backgroundColor: "#f5f5f5",
-                            border: "none",
-                            borderRadius: "15px",
-                            marginBottom: "2.1vw",
-                            width: "130px",
-                            height: "43px",
-
-                            color: "rgb(33, 37, 41)",
-                            fontFamily: "sans-serif, Noto Sans KR",
-                        }}
                     />
                 </section>
                 <section className="createToClean">
@@ -144,37 +129,6 @@ const PListAddModal = ({
                         shouldCloseOnSelect={false}
                     />
                 </section>
-                {/* <section className="selectPerson">
-                    <div className="personTodo_text">담당자</div>
-                    <div className="personTodo">
-                        {personData.map((item) => {
-                            return (
-                                <button
-                                    className={`hover_${
-                                        activeName === item.name
-                                            ? "active"
-                                            : "button"
-                                    }`}
-                                    key={item.name}
-                                    onClick={() => {
-                                        setCreateData({
-                                            ...createData,
-                                            name: item.name,
-                                            badgeId: item.badgeId,
-                                        });
-                                        setActiveName(item.name);
-                                    }}
-                                >
-                                    <img
-                                        className="BadgeTodo"
-                                        src={getBadgeImage(item.badgeId)}
-                                    />
-                                    <div className="nameTodo">{item.name}</div>
-                                </button>
-                            );
-                        })}
-                    </div>
-                </section> */}
                 <Button onClick={onClickCreate} type={"save"} text={"저장"} />
             </Modal>
         </div>
