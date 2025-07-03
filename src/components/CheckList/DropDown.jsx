@@ -1,10 +1,21 @@
 import { Dropdown } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { useEffect, useState } from "react";
 
 const DropDown = ({ title, targetPlaceData, setCreateData, createData }) => {
-    const isWideScreen =
-        typeof window !== "undefined" && window.innerWidth >= 1440;
+    const [isWideScreen, setIsWideScreen] = useState(null);
 
+    useEffect(() => {
+        // 브라우저 너비에 따라 상태 설정
+        const handleResize = () => {
+            setIsWideScreen(window.innerWidth >= 1440);
+        };
+
+        handleResize(); // 초기 1회 실행
+        window.addEventListener("resize", handleResize);
+
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
     return (
         <Dropdown
             style={{
