@@ -9,10 +9,8 @@ import CreateGroupPage from "./pages/CreateGroupPage";
 import TutorialPage from "./pages/TutorialPage";
 import CreateSpacePage from "./pages/CreateSpacePage";
 import NoGroupPage from "./pages/NoGroupPage";
-import { useAuthStatus } from "./hooks/useAuthStatus";
-
-import SignupPage from "./pages/SignupPage";
 import GroupSpacePage from "./pages/GroupSpacePage";
+import { useAuthStatus } from "./hooks/useAuthStatus";
 
 function App() {
   const { isLoggedIn, hasGroup } = useAuthStatus();
