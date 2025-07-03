@@ -7,7 +7,7 @@ import GroupHomePage from "./pages/GroupHomePage";
 import NoGroupPage from "./pages/NoGroupPage";
 import { useAuthStatus } from "./hooks/useAuthStatus";
 import SignupPage from "./pages/SignupPage";
-import GroupSpacePage from "./Pages/GroupSpacePage";
+import GroupSpacePage from "./pages/GroupSpacePage";
 
 function App() {
     const { isLoggedIn, hasGroup } = useAuthStatus();

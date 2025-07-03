@@ -1,36 +1,63 @@
+import { Dropdown } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
-const DropDown = ({ title, style, data, setCreateData, createData }) => {
+const DropDown = ({ title, targetPlaceData, setCreateData, createData }) => {
     return (
-        <div class="dropdown-center">
-            <button
-                class="btn btn-secondary dropdown-toggle"
-                type="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-                style={{ ...style }}
+        <Dropdown
+            style={{
+                marginBottom: "2.1vw",
+                width: "130px",
+                height: "43px",
+                fontFamily: "sans-serif, Noto Sans KR",
+            }}
+        >
+            <Dropdown.Toggle
+                id="dropdown-basic"
+                className="w-100"
+                style={{
+                    backgroundColor: "#F5F5F5",
+                    color: "rgb(117,117,117)",
+                    border: "none",
+                    borderRadius: "15px",
+
+                    height: "45px",
+                    width: "20px",
+
+                    fontSize: "1.1rem",
+                }}
             >
                 {createData.place || title}
-            </button>
-            <ul class="dropdown-menu">
-                {data.map((item) => (
-                    <li
-                        class="text-center"
-                        onClick={() => {
-                            setCreateData({
-                                ...createData,
-                                place: item.place,
-                            });
-                        }}
-                    >
-                        <a class="dropdown-item" href="#">
+            </Dropdown.Toggle>
+
+            <Dropdown.Menu
+                className="text-center w-100"
+                style={{
+                    backgroundColor: "transparent",
+                    border: "none",
+                }}
+            >
+                <div style={{ width: "8vw", height: "50vw" }}>
+                    {targetPlaceData.map((item) => (
+                        <Dropdown.Item
+                            key={item.place}
+                            onClick={() =>
+                                setCreateData({
+                                    ...createData,
+                                    place: item.place,
+                                })
+                            }
+                            style={{
+                                backgroundColor: "#ffffff",
+                                color: "black",
+                                transform: "translateX(-150px)",
+                            }}
+                        >
                             {item.place}
-                        </a>
-                    </li>
-                ))}
-            </ul>
-        </div>
+                        </Dropdown.Item>
+                    ))}
+                </div>
+            </Dropdown.Menu>
+        </Dropdown>
     );
 };
 

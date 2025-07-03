@@ -8,7 +8,7 @@ import PListAddModal from "./PListAddModal";
 import { getBadgeImage } from "../../utils/get-badge-images";
 
 const PList = () => {
-    const { checkListData } = useContext(toCleanStateContext);
+    const { checkListData, placeData } = useContext(toCleanStateContext);
     const [isEditMode, setIsEditMode] = useState(false);
     const [text, setText] = useState("편집");
     const [isAddMode, setIsAddMode] = useState(false);
@@ -16,7 +16,12 @@ const PList = () => {
     // 나중에 사이드바 선택된 애들로 바꿀것
     const selectedName = "A";
     const selectedBadgeId = 1;
-    const personalData = checkListData.filter(
+    const targetPersonData = checkListData.filter(
+        (item) =>
+            item.target === "person" &&
+            String(item.name) === String(selectedName)
+    );
+    const targetPlaceData = placeData.filter(
         (item) =>
             item.target === "person" &&
             String(item.name) === String(selectedName)
@@ -34,8 +39,8 @@ const PList = () => {
         });
     };
 
-    // 어짜피 personalData는 1명에 대한 data기에 badgeId가 동일할거라 personalData[0]으로 통일시킴
-    // img에 getBadgeImage(personalData[0].badgeId)로 데이터 불러오니까 item 삭제했을 때, 불러올 객체가 삭제되서 오류난거
+    // 어짜피 targetPersonData는 1명에 대한 data기에 badgeId가 동일할거라 targetPersonData[0]으로 통일시킴
+    // img에 getBadgeImage(targetPersonData[0].badgeId)로 데이터 불러오니까 item 삭제했을 때, 불러올 객체가 삭제되서 오류난거
     // selectedBadgeId = 1; 따로 정해줘서 해결 (나중에 사이드바에서 클릭한거로 바꾸면 되니까)
     return (
         <div className="PList">
@@ -50,7 +55,7 @@ const PList = () => {
                 <div className="deadLine_text">마감기한</div>
             </section>
             <div className="scrollBar">
-                {personalData.map((item) => (
+                {targetPersonData.map((item) => (
                     <PListItem isEditMode={isEditMode} item={item} />
                 ))}
                 {isEditMode && (
@@ -60,7 +65,8 @@ const PList = () => {
                     <PListAddModal
                         isAddMode={isAddMode}
                         setIsAddMode={setIsAddMode}
-                        personalData={personalData}
+                        targetPersonData={targetPersonData}
+                        targetPlaceData={targetPlaceData}
                     />
                 )}
             </div>

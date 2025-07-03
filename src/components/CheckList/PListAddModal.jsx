@@ -16,7 +16,12 @@ import DropDown from "./DropDown";
 
 registerLocale("ko", ko);
 
-const PListAddModal = ({ isAddMode, setIsAddMode, personalData }) => {
+const PListAddModal = ({
+    isAddMode,
+    setIsAddMode,
+    targetPersonData,
+    targetPlaceData,
+}) => {
     const { onCreate } = useContext(toCleanDispatchContext);
     const { personData } = useContext(toCleanStateContext);
     const [selectedDate, setSelectedDate] = useState(null);
@@ -82,7 +87,7 @@ const PListAddModal = ({ isAddMode, setIsAddMode, personalData }) => {
                     <DropDown
                         title={"장소 선택"}
                         className="placeDropdown"
-                        data={personalData}
+                        targetPlaceData={targetPlaceData}
                         setCreateData={setCreateData}
                         createData={createData}
                         style={{

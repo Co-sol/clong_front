@@ -5,6 +5,54 @@ import GList from "../components/CheckList/GList";
 
 import { useState, useReducer, createContext, useRef } from "react";
 
+const placeMockData = [
+    {
+        target: "person",
+        name: "A",
+        place: "책상",
+    },
+    {
+        target: "person",
+        name: "A",
+        place: "침대",
+    },
+    {
+        target: "person",
+        name: "A",
+        place: "바닥",
+    },
+    {
+        target: "person",
+        name: "A",
+        place: "책장",
+    },
+    {
+        target: "person",
+        name: "A",
+        place: "옷장",
+    },
+    {
+        target: "person",
+        name: "A",
+        place: "거울",
+    },
+    {
+        target: "person",
+        name: "B",
+        place: "화장실",
+    },
+    {
+        target: "person",
+        name: "B",
+        place: "침대",
+    },
+    {
+        target: "person",
+        name: "B",
+        place: "책상",
+    },
+];
+
 const personMockData = [
     {
         name: "A",
@@ -127,6 +175,7 @@ export const toCleanDispatchContext = createContext();
 function GroupSpacePage() {
     const [checkListData, dispatch] = useReducer(reducer, checkListMockData);
     const [personData, setPersonData] = useState(personMockData);
+    const [placeData, setplaceData] = useState(placeMockData);
     const idRef = useRef(8);
 
     const onCreate = (target, name, badgeId, place, toClean, deadLine) => {
@@ -174,7 +223,7 @@ function GroupSpacePage() {
                 value={{ onCreate, onUpdate, onDelete }}
             >
                 <toCleanStateContext.Provider
-                    value={{ checkListData, personData }}
+                    value={{ checkListData, personData, placeData }}
                 >
                     <Header />
                     <div className="GroupSpaceContent">
