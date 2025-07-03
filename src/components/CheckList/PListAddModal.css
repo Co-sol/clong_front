@@ -14,18 +14,18 @@
 /* 장소 */
 .PListAddModal .selectedPlace {
     background-color: #b0ebcd;
-    width: 8.7vw;
-    height: 3vw;
+    width: min(8.7vw, 125.28px);
+    height: min(3vw, 43.2px);
     border-radius: 80px;
-    margin-bottom: 2.77vw;
+    margin-bottom: min(2.77vw, 39.89px);
 
-    font-size: min(1.7vw, 25px);
+    font-size: min(1.7vw, 24.48px);
     font-weight: bold;
-    line-height: 3vw;
+    line-height: min(3vw, 43.2px);
     text-align: center;
 }
 
-/* 장소 dropdown (jsx 파일에 직접 적음)*/
+/* 장소 dropdown */
 .PListAddModal .place_section {
     display: flex;
     flex-direction: column;
@@ -48,7 +48,7 @@
 
 .PListAddModal .toClean_text {
     font-weight: 549;
-    font-size: 1rem;
+    font-size: min(1.11vw, 1rem); /* 1rem ≈ 1.11vw */
     text-align: center;
 }
 
@@ -57,7 +57,7 @@
     border: none;
     border-radius: 15px;
 
-    width: min(32vw, 462.1px);
+    width: min(32vw, 460.8px);
     height: min(3.5vw, 50.4px);
     padding-left: min(1.6vw, 23.04px);
     padding-right: min(1.6vw, 23.04px);
@@ -66,8 +66,8 @@
     resize: none;
     overflow: hidden;
 
-    font-size: 1.2rem;
-    line-height: min(3.2vw, 46px);
+    font-size: min(1.33vw, 1.2rem); /* 1.2rem ≈ 1.33vw */
+    line-height: min(3.2vw, 46.08px);
     text-align: center;
 }
 
@@ -79,42 +79,42 @@
     gap: min(0.6vw, 8.64px);
 }
 .PListAddModal .date {
-    width: min(12vw, 173px);
-    height: min(3vw, 43px);
+    width: min(12vw, 172.8px);
+    height: min(3vw, 43.2px);
 }
 
 .PListAddModal .deadLine_text {
     font-weight: 549;
-    font-size: 1rem;
+    font-size: min(1.11vw, 1rem);
     text-align: center;
     margin-left: 0;
 }
 
 .PListAddModal .DatePicker {
-    width: min(13vw, 187.7px);
-    height: min(3.6vw, 52px);
+    width: min(13vw, 187.2px);
+    height: min(3.6vw, 51.84px);
     border: none;
     border-radius: 15px;
     background-color: #f5f5f5;
-    margin-bottom: 2.7vw;
+    margin-bottom: min(2.7vw, 38.88px);
 
     text-align: center;
-    font-size: 1.2rem;
-    line-height: min(3.6vw, 52px);
+    font-size: min(1.33vw, 1.2rem);
+    line-height: min(3.6vw, 51.84px);
 }
 
 /* 저장 버튼 */
 .PListAddModal .Button_save {
-    margin-left: 23.5vw;
-    margin-bottom: 1.3vw;
-    margin-top: 0.3vw;
+    margin-left: min(23.5vw, 338.4px);
+    margin-bottom: min(1.3vw, 18.72px);
+    margin-top: min(0.3vw, 4.32px);
 
-    width: 8.1vw;
-    height: 48px;
+    width: min(8.1vw, 116.64px);
+    height: min(3.33vw, 48px); /* px로 이미 고정됨 */
     border-radius: 15px;
 
-    font-size: 22.4px;
+    font-size: min(1.56vw, 22.4px);
     color: white;
     font-weight: bold;
-    line-height: min(3.2vw, 46px);
+    line-height: min(3.2vw, 46.08px);
 }

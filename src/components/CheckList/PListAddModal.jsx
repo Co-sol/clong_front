@@ -60,13 +60,11 @@ const PListAddModal = ({ isAddMode, setIsAddMode, targetPlaceData }) => {
                 isOpen={isAddMode}
                 onClose={onClickCloseModal}
                 contentStyle={{
-                    width: "37vw",
-                    // maxWidth: "532.8px",
-                    height: "39vw",
-                    // maxHeight: "518.4px",
+                    width: "min(37vw, 532.8px)", // 37 * 14.4 = 532.8
+                    height: "min(39vw, 561.6px)", // 39 * 14.4 = 561.6
 
-                    paddingTop: "5vw",
-                    paddingBottom: "3vw",
+                    paddingTop: "min(5vw, 72px)", // 5 * 14.4
+                    paddingBottom: "min(3vw, 43.2px)", // 3 * 14.4
 
                     display: "flex",
                     flexDirection: "column",
@@ -74,7 +72,6 @@ const PListAddModal = ({ isAddMode, setIsAddMode, targetPlaceData }) => {
                     alignItems: "center",
 
                     className: "AddModal",
-
                     position: "relative",
                 }}
             >
