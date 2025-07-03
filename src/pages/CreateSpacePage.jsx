@@ -21,7 +21,6 @@ const SHAPES = [
 ];
 
 const SHAPE_COLORS = [
-  "#EFF4E1",
   "#DFF2DD",
   "#CFF1DA",
   "#BEEFD6",
