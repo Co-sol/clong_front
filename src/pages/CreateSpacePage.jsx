@@ -4,6 +4,7 @@ import Modal from "../components/Modal";
 import Step1Modal from "../components/CreateSpaceModal/Step1Modal";
 import Step2Modal from "../components/CreateSpaceModal/Step2Modal";
 import Step3Modal from "../components/CreateSpaceModal/Step3Modal";
+import { FaTrashAlt } from "react-icons/fa";
 import "./CreateSpacePage.css";
 
 const GRID_SIZE = 10;
@@ -20,26 +21,28 @@ const SHAPES = [
 ];
 
 const SHAPE_COLORS = [
-  "#CE7DA5",
-  "#CA97AC",
-  "#C6B1B2",
-  "#C2CBB9",
-  "#C0D8BC",
-  "#BEE5BF",
-  "#C7E9C8",
-  "#CFECD1",
-  "#D7F0DA",
-  "#DFF3E3",
-  "#E3EFDE",
-  "#E7EBD9",
-  "#EFE2CF",
-  "#F7DAC5",
-  "#FFD1BA",
+  "#EFF4E1",
+  "#DFF2DD",
+  "#CFF1DA",
+  "#BEEFD6",
+  "#ADEBCB",
+  "#9CE7C1",
+  "#8CE3B8",
+  "#7CDFAD",
+  "#6BDBA3",
+  "#5BD799",
+  "#4AD38F",
+  "#3ACF85",
+  "#30C57A",
+  "#2CB570",
+  "#28A466",
+  "#24945C",
 ];
 
 function CreateSpacePage() {
   // 그리드에 배치된 도형 배열 정보
   const [placedShapes, setPlacedShapes] = useState([]);
+  const [nextSpaceId, setNextSpaceId] = useState(0); // 다음 space_id를 위한 카운터
 
   const [modalStep, setModalStep] = useState(0);
   const [modalShape, setModalShape] = useState(null); // 선택된 도형 정보
@@ -309,8 +312,15 @@ function CreateSpacePage() {
                                 top: hoverCell.row,
                                 left: hoverCell.col,
                                 color,
+                                space_id: nextSpaceId, // 순차적으로 0, 1, 2, 3... 부여
                               };
+                              console.log("새 도형 생성:", newShape);
+                              console.log(
+                                "생성된 space_id:",
+                                newShape.space_id
+                              );
                               setPlacedShapes([...placedShapes, newShape]);
+                              setNextSpaceId(nextSpaceId + 1); // 다음 번호로 증가
                               setPendingShape(null);
                               setHoverCell(null);
                             }
@@ -339,9 +349,38 @@ function CreateSpacePage() {
                               (placedShape.h - 1) * GRID_GAP
                             }px)`,
                             background: placedShape.color || undefined,
+                            position: "absolute",
                           }}
                         >
                           {placedShape.name}
+                          <FaTrashAlt
+                            className="trash-icon"
+                            style={{
+                              position: "absolute",
+                              top: "6px",
+                              right: "6px",
+                              width: "15px",
+                              height: "15px",
+                              color: "#1a1a1a",
+                              cursor: "pointer",
+                              zIndex: 3,
+                            }}
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              console.log("삭제할 도형:", placedShape);
+                              console.log(
+                                "삭제할 space_id:",
+                                placedShape.space_id
+                              );
+                              console.log("현재 모든 도형:", placedShapes);
+                              setPlacedShapes((prevShapes) =>
+                                prevShapes.filter(
+                                  (shape) =>
+                                    shape.space_id !== placedShape.space_id
+                                )
+                              );
+                            }}
+                          />
                         </div>
                       )}
                     </div>

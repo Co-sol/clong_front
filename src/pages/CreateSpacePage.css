@@ -88,7 +88,7 @@ body {
 }
 
 .grid-cell.highlight {
-  background: #bdefd6;
+  background: #e9e9e9;
 }
 
 .placed-shape {
@@ -115,6 +115,10 @@ body {
 
 .grid-cell.placed {
   border: none;
+}
+
+.trash-icon {
+  pointer-events: auto;
 }
 
 /* 공간 도형 패널 */
