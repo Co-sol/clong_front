@@ -1,7 +1,7 @@
 import "./GListAddModal.css";
 import "react-datepicker/dist/react-datepicker.css";
 import { useContext, useState } from "react";
-import Modal from "./AddModal";
+import Modal from "../Modal";
 import Button from "../Button";
 
 import {

@@ -234,7 +234,7 @@ function GroupSpacePage() {
                             </div>
                             <div className="space">공간</div>
                         </div>
-                        <PList />
+                        <GList />
                     </div>
                 </toCleanStateContext.Provider>
             </toCleanDispatchContext.Provider>
