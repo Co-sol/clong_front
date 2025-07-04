@@ -1,0 +1,100 @@
+.GList {
+    width: min(503px, 34.86vw); /* 기존 고정 → 화면에 맞춤 */
+    height: min(865px, 59.9vw); /* 89.1vh */
+    background-color: white;
+    border-radius: 1.39vw; /* 20px */
+    margin-top: 6vh;
+    margin-bottom: 6.6vh;
+    position: relative;
+}
+
+.GList h3 {
+    font-size: min(24px, 1.67vw); /* 24px */
+    text-align: center;
+    padding-top: min(43px, 3vw); /* 반응형 간격 */
+    padding-bottom: min(43.3px, 3vw);
+    margin-bottom: 0;
+    font-weight: bold;
+}
+
+.GList .Button_edit {
+    position: absolute;
+    right: min(28.9px, 2vw);
+    top: min(20.23px, 1.4vw);
+    width: min(79.46px, 5.5vw);
+    height: min(40.45px, 2.8vw);
+    border-radius: 15px;
+    color: white;
+    cursor: pointer;
+
+    font-size: min(16px, 1.1vw);
+    font-weight: bold;
+}
+
+.GList .Button_add1 {
+    font-size: min(40.3px, 2.8vw); /* 반응형 텍스트 */
+    font-weight: bold;
+
+    width: min(417.312px, 28.9vw);
+    height: min(73.9px, 5.1vw);
+    border-radius: 15px;
+    background-color: rgb(217, 217, 217);
+    margin-left: min(3.1vw, 44.64px);
+    padding-left: min(12px, 0.83vw);
+    padding-bottom: min(0.8vw, 13px);
+    margin-bottom: min(9.1px, 0.63vw);
+    color: white;
+}
+
+.GList .place {
+    width: min(164px, 11.4vw); /* 164px */
+    height: min(50.4px, 3.5vw); /* 55px */
+    background-color: rgb(139, 226, 182);
+    border-radius: 80px;
+    margin-left: min(168px, 11.7vw);
+    margin-bottom: min(43px, 3vw);
+    font-size: min(26px, 1.8vw);
+    line-height: min(50.4px, 3.5vw);
+    text-align: center;
+    font-weight: bold;
+}
+
+.GList .title {
+    display: flex;
+    margin-left: min(60px, 4.13vw);
+    margin-bottom: min(6px, 0.4vw);
+
+    font-size: min(16px, 1.1vw);
+    color: rgb(103, 103, 103);
+    font-style: normal;
+    font-weight: normal;
+    font-family: sans-serif, "Noto Sans KR";
+}
+
+.GList .to-clean_text {
+    margin-left: min(52px, 3.6vw);
+}
+
+.GList .deadLine_text {
+    margin-left: min(105px, 7.3vw);
+}
+
+.GList .scrollBar {
+    height: min(528.1px, 36.6vw);
+    width: min(475px, 33vw);
+    overflow-y: auto;
+}
+
+.scrollBar::-webkit-scrollbar {
+    width: min(7px, 0.5vw);
+}
+
+.scrollBar::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 20px;
+}
+
+.scrollBar::-webkit-scrollbar-track {
+    background: #f5f5f5;
+    border-radius: 20px;
+}
