@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './SignupPage.css';
 
 function SignupPage() {
@@ -10,6 +10,10 @@ function SignupPage() {
   const [sensitivity, setSensitivity] = useState(50);
   const [emailMessage, setEmailMessage] = useState('');
   const [passwordMessage, setPasswordMessage] = useState('');
+  const [isEmailChecked, setIsEmailChecked] = useState(false);
+  const [submitError, setSubmitError] = useState('');
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     document.documentElement.style.setProperty('--value', sensitivity);
@@ -22,28 +26,53 @@ function SignupPage() {
   const handleEmailCheck = () => {
     if (!email) {
       setEmailMessage('이메일을 입력해주세요.');
+      setIsEmailChecked(false);
       return;
     }
     if (!validateEmailFormat(email)) {
       setEmailMessage('올바른 이메일 형식을 입력해주세요.');
+      setIsEmailChecked(false);
       return;
     }
     if (email === 'test@sookmyung.ac.kr') {
       setEmailMessage('사용 불가능한 이메일이에요.');
+      setIsEmailChecked(false);
     } else {
       setEmailMessage('사용 가능한 이메일이에요.');
+      setIsEmailChecked(true);
     }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (password !== confirmPassword) {
-      setPasswordMessage('비밀번호가 일치하지 않아요.');
+
+    if (!nickname || !email || !password || !confirmPassword) {
+      setSubmitError('모든 항목을 입력해주세요.');
       return;
     }
+
+    if (!isEmailChecked) {
+      if (!validateEmailFormat(email)) {
+        setEmailMessage('올바른 이메일 형식을 입력해주세요.');
+      } else {
+        setEmailMessage('이메일 중복 확인을 해주세요.');
+      }
+      setSubmitError('');
+      return;
+    }
+
+    if (password !== confirmPassword) {
+      setPasswordMessage('비밀번호가 일치하지 않아요.');
+      setSubmitError('');
+      return;
+    }
+
     setPasswordMessage('비밀번호가 일치해요.');
+    setSubmitError('');
     console.log('회원가입 시도');
+    navigate('/login');
   };
+
 
   return (
     <div className="page-wrapper">
@@ -51,12 +80,10 @@ function SignupPage() {
         <Link to="/login" className="title">Clong</Link>
         <Link to="/login" className="subtitle">Clean along with</Link>
 
-
         <form onSubmit={handleSubmit}>
           <div className="form-row">
             <input
               type="text"
-              id="nickname"
               placeholder="닉네임"
               value={nickname}
               onChange={(e) => setNickname(e.target.value)}
@@ -66,10 +93,12 @@ function SignupPage() {
           <div className="form-row email-check">
             <input
               type="email"
-              id="email"
               placeholder="이메일"
               value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={(e) => {
+                setEmail(e.target.value);
+                setIsEmailChecked(false);
+              }}
             />
             <button type="button" onClick={handleEmailCheck}>
               중복 확인
@@ -82,17 +111,14 @@ function SignupPage() {
           <div className="form-row">
             <input
               type="password"
-              id="password"
               placeholder="비밀번호"
               value={password}
               onChange={(e) => {
                 setPassword(e.target.value);
                 if (confirmPassword) {
-                  if (e.target.value === confirmPassword) {
-                    setPasswordMessage('비밀번호가 일치해요.');
-                  } else {
-                    setPasswordMessage('비밀번호가 일치하지 않아요.');
-                  }
+                  setPasswordMessage(e.target.value === confirmPassword
+                    ? '비밀번호가 일치해요.'
+                    : '비밀번호가 일치하지 않아요.');
                 } else {
                   setPasswordMessage('');
                 }
@@ -103,17 +129,14 @@ function SignupPage() {
           <div className="form-row">
             <input
               type="password"
-              id="confirm-password"
               placeholder="비밀번호 확인"
               value={confirmPassword}
               onChange={(e) => {
                 setConfirmPassword(e.target.value);
                 if (password && e.target.value) {
-                  if (password === e.target.value) {
-                    setPasswordMessage('비밀번호가 일치해요.');
-                  } else {
-                    setPasswordMessage('비밀번호가 일치하지 않아요.');
-                  }
+                  setPasswordMessage(password === e.target.value
+                    ? '비밀번호가 일치해요.'
+                    : '비밀번호가 일치하지 않아요.');
                 } else {
                   setPasswordMessage('');
                 }
@@ -157,11 +180,14 @@ function SignupPage() {
             </div>
           </div>
 
+          {submitError && (
+            <div className="error-message" style={{ marginTop: '-25px', marginBottom: '-15px' }}>
+              {submitError}
+            </div>
+          )}
+
           <div className="form-row button">
-            <button
-              type="submit"
-              disabled={!nickname || !email || !password || !confirmPassword}
-            >
+            <button type="submit">
               회원 가입
             </button>
           </div>

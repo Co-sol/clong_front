@@ -1,5 +1,5 @@
-import Header from "../components/Header";
-// import GroupHome from "../components/GroupHome/GroupHome";
+import Header from "./../components/Header";
+import GroupHome from "./../components/groupHome/GroupHome";
 
 const GroupHomePage = () => {
     return (

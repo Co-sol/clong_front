@@ -1,0 +1,75 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(245, 245, 245); /* 원하는 색으로 바꿔도 됨 */
+}
+
+.GroupHome {
+    margin: 60px 70px;
+    background-color: rgb(245, 245, 245);
+}
+
+/* 상단 그룹 이름 */
+.GroupHome .groupName {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.GroupHome h3 {
+    font-size: 1.8vw;
+    font-weight: bold;
+}
+
+.GroupHome .groupName > img {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 6px;
+}
+
+/* home_img 옆으로 홀쭉하길래 조정해줌 */
+.GroupHome .groupName .home_img {
+    width: 40px;
+    margin-bottom: 10px;
+}
+
+/* 하단 그룹 주요 기능 */
+.GroupHome .groupSpace {
+    width: 50vw;
+    height: 50vw;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.GroupHome .groupHomeRE {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2.08vw;
+}
+
+.GroupHome .groupRule {
+    width: 39vw;
+    height: 19vw;
+    background-color: white;
+}
+
+.GroupHome .groupEval {
+    width: 39vw;
+    height: 29vw;
+    background-color: white;
+}
+
+.GroupHome .groupHomeUnder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
