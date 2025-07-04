@@ -1,0 +1,164 @@
+/* 폰트 크기 */
+@font-face {
+    font-family: "NotoSansKR-Bold";
+    src: url("/fonts/NotoSansKR-Bold.ttf") format("truetype");
+    font-weight: "bold";
+    font-style: "normal";
+
+    font-family: "NotoSansKR-Regular";
+    src: url("/fonts/NotoSansKR-Regular.ttf") format("truetype");
+    font-weight: "normal";
+    font-style: "normal";
+}
+
+/* 장소 */
+.GListAddModal .selectedPlace {
+    background-color: rgb(139, 226, 182);
+    width: min(9vw, 129.8px);
+    height: min(3.2vw, 46.1px);
+    border-radius: 80px;
+    margin-bottom: min(2.4vw, 34.656px);
+
+    font-size: min(1.7vw, 25px);
+    font-weight: bold;
+    line-height: min(3.2vw, 46.1px);
+    text-align: center;
+}
+
+/* 할 일(to-clean) */
+.GListAddModal .createToClean {
+    display: flex;
+    flex-direction: column;
+    gap: min(1vw, 14.4px);
+    margin-bottom: min(2vw, 28.8px);
+}
+
+.GListAddModal .toClean_text {
+    font-size: min(1.11vw, 1rem);
+    text-align: center;
+}
+
+.GListAddModal .createToClean > textarea {
+    background-color: #f5f5f5;
+    border: none;
+    border-radius: 15px;
+
+    width: min(32vw, 462.1px);
+    height: min(3.5vw, 50.4px);
+
+    resize: none;
+    overflow: hidden;
+
+    font-size: min(1.22vw, 1.1rem);
+    line-height: min(3.2vw, 46px);
+    text-align: center;
+}
+.GListAddModal .createToClean > textarea:focus {
+    border: 1.5px solid #aee9d1;
+    outline: none;
+    box-shadow: 0 0 0 1px #aee9d1;
+}
+
+/* 마감 기한 */
+.GListAddModal .createDeadLine {
+    display: flex;
+    flex-direction: column;
+    gap: min(1vw, 14.4px);
+}
+.GListAddModal .date {
+    width: min(12vw, 173px);
+    height: min(3vw, 43px);
+}
+
+.GListAddModal .deadLine_text {
+    font-size: min(1.11vw, 1rem);
+    text-align: center;
+    margin-left: 0;
+}
+
+.GListAddModal .DatePicker {
+    width: min(13vw, 187.7px);
+    height: min(3.6vw, 52px);
+    border: none;
+    border-radius: 15px;
+    background-color: #f5f5f5;
+    margin-bottom: min(24.53px, 1.7vw);
+
+    text-align: center;
+    font-size: min(1.33vw, 1.2rem);
+    line-height: min(3.6vw, 52px);
+}
+.GListAddModal .DatePicker:focus {
+    border: 1.5px solid #aee9d1;
+    outline: none;
+    box-shadow: 0 0 0 1px #aee9d1;
+}
+
+/* 담당자 */
+.GListAddModal .selectPerson {
+    display: flex;
+    flex-direction: column;
+    gap: min(1.5vw, 21.6px);
+    margin-bottom: min(2vw, 28.8px);
+}
+
+.GListAddModal .personTodo_text {
+    font-size: min(1.11vw, 1rem);
+    text-align: center;
+}
+
+.GListAddModal .selectPerson .personTodo {
+    display: flex;
+    gap: min(1.5vw, 21.6px);
+    justify-content: center;
+}
+
+.GListAddModal .hover_button,
+.hover_active {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: min(0.7vw, 10.1px);
+
+    width: min(6vw, 86.625px);
+    height: min(8vw, 115.5px);
+
+    background-color: transparent;
+    border: none;
+}
+
+.GListAddModal .hover_button:hover {
+    background-color: #8be2b6;
+    border-radius: 45px;
+}
+
+.GListAddModal .hover_active {
+    background-color: #8be2b6;
+    border-radius: 45px;
+}
+
+.GListAddModal .selectPerson .personTodo .BadgeTodo {
+    width: min(5vw, 72.25px);
+    height: min(5vw, 72.25px);
+}
+
+.GListAddModal .selectPerson .personTodo .nameTodo {
+    font-size: min(1.11vw, 1rem);
+    text-align: center;
+}
+
+/* 저장 버튼 */
+.GListAddModal .Button_save {
+    margin-left: min(26vw, 375.44px);
+    margin-bottom: 0;
+
+    width: min(8vw, 115.5px);
+    height: min(3.2vw, 46px);
+    border-radius: 15px;
+
+    font-size: min(1.7vw, 24.548px);
+    color: white;
+    font-weight: bold;
+    line-height: min(3.2vw, 46px);
+}

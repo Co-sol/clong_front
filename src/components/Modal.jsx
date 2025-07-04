@@ -40,7 +40,7 @@ const Modal = ({
   onClose,
   children,
 
-  // 밖에서도 Modal css 변경 가능
+  // modal 하드 코딩 때매 외부 파일에서 css 변경 불가라 매게변수 넣어줌 (이러면 밖에서도 Modal css 변경 가능)
   overlayStyle,
   contentStyle,
   closeStyle,
