@@ -22,8 +22,7 @@ function LoginPage() {
   return (
     <>
       <style>
-        {`
-          @import url('https://fonts.googleapis.com/css2?family=Inter:wght@800&family=Noto+Sans+KR:wght@400;500;700;900&display=swap');
+        {`@import url('https://fonts.googleapis.com/css2?family=Inter:wght@800&family=Noto+Sans+KR:wght@400;500;700;900&display=swap');
 
           body {
             margin: 0;

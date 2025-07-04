@@ -1,4 +1,3 @@
-import "./App.css";
 import { Routes, Route, Navigate } from "react-router-dom";
 import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignupPage";
@@ -10,6 +9,7 @@ import TutorialPage from "./pages/CreatePages/TutorialPage";
 import CreateSpacePage from "./pages/CreatePages/CreateSpacePage";
 import NoGroupPage from "./pages/CreatePages/NoGroupPage";
 import GroupSpacePage from "./pages/GroupSpacePage";
+import GroupHomePage from "./pages/GroupHomePage";
 import { useAuthStatus } from "./hooks/useAuthStatus";
 
 function App() {
@@ -28,6 +28,7 @@ function App() {
       <Route path="/tutorial" element={<TutorialPage />} />
       <Route path="/createSpace" element={<CreateSpacePage />} />
       <Route path="/groupSpace" element={<GroupSpacePage />} />
+      <Route path="/groupHome" element={<GroupHomePage />} />
 
       <Route
         path="/redirect"
