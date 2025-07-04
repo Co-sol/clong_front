@@ -7,7 +7,7 @@ body {
 }
 
 .GroupHome {
-    margin: 60px 70px;
+    margin: 40px 70px;
     background-color: rgb(245, 245, 245);
 }
 
@@ -17,15 +17,15 @@ body {
     gap: 10px;
     justify-content: center;
     align-items: center;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 }
 
 .GroupHome h3 {
-    font-size: 1.8vw;
+    font-size: 32px;
     font-weight: bold;
 }
 
-.GroupHome .groupName > img {
+.GroupHome .groupName .pencil_img {
     width: 30px;
     height: 30px;
     margin-bottom: 6px;
@@ -33,11 +33,20 @@ body {
 
 /* home_img 옆으로 홀쭉하길래 조정해줌 */
 .GroupHome .groupName .home_img {
-    width: 40px;
-    margin-bottom: 10px;
+    width: 35px;
+    height: 27px;
+    margin-bottom: 8px;
 }
 
-/* 하단 그룹 주요 기능 */
+/* 하단 주요 기능 */
+.GroupHome .groupHomeUnder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+/* 공간 구조도 */
 .GroupHome .groupSpace {
     width: 50vw;
     height: 50vw;
@@ -45,31 +54,65 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 20px;
+    margin-bottom: 40px;
 }
 
+/* 그룹 규칙, 평가 */
 .GroupHome .groupHomeRE {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 2.08vw;
+    margin-bottom: 40px;
 }
 
+/* 그룹 규칙 */
 .GroupHome .groupRule {
     width: 39vw;
     height: 19vw;
     background-color: white;
+    border-radius: 20px;
+    padding: 40px;
 }
 
+.GroupHome .groupRule > h3 {
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.GroupHome .groupRule .ruleContent {
+    font-size: 16px;
+}
+
+/* 그룹 평가 */
 .GroupHome .groupEval {
     width: 39vw;
     height: 29vw;
     background-color: white;
+    border-radius: 20px;
+    padding: 40px;
+    position: relative;
 }
 
-.GroupHome .groupHomeUnder {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
+.GroupHome .groupEval > h3 {
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 50px;
+}
+
+.GroupHome .Button_eval {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 130px;
+    height: 40px;
+    border-radius: 15px;
+    color: white;
+
+    font-size: 15px;
 }
