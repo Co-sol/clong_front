@@ -6,7 +6,7 @@ import { toCleanDispatchContext } from "../../context/GroupContext";
 const PListItem = ({ isEditMode, item }) => {
     const { onDelete } = useContext(toCleanDispatchContext);
     const onClickDelete = () => {
-        onDelete(item.target, item.id);
+        onDelete(item.id);
     };
 
     return (

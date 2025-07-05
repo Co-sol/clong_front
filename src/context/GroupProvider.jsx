@@ -97,7 +97,6 @@ const checkListMockData = [
         toClean: "tv 닦기",
         deadLine: "D-2",
         wait: 0,
-        done: 0,
     },
     {
         target: "group",
@@ -108,7 +107,6 @@ const checkListMockData = [
         toClean: "거울 닦기",
         deadLine: "D-day",
         wait: 0,
-        done: 0,
     },
     {
         target: "person",
@@ -119,7 +117,6 @@ const checkListMockData = [
         toClean: "책상 정리",
         deadLine: "D-2",
         wait: 0,
-        done: 0,
     },
     {
         target: "person",
@@ -130,7 +127,6 @@ const checkListMockData = [
         toClean: "침대 이불 게기",
         deadLine: "D-2",
         wait: 0,
-        done: 0,
     },
     {
         target: "person",
@@ -141,7 +137,6 @@ const checkListMockData = [
         toClean: "바닥 쓸기",
         deadLine: "D-2",
         wait: 0,
-        done: 0,
     },
     {
         target: "person",
@@ -152,7 +147,6 @@ const checkListMockData = [
         toClean: "책 정리",
         deadLine: "D-2",
         wait: 0,
-        done: 0,
     },
     {
         target: "person",
@@ -163,9 +157,10 @@ const checkListMockData = [
         toClean: "이불 개기",
         deadLine: "D-day",
         wait: 0,
-        done: 0,
     },
 ];
+
+const waitingMockData = [];
 
 function reducer(data, action) {
     switch (action.type) {
@@ -175,10 +170,12 @@ function reducer(data, action) {
             return data.map((item) =>
                 String(item.id) === String(action.data.id) ? action.data : item
             );
+        case "WAIT":
+            return data.map((item) =>
+                item.id === action.id ? { ...item, wait: 1 } : item
+            );
         case "DELETE":
             return data.filter((item) => String(item.id) !== String(action.id));
-        case "WAIT":
-            return data.map((item) => item.id === action.id && (item.done = 1));
         default:
             return data;
     }
@@ -201,6 +198,7 @@ const GroupProvider = ({ children }) => {
                 place,
                 toClean,
                 deadLine,
+                wait: 0,
             },
         });
     };
@@ -220,7 +218,7 @@ const GroupProvider = ({ children }) => {
         });
     };
 
-    const onDelete = (target, id) => {
+    const onDelete = (id) => {
         dispatch({
             type: "DELETE",
             id,
@@ -229,9 +227,11 @@ const GroupProvider = ({ children }) => {
 
     const onWait = (id) => {
         dispatch({
+            type: "WAIT",
             id,
         });
     };
+    console.log(checkListData);
 
     return (
         <toCleanDispatchContext.Provider
