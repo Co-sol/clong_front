@@ -18,7 +18,8 @@ const GList = () => {
     const groupData = checkListData.filter(
         (item) =>
             item.target === "group" &&
-            String(item.place) === String(selectedPlace)
+            String(item.place) === String(selectedPlace) &&
+            item.wait !== 1
     );
 
     const onClickAdd = () => {
