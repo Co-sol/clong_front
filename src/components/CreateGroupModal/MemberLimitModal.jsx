@@ -25,7 +25,7 @@ const MemberLimitModal = ({ isOpen, onClose, members, ownerNickname }) => (
       justifyContent: "center",
     }}
     contentStyle={{
-      width: "400px",
+      width: "380px",
       maxWidth: "none", // 최대 너비 제한 해제
       minWidth: "auto", // 최소 너비 제거
       top: "30vh",
