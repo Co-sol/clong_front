@@ -1,10 +1,10 @@
-import Header from "../components/Header";
+import Header from "../../components/Header";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./CreateGroupPage.css";
-import InvitationModal from "../components/InvitationModal";
-import MemberLimitModal from "../components/MemberLimitModal";
-import AlreadyGroupModal from "../components/AlreadyGroupModal";
+import InvitationModal from "../../components/CreateGroupModal/InvitationModal";
+import MemberLimitModal from "../../components/CreateGroupModal/MemberLimitModal";
+import AlreadyGroupModal from "../../components/CreateGroupModal/AlreadyGroupModal";
 
 function CreateGroupPage() {
   const navigate = useNavigate();
@@ -89,7 +89,7 @@ function CreateGroupPage() {
 
   return (
     <>
-      <Header />
+      <Header hideMenu />
       <main className="create-group-bg">
         <div className="create-group-card">
           <h2 className="create-group-title">새 그룹 만들기</h2>
