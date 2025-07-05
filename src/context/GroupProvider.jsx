@@ -58,6 +58,7 @@ const personMockData = [
         email: "A@email.com",
         pw: "1111",
         cleanSensitivity: 50,
+        done: 0,
     },
     {
         name: "B",
@@ -65,6 +66,7 @@ const personMockData = [
         email: "B@email.com",
         pw: "2222",
         cleanSensitivity: 80,
+        done: 0,
     },
     {
         name: "C",
@@ -72,6 +74,7 @@ const personMockData = [
         email: "C@email.com",
         pw: "333",
         cleanSensitivity: 30,
+        done: 0,
     },
     {
         name: "D",
@@ -79,6 +82,7 @@ const personMockData = [
         email: "D@email.com",
         pw: "444",
         cleanSensitivity: 20,
+        done: 0,
     },
 ];
 
@@ -92,6 +96,8 @@ const checkListMockData = [
         place: "거실",
         toClean: "tv 닦기",
         deadLine: "D-2",
+        wait: 0,
+        done: 0,
     },
     {
         target: "group",
@@ -101,6 +107,8 @@ const checkListMockData = [
         place: "화장실",
         toClean: "거울 닦기",
         deadLine: "D-day",
+        wait: 0,
+        done: 0,
     },
     {
         target: "person",
@@ -110,6 +118,8 @@ const checkListMockData = [
         place: "책상",
         toClean: "책상 정리",
         deadLine: "D-2",
+        wait: 0,
+        done: 0,
     },
     {
         target: "person",
@@ -119,6 +129,8 @@ const checkListMockData = [
         place: "침대",
         toClean: "침대 이불 게기",
         deadLine: "D-2",
+        wait: 0,
+        done: 0,
     },
     {
         target: "person",
@@ -128,6 +140,8 @@ const checkListMockData = [
         place: "바닥",
         toClean: "바닥 쓸기",
         deadLine: "D-2",
+        wait: 0,
+        done: 0,
     },
     {
         target: "person",
@@ -137,6 +151,8 @@ const checkListMockData = [
         place: "책장",
         toClean: "책 정리",
         deadLine: "D-2",
+        wait: 0,
+        done: 0,
     },
     {
         target: "person",
@@ -146,6 +162,8 @@ const checkListMockData = [
         place: "침대",
         toClean: "이불 개기",
         deadLine: "D-day",
+        wait: 0,
+        done: 0,
     },
 ];
 
@@ -159,6 +177,8 @@ function reducer(data, action) {
             );
         case "DELETE":
             return data.filter((item) => String(item.id) !== String(action.id));
+        case "WAIT":
+            return data.map((item) => item.id === action.id && (item.done = 1));
         default:
             return data;
     }
@@ -207,9 +227,15 @@ const GroupProvider = ({ children }) => {
         });
     };
 
+    const onWait = (id) => {
+        dispatch({
+            id,
+        });
+    };
+
     return (
         <toCleanDispatchContext.Provider
-            value={{ onCreate, onUpdate, onDelete }}
+            value={{ onCreate, onUpdate, onDelete, onWait }}
         >
             <toCleanStateContext.Provider
                 value={{ checkListData, personData, placeData }}
