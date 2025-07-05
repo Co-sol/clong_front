@@ -97,7 +97,7 @@ const TutorialPage = () => {
           justifyContent: "space-between",
           alignItems: "center",
           width: "90%",
-          // height: "250px",
+          height: "330px",
           zIndex: 1100,
           pointerEvents: "none",
         }}
@@ -107,7 +107,7 @@ const TutorialPage = () => {
           style={{
             flex: "1",
             textAlign: "center",
-            height: "100%",
+
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
@@ -119,9 +119,11 @@ const TutorialPage = () => {
               alt="Step 1"
               style={{
                 width: "100%",
-                maxWidth: "230px",
+
+                maxWidth: "250px",
                 height: "auto",
                 objectFit: "contain",
+                backgroundColor: "transparent",
               }}
             />
           )}
@@ -132,7 +134,6 @@ const TutorialPage = () => {
           style={{
             flex: "1",
             textAlign: "center",
-            height: "100%",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
@@ -143,10 +144,12 @@ const TutorialPage = () => {
               src="/assets/step2.png"
               alt="Step 2"
               style={{
-                width: "100%",
-                maxWidth: "200px",
+                width: "90%",
+
+                maxWidth: "220px",
                 height: "auto",
                 objectFit: "contain",
+                backgroundColor: "transparent",
               }}
             />
           )}
@@ -157,7 +160,7 @@ const TutorialPage = () => {
           style={{
             flex: "1",
             textAlign: "center",
-            height: "100%",
+
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
@@ -169,9 +172,11 @@ const TutorialPage = () => {
               alt="Step 3"
               style={{
                 width: "100%",
+
                 maxWidth: "215px",
                 height: "auto",
                 objectFit: "contain",
+                backgroundColor: "transparent",
               }}
             />
           )}
