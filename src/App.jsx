@@ -2,13 +2,14 @@ import "./App.css";
 import { Routes, Route, Navigate } from "react-router-dom";
 import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignupPage";
-import CleanPersonality_1 from './pages/CleanPersonality_1';
-import CleanPersonality_2 from "./pages/CleanPersonality_2";
-import CleanPersonality_3 from "./pages/CleanPersonality_3";
+import CleanPersonality_1 from './pages/CleanPersonalityPage/CleanPersonality_1';
+import CleanPersonality_2 from "./pages/CleanPersonalityPage/CleanPersonality_2";
+import CleanPersonality_3 from "./pages/CleanPersonalityPage/CleanPersonality_3";
 import CreateGroupPage from "./pages/CreateGroupPage";
 import TutorialPage from "./pages/TutorialPage";
 import CreateSpacePage from "./pages/CreateSpacePage";
 import NoGroupPage from "./pages/NoGroupPage";
+import MyPage from "./pages/MyPage"; 
 import { useAuthStatus } from "./hooks/useAuthStatus";
 
 
@@ -27,6 +28,7 @@ function App() {
       <Route path="/createGroup" element={<CreateGroupPage />} />
       <Route path="/tutorial" element={<TutorialPage />} />
       <Route path="/createSpace" element={<CreateSpacePage />} />
+      <Route path="/mypage" element={<MyPage />} />
       
       <Route
         path="/redirect"

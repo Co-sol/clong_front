@@ -1,0 +1,368 @@
+body {
+  margin: 0;
+  background-color: white; /* header 영역 흰색 유지 */
+}
+
+.mypage-wrapper {
+  width: 100vw;
+  min-height: 100vh;
+  background-color: #F5F5F5;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mypage-sidecard h2 {
+  font-size: 20px; /* 기존보다 작게 */
+}
+
+.mypage-container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 60px 70px;
+  box-sizing: border-box;
+  align-items: stretch;
+  background-color: #F5F5F5;
+}
+
+/* 좌측 */
+.mypage-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* 우측 */
+.mypage-right {
+  width: 500px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* 사이드카드 전체 */
+.mypage-sidecard {
+  width: 100%;
+  height: 809px;
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 50px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.08);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  font-family: 'NotoSansKR', sans-serif;
+  overflow: hidden;
+}
+
+.card-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.edit-button {
+  background-color: #8BE2B6;
+  color: #FFFFFF;
+  font-size: 16px;
+  font-weight: 800;
+  width: 70px;
+  height: 35px;
+  border-radius: 12px;
+  cursor: pointer;
+  border: none;
+}
+
+.card-divider {
+  border: none;
+  border-top: 1px solid #CBCBCB;
+  margin: 18px 0;
+}
+
+.mypage-sidecard p {
+  font-size: 16px;
+  margin: 4px 0;
+}
+
+.mypage-sidecard strong {
+  font-weight: 700;
+}
+
+.mypage-sidecard a {
+  display: block;
+  font-size: 16px;
+  color: #000000;
+  margin-bottom: 8px;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.mypage-sidecard a:hover {
+  color: #1ac2a9;
+}
+
+/* 뱃지 */
+.badge-wrapper {
+  width: 842px;
+  height: 250px;
+}
+
+.badge-section {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  border-radius: 20px;
+  padding: 20px 30px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* 세로 중앙 정렬 */
+  box-sizing: border-box;
+}
+
+.badge-section .section-title {
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.badge-list {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.badge-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 14px;
+  justify-content: center;
+}
+
+.badge-item img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.badge-item.active img {
+  border: 6px solid #8BE2B6;
+  border-radius: 50%;
+  width: 80px; /* 기존보다 크게 */
+  height: 80px;
+  transition: all 0.3s ease;
+}
+
+
+/* 그룹 카드 */
+.group-wrapper {
+  width: 842px;
+  height: 248px;
+}
+
+.group-section {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  border-radius: 20px;
+  padding: 0px 100px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.group-section .section-title {
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.group-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.group-name {
+  font-size: 20px;
+  font-weight: 600;
+  text-align: left;
+}
+
+.group-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-size: 14px;
+  color: #555;
+  gap: 25px;
+  margin-bottom: 20px;
+}
+
+/* 성격유형 카드 */
+.personality-wrapper {
+  width: 401px;
+  height: 248px;
+}
+
+.personality-section {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.personality-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.personality-date {
+  font-size: 12px;
+  color: #888;
+  align-self: flex-end;
+}
+
+.personality-header .section-title {
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  width: 100%;
+
+}
+
+.personality-type {
+  display: flex;
+  align-items: baseline;
+  gap: 15px;
+  justify-content: center;
+}
+
+.type-code {
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+}
+
+.type-name {
+  font-size: 16px;
+  font-weight: 500;
+  color: #000000;
+}
+
+.personality-desc {
+  font-size: 13px;
+  margin-top: 35px;
+  color: #444;
+  text-align: center;
+  margin-bottom : 15px;
+}
+
+/* 민감도 카드 */
+.sensitivity-wrapper {
+  width: 401px;
+  height: 248px;
+}
+
+.sensitivity-section {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  border-radius: 20px;
+  padding: 32px 24px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.sensitivity-section .section-title {
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom : 35px;
+}
+
+.sensitivity-value {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom : 35px;
+}
+
+.sensitivity-bar {
+  width: 314px;
+  height: 25px;
+  background-color: #E4E4E4;
+  border-radius: 45px;
+  overflow: hidden;
+}
+
+.sensitivity-fill {
+  height: 100%;
+  background-color: #8BE2B6;
+  transition: width 0.3s ease;
+}
+
+.info-row {
+  display: flex;
+  gap: 40px;
+}
+
+.group-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.group-main {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.group-name-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.home-icon {
+  width: 30px;
+  height: 24px;
+}
+
+.group-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.group-meta-item {
+  display: flex;
+  gap: 6px;
+  font-size: 14px;
+  color: #555;
+}
