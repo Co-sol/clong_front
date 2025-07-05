@@ -1,0 +1,32 @@
+/* 개인별 평가 정보 */
+.GEvalItem {
+    width: 214px;
+    height: 83px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+/* 왼쪽부분 */
+.GEvalItem .left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.GEvalItem .left .Badge_img {
+    width: 60px;
+    height: 60px;
+}
+
+/* 오른쪽부분 */
+.GEvalItem .right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15.63px;
+}

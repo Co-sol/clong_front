@@ -5,6 +5,7 @@ import pencil_img from "../../assets/pencil_img.PNG";
 import { useContext } from "react";
 import { toCleanStateContext } from "../../pages/GroupSpacePage";
 import Button from "../Button";
+import GEvalItem from "./GEvalItem";
 
 const GroupHome = () => {
     const personData = useContext(toCleanStateContext);
@@ -24,7 +25,9 @@ const GroupHome = () => {
                     </div>
                     <div className="groupEval">
                         <h3>그룹원</h3>
-                        <div>그룹원 정보</div>
+                        <div>
+                            <GEvalItem />
+                        </div>
                         <Button text={"그룹원 평가"} type={"eval"} />
                     </div>
                 </div>
