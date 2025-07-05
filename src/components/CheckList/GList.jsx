@@ -1,6 +1,6 @@
 import "./GList.css";
 import { useContext, useState } from "react";
-import { toCleanStateContext } from "../../pages/GroupSpacePage";
+import { toCleanStateContext } from "../../context/GroupContext";
 
 import GListItem from "./GListItem";
 import Button from "../Button";
@@ -8,6 +8,7 @@ import GListAddModal from "./GListAddModal";
 
 const GList = () => {
     const { checkListData } = useContext(toCleanStateContext);
+    console.log(checkListData);
     const [isEditMode, setIsEditMode] = useState(false);
     const [text, setText] = useState("편집");
     const [isAddMode, setIsAddMode] = useState(false);

@@ -1,6 +1,6 @@
 import "./PList.css";
 import { useContext, useState } from "react";
-import { toCleanStateContext } from "../../pages/GroupSpacePage";
+import { toCleanStateContext } from "../../context/GroupContext";
 
 import PListItem from "./PListItem";
 import Button from "../Button";

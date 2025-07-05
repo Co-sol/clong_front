@@ -7,7 +7,7 @@ import Button from "../Button";
 import {
     toCleanStateContext,
     toCleanDispatchContext,
-} from "../../pages/GroupSpacePage";
+} from "../../context/GroupContext";
 import { getBadgeImage } from "../../utils/get-badge-images";
 import DatePicker from "react-datepicker";
 

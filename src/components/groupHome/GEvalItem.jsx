@@ -2,15 +2,12 @@ import { getBadgeImage } from "../../utils/get-badge-images";
 import "./GEvalItem.css";
 import Button from "../Button";
 
-const GEvalItem = ({ person }) => {
+const GEvalItem = () => {
     return (
         <div className="GEvalItem">
             <section className="left">
-                <img
-                    className="Badge_img"
-                    src={getBadgeImage(person.badgeId)}
-                />
-                <div className="name">{person.name}</div>
+                <img className="Badge_img" src={getBadgeImage(1)} />
+                <div className="name">이름</div>
             </section>
             <section className="right">
                 <div>stars</div>
