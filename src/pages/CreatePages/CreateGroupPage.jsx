@@ -89,7 +89,7 @@ function CreateGroupPage() {
 
   return (
     <>
-      <Header />
+      <Header hideMenu />
       <main className="create-group-bg">
         <div className="create-group-card">
           <h2 className="create-group-title">새 그룹 만들기</h2>

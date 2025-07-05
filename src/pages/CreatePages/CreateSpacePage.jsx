@@ -1,6 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
 import Header from "../../components/Header";
-import Modal from "../../components/Modal";
 import Step1Modal from "../../components/CreateSpaceModal/Step1Modal";
 import Step2Modal from "../../components/CreateSpaceModal/Step2Modal";
 import Step3Modal from "../../components/CreateSpaceModal/Step3Modal";
@@ -212,7 +211,7 @@ function CreateSpacePage() {
   return (
     <>
       <div className="create-space-bg">
-        <Header />
+        <Header hideMenu />
         <div className="create-space-content">
           <div className="grid-panel">
             <div className="grid-container">
