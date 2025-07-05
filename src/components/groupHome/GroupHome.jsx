@@ -9,6 +9,7 @@ import { toCleanStateContext } from "../../context/GroupContext";
 
 const GroupHome = () => {
     const { personData } = useContext(toCleanStateContext);
+
     return (
         <div className="GroupHome">
             <div className="groupName">
@@ -25,9 +26,9 @@ const GroupHome = () => {
                     </div>
                     <div className="groupEval">
                         <h3>그룹원</h3>
-                        <div>
-                            {personData.map((item) => {
-                                <GEvalItem />;
+                        <div className="GEvalItems">
+                            {personData.map((item, idx) => {
+                                return <GEvalItem person={item} />;
                             })}
                         </div>
                         <Button text={"그룹원 평가"} type={"eval"} />

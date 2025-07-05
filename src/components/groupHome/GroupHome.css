@@ -116,3 +116,9 @@ body {
 
     font-size: 15px;
 }
+
+.GroupHome .GEvalItems {
+    width: 476px;
+    height: 231px;
+    display: flex;
+}
