@@ -159,41 +159,54 @@ function CreateSpacePage() {
 
   const renderModal = () => {
     if (!modalStep) return null;
-    return (
-      <Modal isOpen={!!modalStep} onClose={handleClose}>
-        {modalStep === 1 && (
-          <Step1Modal
-            spaceType={spaceType}
-            setSpaceType={setSpaceType}
-            spaceName={spaceName}
-            setSpaceName={setSpaceName}
-            onNext={handleStep1}
-          />
-        )}
-        {modalStep === 2 && (
-          <Step2Modal
-            modalShape={modalShape}
-            shapeDirection={shapeDirection}
-            setShapeDirection={setShapeDirection}
-            onNext={handleStep2}
-            shapeSize={shapeSize}
-            setShapeSize={setShapeSize}
-            onBack={handleBack}
-          />
-        )}
-        {modalStep === 3 && (
-          <Step3Modal
-            modalShape={modalShape}
-            shapeDirection={shapeDirection}
-            spaceName={spaceName}
-            shapeSize={shapeSize}
-            onNext={handleStep3}
-            onBack={handleBack}
-            setPreviewShape={setPreviewShape}
-          />
-        )}
-      </Modal>
-    );
+
+    if (modalStep === 1) {
+      return (
+        <Step1Modal
+          isOpen={!!modalStep}
+          onClose={handleClose}
+          spaceType={spaceType}
+          setSpaceType={setSpaceType}
+          spaceName={spaceName}
+          setSpaceName={setSpaceName}
+          onNext={handleStep1}
+        />
+      );
+    }
+
+    if (modalStep === 2) {
+      return (
+        <Step2Modal
+          isOpen={!!modalStep}
+          onClose={handleClose}
+          modalShape={modalShape}
+          shapeDirection={shapeDirection}
+          setShapeDirection={setShapeDirection}
+          onNext={handleStep2}
+          shapeSize={shapeSize}
+          setShapeSize={setShapeSize}
+          onBack={handleBack}
+        />
+      );
+    }
+
+    if (modalStep === 3) {
+      return (
+        <Step3Modal
+          isOpen={!!modalStep}
+          onClose={handleClose}
+          modalShape={modalShape}
+          shapeDirection={shapeDirection}
+          spaceName={spaceName}
+          shapeSize={shapeSize}
+          setPreviewShape={setPreviewShape}
+          onNext={handleStep3}
+          onBack={handleBack}
+        />
+      );
+    }
+
+    return null;
   };
 
   return (

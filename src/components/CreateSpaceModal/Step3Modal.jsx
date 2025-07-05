@@ -1,3 +1,6 @@
+import Modal from "../Modal";
+import "./CreateModal.css";
+
 function Step3Modal({
   modalShape,
   shapeDirection,
@@ -6,6 +9,8 @@ function Step3Modal({
   onNext,
   onBack,
   setPreviewShape,
+  isOpen,
+  onClose,
 }) {
   // 방향에 따라 w, h 결정
   let w = modalShape.w;
@@ -38,14 +43,44 @@ function Step3Modal({
   const ratioH = h * shapeSize;
 
   return (
-    <>
+    <Modal
+      isOpen={isOpen}
+      onClose={onClose}
+      contentStyle={{
+        width: "400px",
+        maxWidth: "none", // 최대 너비 제한 해제
+        minWidth: "auto", // 최소 너비 제거
+      }}
+    >
       <button className="modal-back" onClick={onBack}>
         ←
       </button>
 
-      <div className="modal-title">좋아요!</div>
+      <div
+        className="modal-title"
+        style={{
+          fontFamily: "NotoSansKR-Bold, sans-serif",
+          fontWeight: 700,
+          fontSize: "1.25rem",
+          marginBottom: "30px",
+          textAlign: "center",
+        }}
+      >
+        좋아요!
+      </div>
 
-      <div className="modal-label">원하는 위치를 클릭하면 도형이 생성돼요</div>
+      <div
+        className="modal-label"
+        style={{
+          display: "block",
+          width: "100%",
+          textAlign: "center",
+          fontSize: "1rem",
+          marginBottom: "15px",
+        }}
+      >
+        원하는 위치를 클릭하면 도형이 생성돼요
+      </div>
 
       <div
         className="modal-shape-preview"
@@ -74,7 +109,7 @@ function Step3Modal({
       <button className="modal-next" onClick={handlePreviewAndNext}>
         다음
       </button>
-    </>
+    </Modal>
   );
 }
 
