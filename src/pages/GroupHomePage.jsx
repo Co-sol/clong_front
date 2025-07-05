@@ -5,7 +5,9 @@ const GroupHomePage = () => {
     return (
         <>
             <Header />
-            <GroupHome />
+            <checklistStateContext.Provider>
+                <GroupHome />
+            </checklistStateContext.Provider>
         </>
     );
 };
