@@ -22,6 +22,10 @@
     height: 60px;
 }
 
+.GEvalItem .left .name {
+    text-align: center;
+}
+
 /* 오른쪽부분 */
 .GEvalItem .right {
     display: flex;

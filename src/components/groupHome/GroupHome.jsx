@@ -27,9 +27,16 @@ const GroupHome = () => {
                     <div className="groupEval">
                         <h3>그룹원</h3>
                         <div className="GEvalItems">
-                            {personData.map((item, idx) => {
-                                return <GEvalItem person={item} />;
-                            })}
+                            <div className="EvalRow1">
+                                {personData.slice(0, 2).map((item) => {
+                                    return <GEvalItem person={item} />;
+                                })}
+                            </div>
+                            <div className="EvalRow1">
+                                {personData.slice(2).map((item) => {
+                                    return <GEvalItem person={item} />;
+                                })}
+                            </div>
                         </div>
                         <Button text={"그룹원 평가"} type={"eval"} />
                     </div>

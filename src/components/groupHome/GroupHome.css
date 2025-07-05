@@ -79,7 +79,7 @@ body {
 
 .GroupHome .groupRule > h3 {
     text-align: center;
-    font-size: 22px;
+    font-size: 23px;
     font-weight: bold;
     margin-bottom: 30px;
 }
@@ -100,9 +100,9 @@ body {
 
 .GroupHome .groupEval > h3 {
     text-align: center;
-    font-size: 22px;
+    font-size: 23px;
     font-weight: bold;
-    margin-bottom: 50px;
+    margin-bottom: 55px;
 }
 
 .GroupHome .Button_eval {
@@ -121,4 +121,16 @@ body {
     width: 476px;
     height: 231px;
     display: flex;
+    flex-direction: column;
+    gap: 69px;
+}
+
+.GroupHome .EvalRow1 {
+    display: flex;
+    gap: 48px;
+}
+
+.GroupHome .EvalRow2 {
+    display: flex;
+    gap: 48px;
 }

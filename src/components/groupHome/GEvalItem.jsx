@@ -3,7 +3,6 @@ import "./GEvalItem.css";
 import Button from "../Button";
 
 const GEvalItem = ({ person }) => {
-    console.log(person);
     return (
         <div className="GEvalItem">
             <section className="left">
