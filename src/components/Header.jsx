@@ -7,7 +7,7 @@ const Header = () => {
       <div className="inner-Header">
         {/* 로고 영역 */}
         <div className="LogoWrapper">
-          <NavLink to="/GroupHomePage" className="logo-link">
+          <NavLink to="/groupHome" className="logo-link">
             <img
               src="/assets/clong-logo.png"
               alt="clong logo"
@@ -19,7 +19,7 @@ const Header = () => {
         {/* 메뉴 영역 */}
         <nav className="MenuWrapper">
           <NavLink
-            to="/GroupHomePage"
+            to="/groupHome"
             className={({ isActive }) =>
               "menu-item" + (isActive ? " active" : "")
             }

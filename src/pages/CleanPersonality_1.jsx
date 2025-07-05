@@ -60,12 +60,14 @@ const styles = {
     color: "#000000",
     marginBottom: "30px",
     fontWeight: 500,
+    fontFamily: 'NotoSansKR-Regular, sans-serif',
   },
   title: {
     fontSize: "64px",
     fontWeight: 600,
     marginBottom: "100px",
     color: "#000",
+    fontFamily: 'NotoSansKR-Bold, sans-serif',
   },
   button: {
     fontSize: "32px",
@@ -78,12 +80,14 @@ const styles = {
     color: "white",
     cursor: "pointer",
     marginBottom: "30px",
+    fontFamily: 'NotoSansKR-Bold, sans-serif',
   },
   later: {
     fontSize: "20px",
     color: "#4381EB",
     textDecoration: "none",
     cursor: "pointer",
+    fontFamily: 'NotoSansKR-Bold, sans-serif',
   },
 };
 

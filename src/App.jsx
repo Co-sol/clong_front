@@ -10,6 +10,7 @@ import CreateSpacePage from "./pages/CreatePages/CreateSpacePage";
 import GroupHomePage from "./pages/GroupHomePage";
 import NoGroupPage from "./pages/CreatePages/NoGroupPage";
 import GroupSpacePage from "./pages/GroupSpacePage";
+import GroupHomePage from "./pages/GroupHomePage";
 import { useAuthStatus } from "./hooks/useAuthStatus";
 
 function App() {
