@@ -1,5 +1,6 @@
 import { getBadgeImage } from "../../utils/get-badge-images";
 import "./GEvalItem.css";
+import Button from "../Button";
 
 const GEvalItem = ({ badgeId, name, score }) => {
     return (
@@ -10,7 +11,7 @@ const GEvalItem = ({ badgeId, name, score }) => {
             </section>
             <section className="right">
                 <div>stars</div>
-                <div>개인 체크리스트</div>
+                <Button text={"청소 리스트"} type={"list"} />
             </section>
         </div>
     );
